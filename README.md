@@ -19,8 +19,18 @@ Repository structure
 Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy purpose.
 
 ```
+├── data
+│   ├── music_channels.json
+│   └── pocket_tube.json
+│
 ├── src
-│   └── test.py
+│   ├── _test.py
+│   ├── main.py
+│   └── youtube_req.py
+│
+├── tokens (IGNORED)
+│   ├── api_key.txt
+│   └── oauth.json
 │
 ├── .deepsource.toml
 ├── .gitignore
