@@ -5,6 +5,7 @@ import googleapiclient.errors
 import json
 import random
 import requests
+import sys
 
 from bs4 import BeautifulSoup
 
@@ -53,7 +54,8 @@ def get_channels(service: googleapiclient.discovery, channel_list: list, save: b
                                  'id': an_item['id']} for an_item in request['items']]
 
             except googleapiclient.errors.HttpError:
-                raise
+                print('googleapiclient.errors.HttpError')
+                sys.exit()
 
     else:  # If less than 50 channels concerned, do the single request at once
         try:
@@ -67,7 +69,8 @@ def get_channels(service: googleapiclient.discovery, channel_list: list, save: b
                              'id': an_item['id']} for an_item in request['items']]
 
         except googleapiclient.errors.HttpError:
-            raise
+            print('googleapiclient.errors.HttpError')
+            sys.exit()
 
     if save:  # If you choose to save the requests results
         information = sorted(information, key=lambda dic: dic['title'].lower())  # Sort by alphabetical order
@@ -101,7 +104,8 @@ def get_playlist_items(service: googleapiclient.discovery, playlist_id: str):
                 break
 
     except googleapiclient.errors.HttpError:
-        raise
+        print('googleapiclient.errors.HttpError')
+        sys.exit()
 
     return p_items
 
