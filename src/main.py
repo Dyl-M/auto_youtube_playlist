@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import youtube_req
 
 """File Information
 
