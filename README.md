@@ -35,6 +35,7 @@ Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy pu
 ├── .deepsource.toml
 ├── .gitignore
 ├── LICENSE
+├── notes.txt
 ├── README.md
 └── requirements.txt
 ```
