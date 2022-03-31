@@ -1,5 +1,4 @@
 # I write here what comes to my mind and some temporary notes.
-# At first sight, this file has no fundamental interest, but you never know, I might write some jokes in it. ¯\_(ツ)_/¯
-
-Looking for videos in playlists:  45%|████▍     | 61/137 [00:11<00:14,  5.18it/s]
-googleapiclient.errors.HttpError
+# If I commit things below these lines, it won't be on purpose (I think?).
+# So, at first sight, this file has no fundamental interest.
+# But you never know, I might write some jokes in it. ¯\_(ツ)_/¯

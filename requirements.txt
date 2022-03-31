@@ -2,8 +2,9 @@ python~=3.9
 
 bs4~=4.10
 google-api-python-client~=2.42
-google-auth-oauthlib~=0.5
+isodate~=0.6
 numpy~=1.22
+oauth2client~=4.1
 pandas~=1.4
 pytz~=2022.1
 requests~=2.27
