@@ -134,9 +134,8 @@ def get_playlist_items(service: googleapiclient.discovery, playlist_id: str, day
             if error_reason == 'playlistNotFound':
                 break  # TODO: Define what to do if there is no public video.
 
-            else:
-                print(f"Unknown error\n{http_error}")
-                sys.exit()
+            print(f"Unknown error\n{http_error}")  # TODO: Define what to do in this case.
+            sys.exit()
 
     return p_items
 
