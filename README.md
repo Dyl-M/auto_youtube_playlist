@@ -31,6 +31,7 @@ Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy pu
 │
 ├── tokens (IGNORED)
 │   ├── api_key.txt
+│   ├── credentials.json
 │   └── oauth.json
 │
 ├── .deepsource.toml
