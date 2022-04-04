@@ -50,11 +50,14 @@ last_exe_file = logging.FileHandler(filename='../log/last_exe.log', mode='w')
 formatter = logging.Formatter(fmt='%(asctime)s [%(levelname)s] - %(message)s', datefmt='%Y-%m-%d %H:%M:%S%z')
 
 # Set file handlers' level
-history_file.setLevel(logging.DEBUG), last_exe_file.setLevel(logging.DEBUG)
+history_file.setLevel(logging.DEBUG)
+last_exe_file.setLevel(logging.DEBUG)
 
 # Assign file handlers and formatter to loggers
-history_file.setFormatter(formatter), last_exe_file.setFormatter(formatter)
-history.addHandler(history_file), last_exe.addHandler(last_exe_file)
+history_file.setFormatter(formatter)
+history.addHandler(history_file)
+last_exe_file.setFormatter(formatter)
+last_exe.addHandler(last_exe_file)
 
 "FUNCTIONS"
 
@@ -85,11 +88,13 @@ def get_authenticated_service():
 
     try:
         service = googleapiclient.discovery.build('youtube', 'v3', credentials=cred)
-        history.info('YouTube service created successfully.'), last_exe.info('YouTube Service created successfully.')
+        history.info('YouTube service created successfully.')
+        last_exe.info('YouTube Service created successfully.')
         return service
 
     except Exception as error:  # skipcq: PYL-W0703 - No known errors at the moment.
-        history.critical(f'({error}) {instance_fail_message}'), last_exe.critical(f'({error}) {instance_fail_message}')
+        history.critical(f'({error}) {instance_fail_message}')
+        last_exe.critical(f'({error}) {instance_fail_message}')
         sys.exit()
 
 
@@ -118,7 +123,8 @@ def get_channels(service: googleapiclient.discovery, channel_list: list, save: b
                              'id': an_item['id']} for an_item in request['items']]
 
         except googleapiclient.errors.HttpError as http_error:
-            history.error(http_error.error_details), last_exe.error(http_error.error_details)
+            history.error(http_error.error_details)
+            last_exe.error(http_error.error_details)
             sys.exit()
 
     information = sorted(information, key=lambda dic: dic['title'].lower())  # Sort by channel name alphabetical order
@@ -245,7 +251,8 @@ def check_if_live(service: googleapiclient.discovery, videos_list: list):
                        'live_status': item['snippet']['liveBroadcastContent']} for item in request['items']]
 
         except googleapiclient.errors.HttpError as http_error:
-            history.error(http_error.error_details), last_exe.error(http_error.error_details)
+            history.error(http_error.error_details)
+            last_exe.error(http_error.error_details)
             sys.exit()
 
     return items
@@ -273,7 +280,8 @@ def get_durations(service: googleapiclient.discovery, videos_list: list):
                        'live_status': item['snippet']['liveBroadcastContent']} for item in request['items']]
 
         except googleapiclient.errors.HttpError as http_error:
-            history.error(http_error.error_details), last_exe.error(http_error.error_details)
+            history.error(http_error.error_details)
+            last_exe.error(http_error.error_details)
             sys.exit()
 
     return items
@@ -332,15 +340,18 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
             if not to_add_df.empty:  # If there are videos to add
                 add_to_playlist(service=service, playlist_id=playlist_id, videos_list=to_add_df.video_id)
                 l_str = f'{to_add_df.shape[0]} new livestream(s) added.'
-                history.info(l_str), last_exe.info(l_str)
+                history.info(l_str)
+                last_exe.info(l_str)
 
             if not to_delete_df.empty:  # If there are videos to delete
                 del_from_playlist(service=service, playlist_id=playlist_id, items_list=to_delete_df.item_id)
                 l_str = f'{to_delete_df.shape[0]} new livestream(s) removed.'
-                history.info(l_str), last_exe.info(l_str)
+                history.info(l_str)
+                last_exe.info(l_str)
 
             if to_add_df.empty and to_delete_df.empty:
-                history.info('No livestream added or removed.'), last_exe.info('No livestream added or removed.')
+                history.info('No livestream added or removed.')
+                last_exe.info('No livestream added or removed.')
 
         else:
             date_delta = ref_date - dt.timedelta(days=del_day_ago)  # Days subtraction
@@ -357,21 +368,25 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
             if not to_add_df.empty:  # If there are videos to add
                 add_to_playlist(service=service, playlist_id=playlist_id, videos_list=to_add_df.video_id)
                 l_str = f'{to_add_df.shape[0]} new video(s) added.'
-                history.info(l_str), last_exe.info(l_str)
+                history.info(l_str)
+                last_exe.info(l_str)
 
             if not to_delete_df.empty:  # If there are videos to delete
                 del_from_playlist(service=service, playlist_id=playlist_id, items_list=to_delete_df.item_id)
                 l_str = f'{to_delete_df.shape[0]} new video(s) removed.'
-                history.info(l_str), last_exe.info(l_str)
+                history.info(l_str)
+                last_exe.info(l_str)
 
             if to_add_df.empty and to_delete_df.empty:
-                history.info('No video added or removed.'), last_exe.info('No video added or removed.')
+                history.info('No video added or removed.')
+                last_exe.info('No video added or removed.')
 
     else:  # If there is no video in the playlist
         if is_live and to_add_df.empty:  # If there are livestreams to add
             add_to_playlist(service=service, playlist_id=playlist_id, videos_list=to_add_df.video_id)
             l_str = f'{to_add_df.shape[0]} new livestream(s) added.'
-            history.info(l_str), last_exe.info(l_str)
+            history.info(l_str)
+            last_exe.info(l_str)
 
         else:  # For regular videos
             # Get durations of videos to add
@@ -384,7 +399,8 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
             if not to_add_df.empty:  # If there are videos to add
                 add_to_playlist(service=service, playlist_id=playlist_id, videos_list=to_add_df.video_id)
                 l_str = f'{to_add_df.shape[0]} new video(s) added.'
-                history.info(l_str), last_exe.info(l_str)
+                history.info(l_str)
+                last_exe.info(l_str)
 
 
 def add_to_playlist(service: googleapiclient.discovery, playlist_id: str, videos_list: list):
