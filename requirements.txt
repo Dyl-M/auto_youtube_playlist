@@ -1,6 +1,6 @@
 bs4~=4.10
 isodate~=0.6
 pandas~=1.4
-pytz~=2022.1
 requests~=2.27
 tqdm~=4.63
+tzlocal~=4.2
