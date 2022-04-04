@@ -65,8 +65,8 @@ def get_authenticated_service():
     try:
         return googleapiclient.discovery.build('youtube', 'v3', credentials=cred)  # Return a functional service
 
-    except Exception as e:  # TODO: Define what to do in this case (logging).
-        print(f'{e} - {instance_fail_message}')  # skipcq: PYL-W0703 - No known errors at the moment.
+    except Exception as e:  # skipcq: PYL-W0703 - No known errors at the moment.
+        print(f'{e} - {instance_fail_message}')  # TODO: Define what to do in this case (logging).
         sys.exit()
 
 
