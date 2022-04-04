@@ -2,3 +2,5 @@
 # If I commit things below these lines, it won't be on purpose (I think?).
 # So, at first sight, this file has no fundamental interest.
 # But you never know, I might write some jokes in it. ¯\_(ツ)_/¯
+
+# TO DO: Create a list of ignored items
