@@ -24,6 +24,10 @@ Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy pu
 │   ├── playlists.json
 │   └── pocket_tube.json
 │
+├── log (IGNORED, for now)
+│   ├── history.log
+│   └── last_exe.log
+│
 ├── src
 │   ├── _test.py
 │   ├── main.py
