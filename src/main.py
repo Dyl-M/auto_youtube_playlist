@@ -25,7 +25,7 @@ PLAYLIST_MIXES, PLAYLIST_LIVES = PLAYLISTS['mixes']['id'], PLAYLISTS['lives']['i
 MUSIC_CHANNELS_IDS = [channel['id'] for channel in MUSIC_CHANNELS]
 MUSIC_CHANNELS_UPLOADS = [channel['uploads'] for channel in MUSIC_CHANNELS]
 
-"MAIN"  # TODO: implement logging
+"MAIN"
 
 # Update live playlist
 CURRENT_LIVE = youtube_req.iter_livestreams(MUSIC_CHANNELS_IDS)
