@@ -403,7 +403,6 @@ def add_to_playlist(service: googleapiclient.discovery, playlist_id: str, videos
         except googleapiclient.errors.HttpError:
             history.error(f'(HttpError) Something went wrong with this video: {video_id}')
             last_exe.error(f'(HttpError) Something went wrong with this video: {video_id}')
-            pass
 
 
 def del_from_playlist(service: googleapiclient.discovery, playlist_id: str, items_list: list):
@@ -421,4 +420,3 @@ def del_from_playlist(service: googleapiclient.discovery, playlist_id: str, item
         except googleapiclient.errors.HttpError:
             history.error(f'(HttpError) Something went wrong with this item: {item_id}')
             last_exe.error(f'(HttpError) Something went wrong with this item: {item_id}')
-            pass
