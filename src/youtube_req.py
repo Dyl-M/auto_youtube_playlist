@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import bs4
 import datetime as dt
 import googleapiclient.discovery
@@ -9,15 +8,15 @@ import itertools
 import json
 import os
 import pandas as pd
-import pytz
 import random
 import requests
 import sys
 import tqdm
+import tzlocal
 
-from oauth2client import client as oauth2client_client
-from oauth2client import tools as oauth2client_tools
-from oauth2client.file import Storage
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
 
 """File Information
 @file_name: youtube_req.py
@@ -32,26 +31,41 @@ pd.set_option('display.width', 250)
 
 "GLOBAL"
 
-TODAY = dt.datetime.now()
+NOW = dt.datetime.now(tz=tzlocal.get_localzone())
 
 "FUNCTIONS"
 
 
 def get_authenticated_service():
-    """Retrieve authentification credentials at specified path or create new ones
+    """Retrieve authentification credentials at specified path or create new ones, mostly inspired by this source
+    code: https://learndataanalysis.org/google-py-file-source-code/
     :return: a Google API service object build with 'googleapiclient.discovery.build'.
     """
     oauth_file = '../tokens/oauth.json'  # OAUTH 2.0 ID path
     scopes = ["https://www.googleapis.com/auth/youtube.force-ssl"]
-    credential_path = os.path.join('../tokens/', 'credential.json')
-    store = Storage(credential_path)  # Store and retrieve a single credential to and from a file
-    credentials = store.get()  # Retrieve credential
+    instance_fail_message = 'Failed to create service instance for YouTube'
+    cred = None
 
-    if not credentials or credentials.invalid:  # Cover lack of credentials and outdated credentials
-        flow = oauth2client_client.flow_from_clientsecrets(oauth_file, scopes)  # Create a Flow from 'oauth_file'
-        credentials = oauth2client_tools.run_flow(flow, store)  # Run authentification process
+    if os.path.exists('../tokens/credentials.json'):
+        cred = Credentials.from_authorized_user_file('../tokens/credentials.json')  # Retrieve credentials
 
-    return googleapiclient.discovery.build('youtube', 'v3', credentials=credentials)
+    if not cred or not cred.valid:  # Cover outdated credentials
+        if cred.expired and cred.refresh_token:
+            cred.refresh(Request())
+
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(oauth_file, scopes)  # Create a Flow from 'oauth_file'
+            cred = flow.run_local_server()  # Run authentification process
+
+        with open('../tokens/credentials.json', 'w') as cred_file:  # Save credentials as a JSON file
+            json.dump(eval(cred.to_json()), cred_file, ensure_ascii=False, indent=4)
+
+    try:
+        return googleapiclient.discovery.build('youtube', 'v3', credentials=cred)  # Return a functional service
+
+    except Exception as e:
+        print(f'{e} - {instance_fail_message}')  # TODO: Define what to do in this case (logging).
+        sys.exit()
 
 
 def get_channels(service: googleapiclient.discovery, channel_list: list, save: bool = False,
@@ -92,12 +106,12 @@ def get_channels(service: googleapiclient.discovery, channel_list: list, save: b
 
 
 def get_playlist_items(service: googleapiclient.discovery, playlist_id: str, day_ago: int = None,
-                       ref_date: dt.datetime = TODAY):
+                       ref_date: dt.datetime = NOW):
     """Get the videos in a YouTube playlist
     :param service: a YouTube service build with 'googleapiclient.discovery'
     :param playlist_id: a YouTube playlist ID
     :param day_ago: day difference with a reference date, delimits items' collection field
-    :param ref_date: reference date (TODAY by default)
+    :param ref_date: reference date (NOW by default)
     :return p_items: playlist items (videos) as a list.
     """
     p_items = []
@@ -119,14 +133,8 @@ def get_playlist_items(service: googleapiclient.discovery, playlist_id: str, day
                          'status': item['status']['privacyStatus']} for item in request['items']]  # Keep necessary data
 
             if day_ago is not None:  # In case we want to keep videos published x days ago from your ref_date
-                # Hours of reference date set to midnight UTC
-                ref_date = ref_date.replace(hour=0, minute=0, second=0, microsecond=0, tzinfo=pytz.utc)
-
                 # Days subtraction
                 date_delta = ref_date - dt.timedelta(days=day_ago)
-
-                # Hours of reference date reset to 23:59:59 UTC (to keep videos released during the day)
-                ref_date = ref_date.replace(hour=23, minute=59, second=59)
 
                 # Filtering
                 p_items = [item for item in p_items if ref_date > item['release_date'] > date_delta]
@@ -253,30 +261,29 @@ def iter_livestreams(channel_list: list):
     return list(itertools.chain.from_iterable(lives_it))
 
 
-def iter_playlists(playlist_list: list, service: googleapiclient.discovery, day_ago: int = None,
-                   ref_date: dt.datetime = TODAY):
+def iter_playlists(service: googleapiclient.discovery, playlists: list, day_ago: int = None,
+                   ref_date: dt.datetime = NOW):
     """Apply 'get_playlist_items' for a collection of YouTube playlists
-    :param playlist_list: list of YouTube channel IDs
+    :param playlists: list of YouTube channel IDs
     :param service: a YouTube service build with 'googleapiclient.discovery'
     :param day_ago: day difference with a reference date, delimits items' collection field
-    :param ref_date: reference date (TODAY by default)
+    :param ref_date: reference date (NOW by default)
     :return: videos retrieved in playlists.
     """
     item_it = [get_playlist_items(service=service, playlist_id=playlist_id, day_ago=day_ago, ref_date=ref_date)
-               for playlist_id in tqdm.tqdm(playlist_list, desc='Looking for videos to add')]
+               for playlist_id in tqdm.tqdm(playlists, desc='Looking for videos to add')]
     return list(itertools.chain.from_iterable(item_it))
 
 
-def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos_to_add: list = None,
-                    is_live: bool = False, min_duration: int = 10, del_day_ago: int = 7,
-                    ref_date: dt.datetime = TODAY):
+def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos_to_add: list, is_live: bool = False,
+                    min_duration: int = 10, del_day_ago: int = 7, ref_date: dt.datetime = NOW):
     """Update a YouTube playlist with temporal criteria
     :param service: a YouTube service build with 'googleapiclient.discovery'
     :param playlist_id: a YouTube playlist ID
     :param videos_to_add: list of YouTube video IDs to potentially add to a specified playlist
     :param is_live: to update a list containing specifically livestreams only (or not)
-    :param del_day_ago: day difference with TODAY, to keep in playlist video published in the last 'del_day_ago' days
-    :param ref_date: reference date (TODAY by default)
+    :param del_day_ago: day difference with NOW, to keep in playlist video published in the last 'del_day_ago' days
+    :param ref_date: reference date (NOW by default)
     :param min_duration: minimal video duration filter.
     """
     # Pass playlist as pandas Dataframes (for easier filtering)

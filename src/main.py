@@ -28,9 +28,9 @@ MUSIC_CHANNELS_UPLOADS = [channel['uploads'] for channel in MUSIC_CHANNELS]
 "MAIN"  # TODO: implement logging
 
 # Update live playlist
-CURRENT_LIVE = youtube_req.iter_livestreams(channel_list=MUSIC_CHANNELS_IDS)
-youtube_req.update_playlist(service=YOUTUBE_OAUTH, playlist_id=PLAYLIST_LIVES, videos_to_add=CURRENT_LIVE, is_live=True)
+CURRENT_LIVE = youtube_req.iter_livestreams(MUSIC_CHANNELS_IDS)
+youtube_req.update_playlist(YOUTUBE_OAUTH, PLAYLIST_LIVES, CURRENT_LIVE, is_live=True)
 
 # Update mixes playlist
-LAST_DAY = youtube_req.iter_playlists(playlist_list=MUSIC_CHANNELS_UPLOADS, service=YOUTUBE_OAUTH, day_ago=1)
-youtube_req.update_playlist(service=YOUTUBE_OAUTH, playlist_id=PLAYLIST_MIXES, videos_to_add=LAST_DAY)
+TO_ADD = youtube_req.iter_playlists(YOUTUBE_OAUTH, MUSIC_CHANNELS_UPLOADS, day_ago=1)
+youtube_req.update_playlist(YOUTUBE_OAUTH, PLAYLIST_MIXES, TO_ADD)

@@ -34,7 +34,6 @@ Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy pu
 │   └── youtube_req.py
 │
 ├── tokens (IGNORED)
-│   ├── api_key.txt
 │   ├── credentials.json
 │   └── oauth.json
 │
