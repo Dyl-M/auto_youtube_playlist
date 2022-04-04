@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+
+import ast
 import bs4
 import datetime as dt
 import googleapiclient.discovery
@@ -50,7 +52,7 @@ def get_authenticated_service():
         cred = Credentials.from_authorized_user_file('../tokens/credentials.json')  # Retrieve credentials
 
     if not cred or not cred.valid:  # Cover outdated credentials
-        if cred.expired and cred.refresh_token:
+        if cred and cred.expired and cred.refresh_token:
             cred.refresh(Request())
 
         else:
@@ -58,13 +60,13 @@ def get_authenticated_service():
             cred = flow.run_local_server()  # Run authentification process
 
         with open('../tokens/credentials.json', 'w') as cred_file:  # Save credentials as a JSON file
-            json.dump(eval(cred.to_json()), cred_file, ensure_ascii=False, indent=4)
+            json.dump(ast.literal_eval(cred.to_json()), cred_file, ensure_ascii=False, indent=4)
 
     try:
         return googleapiclient.discovery.build('youtube', 'v3', credentials=cred)  # Return a functional service
 
-    except Exception as e:
-        print(f'{e} - {instance_fail_message}')  # TODO: Define what to do in this case (logging).
+    except Exception as e:  # TODO: Define what to do in this case (logging).
+        print(f'{e} - {instance_fail_message}')  # skipcq: PYL-W0703 - No known errors at the moment.
         sys.exit()
 
 
