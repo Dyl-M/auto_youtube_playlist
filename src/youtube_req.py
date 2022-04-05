@@ -62,9 +62,10 @@ last_exe.addHandler(last_exe_file)
 "FUNCTIONS"
 
 
-def get_authenticated_service():
+def get_authenticated_service(log: bool = True):
     """Retrieve authentification credentials at specified path or create new ones, mostly inspired by this source
     code: https://learndataanalysis.org/google-py-file-source-code/
+    :param log: to apply logging or not
     :return service: a Google API service object build with 'googleapiclient.discovery.build'.
     """
     oauth_file = '../tokens/oauth.json'  # OAUTH 2.0 ID path
@@ -88,13 +89,17 @@ def get_authenticated_service():
 
     try:
         service = googleapiclient.discovery.build('youtube', 'v3', credentials=cred)
-        history.info('YouTube service created successfully.')
-        last_exe.info('YouTube Service created successfully.')
+        if log:
+            history.info('YouTube service created successfully.')
+            last_exe.info('YouTube Service created successfully.')
+
         return service
 
     except Exception as error:  # skipcq: PYL-W0703 - No known errors at the moment.
-        history.critical(f'({error}) {instance_fail_message}')
-        last_exe.critical(f'({error}) {instance_fail_message}')
+        if log:
+            history.critical(f'({error}) {instance_fail_message}')
+            last_exe.critical(f'({error}) {instance_fail_message}')
+
         sys.exit()
 
 
@@ -207,28 +212,34 @@ def find_livestreams(channel_id: str):
     :param channel_id: a YouTube channel ID
     :return live_list: list of livestream ID (or empty list if no livestream at the moment).
     """
-    cookies = {'CONSENT': 'YES+cb.20210328-17-p0.en-GB+FX+{}'.format(random.randint(100, 999))}  # Cookies settings
-    web_page = requests.get(f'https://www.youtube.com/channel/{channel_id}', cookies=cookies)  # Page request
-    soup = bs4.BeautifulSoup(web_page.text, "html.parser")  # HTML parsing
+    try:
+        cookies = {'CONSENT': 'YES+cb.20210328-17-p0.en-GB+FX+{}'.format(random.randint(100, 999))}  # Cookies settings
+        web_page = requests.get(f'https://www.youtube.com/channel/{channel_id}', cookies=cookies)  # Page request
+        soup = bs4.BeautifulSoup(web_page.text, "html.parser")  # HTML parsing
 
-    # Filtering JS part only, then convert to string
-    js_scripts = [script for script in soup.find_all("script") if "sectionListRenderer" in str(script)][0].text
-    sections_as_dict = json.loads(js_scripts.replace("var ytInitialData = ", '')[:-1])  # Parse JS as dictionary
+        # Filtering JS part only, then convert to string
+        js_scripts = [script for script in soup.find_all("script") if "sectionListRenderer" in str(script)][0].text
+        sections_as_dict = json.loads(js_scripts.replace("var ytInitialData = ", '')[:-1])  # Parse JS as dictionary
 
-    # Extract content from page tabs
-    tab = sections_as_dict['contents']['twoColumnBrowseResultsRenderer']['tabs'][0]['tabRenderer']['content']
+        # Extract content from page tabs
+        tab = sections_as_dict['contents']['twoColumnBrowseResultsRenderer']['tabs'][0]['tabRenderer']['content']
 
-    # Extract content from channel page items
-    section = tab['sectionListRenderer']['contents'][0]['itemSectionRenderer']['contents'][0]
+        # Extract content from channel page items
+        section = tab['sectionListRenderer']['contents'][0]['itemSectionRenderer']['contents'][0]
 
-    if 'channelFeaturedContentRenderer' in section.keys():  # If at least one livestream is running
-        # Extract each livestream item
-        featured = section['channelFeaturedContentRenderer']['items']
-        # Extract livestream IDs channel_id
-        livestream_ids = [{'channel_id': channel_id, 'video_id': item['videoRenderer']['videoId']} for item in featured]
-        return livestream_ids
+        if 'channelFeaturedContentRenderer' in section.keys():  # If at least one livestream is running
+            # Extract each livestream item
+            featured = section['channelFeaturedContentRenderer']['items']
+            # Extract livestream IDs channel_id
+            livestream_ids = [{'channel_id': channel_id, 'video_id': item['videoRenderer']['videoId']} for item in
+                              featured]
+            return livestream_ids
 
-    return []  # To return if no livestream at the moment
+    except requests.exceptions.ConnectionError:
+        history.warning(f'ConnectionError with this channel: {channel_id}')
+        last_exe.warning(f'ConnectionError with this channel: {channel_id}')
+
+    return []  # Return if no livestream at the moment or in case of ConnectionError
 
 
 def check_if_live(service: googleapiclient.discovery, videos_list: list):
@@ -293,8 +304,7 @@ def iter_livestreams(channel_list: list):
     :return: IDs of current live based on channels collection.
     """
     lives_it = [find_livestreams(chan_id) for chan_id in tqdm.tqdm(channel_list, desc='Looking for livestreams')]
-    lives_list = list(itertools.chain.from_iterable(lives_it))
-    return lives_list
+    return list(itertools.chain.from_iterable(lives_it))
 
 
 def iter_playlists(service: googleapiclient.discovery, playlists: list, day_ago: int = None,
@@ -339,15 +349,13 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
 
             if not to_add_df.empty:  # If there are videos to add
                 add_to_playlist(service=service, playlist_id=playlist_id, videos_list=to_add_df.video_id)
-                l_str = f'{to_add_df.shape[0]} new livestream(s) added.'
-                history.info(l_str)
-                last_exe.info(l_str)
+                history.info(f'{to_add_df.shape[0]} new livestream(s) added.')
+                last_exe.info(f'{to_add_df.shape[0]} new livestream(s) added.')
 
             if not to_delete_df.empty:  # If there are videos to delete
                 del_from_playlist(service=service, playlist_id=playlist_id, items_list=to_delete_df.item_id)
-                l_str = f'{to_delete_df.shape[0]} new livestream(s) removed.'
-                history.info(l_str)
-                last_exe.info(l_str)
+                history.info(f'{to_delete_df.shape[0]} livestream(s) removed.')
+                last_exe.info(f'{to_delete_df.shape[0]} livestream(s) removed.')
 
             if to_add_df.empty and to_delete_df.empty:
                 history.info('No livestream added or removed.')
@@ -367,15 +375,13 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
 
             if not to_add_df.empty:  # If there are videos to add
                 add_to_playlist(service=service, playlist_id=playlist_id, videos_list=to_add_df.video_id)
-                l_str = f'{to_add_df.shape[0]} new video(s) added.'
-                history.info(l_str)
-                last_exe.info(l_str)
+                history.info(f'{to_add_df.shape[0]} new video(s) added.')
+                last_exe.info(f'{to_add_df.shape[0]} new video(s) added.')
 
             if not to_delete_df.empty:  # If there are videos to delete
                 del_from_playlist(service=service, playlist_id=playlist_id, items_list=to_delete_df.item_id)
-                l_str = f'{to_delete_df.shape[0]} new video(s) removed.'
-                history.info(l_str)
-                last_exe.info(l_str)
+                history.info(f'{to_delete_df.shape[0]} video(s) removed.')
+                last_exe.info(f'{to_delete_df.shape[0]} video(s) removed.')
 
             if to_add_df.empty and to_delete_df.empty:
                 history.info('No video added or removed.')
@@ -384,9 +390,8 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
     else:  # If there is no video in the playlist
         if is_live and to_add_df.empty:  # If there are livestreams to add
             add_to_playlist(service=service, playlist_id=playlist_id, videos_list=to_add_df.video_id)
-            l_str = f'{to_add_df.shape[0]} new livestream(s) added.'
-            history.info(l_str)
-            last_exe.info(l_str)
+            history.info(f'{to_add_df.shape[0]} new livestream(s) added.')
+            last_exe.info(f'{to_add_df.shape[0]} new livestream(s) added.')
 
         else:  # For regular videos
             # Get durations of videos to add
@@ -398,9 +403,8 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
 
             if not to_add_df.empty:  # If there are videos to add
                 add_to_playlist(service=service, playlist_id=playlist_id, videos_list=to_add_df.video_id)
-                l_str = f'{to_add_df.shape[0]} new video(s) added.'
-                history.info(l_str)
-                last_exe.info(l_str)
+                history.info(f'{to_add_df.shape[0]} new video(s) added.')
+                last_exe.info(f'{to_add_df.shape[0]} new video(s) added.')
 
 
 def add_to_playlist(service: googleapiclient.discovery, playlist_id: str, videos_list: list):
