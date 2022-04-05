@@ -4,3 +4,12 @@
 # But you never know, I might write some jokes in it. ¯\_(ツ)_/¯
 
 # TO DO: Create a list of ignored items
+
+```
+if __name__ == '__main__':
+    with open('../data/pocket_tube.json') as pt_file:
+        PT = json.load(pt_file)
+
+    youtube = get_authenticated_service(log=False)
+    get_channels(youtube, PT['MUSIQUE'], save=True, save_name='music_channels')
+```
