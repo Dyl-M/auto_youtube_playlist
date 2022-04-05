@@ -21,8 +21,8 @@ history_main = logging.Logger(name='history_main', level=0)
 last_exe_main = logging.Logger(name='last_exe_main', level=0)
 
 # Create file handlers
-history_main_file = logging.FileHandler(filename='../log/history_main.log')  # mode='a'
-last_exe_main_file = logging.FileHandler(filename='../log/last_exe_main.log', mode='w')
+history_main_file = logging.FileHandler(filename='../log/history.log')  # mode='a'
+last_exe_main_file = logging.FileHandler(filename='../log/last_exe.log', mode='w')
 
 # Create formatter
 formatter_main = logging.Formatter(fmt='%(asctime)s [%(levelname)s] - %(message)s', datefmt='%Y-%m-%d %H:%M:%S%z')
