@@ -133,6 +133,3 @@ dmypy.json
 
 # Private
 /tokens/
-
-# Log (commit only last execution)
-log/history.log

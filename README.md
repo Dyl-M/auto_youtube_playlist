@@ -26,7 +26,7 @@ Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy pu
 │   └── pocket_tube.json
 │
 ├── log 
-│   ├── history.log (IGNORED)
+│   ├── history.log
 │   └── last_exe.log
 │
 ├── src

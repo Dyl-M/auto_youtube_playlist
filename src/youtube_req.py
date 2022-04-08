@@ -12,6 +12,7 @@ import logging
 import os
 import pandas as pd
 import random
+import re
 import requests
 import sys
 import tqdm
@@ -34,10 +35,25 @@ pd.set_option('display.width', 250)
 
 "GLOBAL"
 
+
+def last_exe_date(logging_path: str = '../log/last_exe.log'):
+    """Extract last execution datetime from a log file (supposing first line is containing the right datetime).
+    :param logging_path: .log file path
+    :return date: last execution date.
+    """
+    with open(logging_path, 'r', encoding='utf8') as log_file:
+        first_log = log_file.readlines()[0]  # Get first log
+
+    date_str = re.search(r'(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})\+(\d{4})', first_log).group()  # Extract date
+    date = dt.datetime.strptime(date_str, '%Y-%m-%d %H:%M:%S%z')  # Parse to datetime object
+    return date
+
+
 with open('../data/ignore.json') as ignore_file:
     TO_IGNORE = json.load(ignore_file)
 
 NOW = dt.datetime.now(tz=tzlocal.get_localzone())
+LAST_EXE = last_exe_date()
 
 "LOGGERS"
 
@@ -145,12 +161,13 @@ def get_channels(service: googleapiclient.discovery, channel_list: list, save: b
 
 
 def get_playlist_items(service: googleapiclient.discovery, playlist_id: str, day_ago: int = None,
-                       ref_date: dt.datetime = NOW):
+                       with_last_exe: bool = False, latest_d: dt.datetime = NOW):
     """Get the videos in a YouTube playlist
     :param service: a YouTube service build with 'googleapiclient.discovery'
     :param playlist_id: a YouTube playlist ID
     :param day_ago: day difference with a reference date, delimits items' collection field
-    :param ref_date: reference date (NOW by default)
+    :param latest_d: latest reference date
+    :param with_last_exe: to use last execution date extracted from log or not
     :return p_items: playlist items (videos) as a list.
     """
     p_items = []
@@ -171,12 +188,18 @@ def get_playlist_items(service: googleapiclient.discovery, playlist_id: str, day
                          'item_id': item['id'],
                          'status': item['status']['privacyStatus']} for item in request['items']]  # Keep necessary data
 
-            if day_ago is not None:  # In case we want to keep videos published x days ago from your ref_date
-                # Days subtraction
-                date_delta = ref_date - dt.timedelta(days=day_ago)
+            if with_last_exe:  # In case we want to keep videos published between last exe date and your latest_d
+                oldest_d = LAST_EXE.replace(minute=0, second=0, microsecond=0)  # Round hour to XX:00:00.0
+                latest_d = latest_d.replace(minute=0, second=0, microsecond=0)  # Round hour to XX:00:00.0
+                p_items = [item for item in p_items if latest_d > item['release_date'] > oldest_d]  # Filtering
 
-                # Filtering
-                p_items = [item for item in p_items if ref_date > item['release_date'] > date_delta]
+                if len(p_items) <= 50:  # No need for more requests (the playlist must be ordered chronologically!)
+                    break
+
+            elif day_ago is not None:  # In case we want to keep videos published x days ago from your latest_d
+                latest_d = latest_d.replace(minute=0, second=0, microsecond=0)  # Round hour to XX:00:00.0
+                date_delta = latest_d - dt.timedelta(days=day_ago)  # Days subtraction
+                p_items = [item for item in p_items if latest_d > item['release_date'] > date_delta]  # Filtering
 
                 if len(p_items) <= 50:  # No need for more requests (the playlist must be ordered chronologically!)
                     break
@@ -189,13 +212,14 @@ def get_playlist_items(service: googleapiclient.discovery, playlist_id: str, day
         except googleapiclient.errors.HttpError as http_error:
             error_reason = http_error.error_details[0]['reason']
 
-            if error_reason == 'playlistNotFound' and playlist_id not in TO_IGNORE:
-                history.warning(f'Playlist not found: {playlist_id}')
-                last_exe.warning(f'Playlist not found: {playlist_id}')
+            if error_reason == 'playlistNotFound':
+                if playlist_id not in TO_IGNORE:
+                    history.warning(f'Playlist not found: {playlist_id}')
+                    last_exe.warning(f'Playlist not found: {playlist_id}')
                 break
 
-            history.error(f'Unknown error: {http_error.error_details}')
-            last_exe.error(f'Unknown error: {http_error.error_details}')
+            history.error(f'[{playlist_id}] Unknown error: {error_reason}')
+            last_exe.error(f'[{playlist_id}] Unknown error: {error_reason}')
             sys.exit()
 
     return p_items
@@ -311,16 +335,19 @@ def iter_livestreams(channel_list: list):
 
 
 def iter_playlists(service: googleapiclient.discovery, playlists: list, day_ago: int = None,
-                   ref_date: dt.datetime = NOW):
+                   with_last_exe: bool = True, latest_d: dt.datetime = NOW):
     """Apply 'get_playlist_items' for a collection of YouTube playlists
     :param playlists: list of YouTube channel IDs
     :param service: a YouTube service build with 'googleapiclient.discovery'
     :param day_ago: day difference with a reference date, delimits items' collection field
-    :param ref_date: reference date (NOW by default)
+    :param latest_d: latest reference date
+    :param with_last_exe: to use last execution date extracted from log or not
     :return: videos retrieved in playlists.
     """
-    item_it = [get_playlist_items(service=service, playlist_id=playlist_id, day_ago=day_ago, ref_date=ref_date)
+    item_it = [get_playlist_items(service=service, playlist_id=playlist_id, day_ago=day_ago, latest_d=latest_d,
+                                  with_last_exe=with_last_exe)
                for playlist_id in tqdm.tqdm(playlists, desc='Looking for videos to add')]
+
     return list(itertools.chain.from_iterable(item_it))
 
 

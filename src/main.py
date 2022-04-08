@@ -10,10 +10,6 @@ import youtube_req
 Main process (still in test phase).
 """
 
-"YOUTUBE OAUTH 2.0 SETUP"
-
-YOUTUBE_OAUTH = youtube_req.get_authenticated_service()
-
 "LOGGERS"
 
 # Create loggers
@@ -23,8 +19,8 @@ last_exe_main_e = logging.Logger(name='last_exe_main_end', level=0)
 
 # Create file handlers
 history_main_file = logging.FileHandler(filename='../log/history.log')  # mode='a'
-last_exe_main_s_file = logging.FileHandler(filename='../log/last_exe.log', mode='w')
-last_exe_main_e_file = logging.FileHandler(filename='../log/last_exe.log')
+last_exe_main_s_file = logging.FileHandler(filename='../log/last_exe.log', mode='w')  # Last exe. logging start
+last_exe_main_e_file = logging.FileHandler(filename='../log/last_exe.log')  # Last exe. logging end
 
 # Create formatter
 formatter_main = logging.Formatter(fmt='%(asctime)s [%(levelname)s] - %(message)s', datefmt='%Y-%m-%d %H:%M:%S%z')
@@ -60,12 +56,14 @@ MUSIC_CHANNELS_UPLOADS = [channel['uploads'] for channel in MUSIC_CHANNELS]
 history_main.info('Process started.')
 last_exe_main_s.info('Process started.')
 
+YOUTUBE_OAUTH = youtube_req.get_authenticated_service()  # Init. YouTube service
+
 # Update live playlist
 CURRENT_LIVE = youtube_req.iter_livestreams(MUSIC_CHANNELS_IDS)
 youtube_req.update_playlist(YOUTUBE_OAUTH, PLAYLIST_LIVES, CURRENT_LIVE, is_live=True)
 
 # Update mixes playlist
-TO_ADD = youtube_req.iter_playlists(YOUTUBE_OAUTH, MUSIC_CHANNELS_UPLOADS, day_ago=1)
+TO_ADD = youtube_req.iter_playlists(YOUTUBE_OAUTH, MUSIC_CHANNELS_UPLOADS)
 youtube_req.update_playlist(YOUTUBE_OAUTH, PLAYLIST_MIXES, TO_ADD)
 
 # End
