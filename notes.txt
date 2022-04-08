@@ -3,8 +3,6 @@
 # So, at first sight, this file has no fundamental interest.
 # But you never know, I might write some jokes in it. ¯\_(ツ)_/¯
 
-# TO DO: Create a list of ignored items
-
 ```
 if __name__ == '__main__':
     with open('../data/pocket_tube.json') as pt_file:

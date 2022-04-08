@@ -34,6 +34,9 @@ pd.set_option('display.width', 250)
 
 "GLOBAL"
 
+with open('../data/ignore.json') as ignore_file:
+    TO_IGNORE = json.load(ignore_file)
+
 NOW = dt.datetime.now(tz=tzlocal.get_localzone())
 
 "LOGGERS"
@@ -186,7 +189,7 @@ def get_playlist_items(service: googleapiclient.discovery, playlist_id: str, day
         except googleapiclient.errors.HttpError as http_error:
             error_reason = http_error.error_details[0]['reason']
 
-            if error_reason == 'playlistNotFound':
+            if error_reason == 'playlistNotFound' and playlist_id not in TO_IGNORE:
                 history.warning(f'Playlist not found: {playlist_id}')
                 last_exe.warning(f'Playlist not found: {playlist_id}')
                 break
