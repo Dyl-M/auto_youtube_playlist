@@ -43,8 +43,8 @@ def last_exe_date():
     with open('../log/last_exe.log', 'r', encoding='utf8') as log_file:
         first_log = log_file.readlines()[0]  # Get first log
 
-    date_str = re.search(r'(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})\+(\d{4})', first_log).group()  # Extract date
-    date = dt.datetime.strptime(date_str, '%Y-%m-%d %H:%M:%S%z')  # Parse to datetime object
+    d_str = re.search(r'(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})\+(\d{4})', first_log).group()  # Extract date
+    date = dt.datetime.strptime(d_str, '%Y-%m-%d %H:%M:%S%z')  # Parse to datetime object
     return date
 
 
@@ -240,7 +240,8 @@ def find_livestreams(channel_id: str):
     """
     try:
         cookies = {'CONSENT': 'YES+cb.20210328-17-p0.en-GB+FX+{}'.format(random.randint(100, 999))}  # Cookies settings
-        web_page = requests.get(f'https://www.youtube.com/channel/{channel_id}', cookies=cookies)  # Page request
+        url = f'https://www.youtube.com/channel/{channel_id}'
+        web_page = requests.get(url, cookies=cookies, timeout=(5, 5))  # Page request
         soup = bs4.BeautifulSoup(web_page.text, "html.parser")  # HTML parsing
 
         # Filtering JS part only, then convert to string
@@ -366,7 +367,8 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
     to_add_df = pd.DataFrame(videos_to_add)
 
     if not already_in.empty:  # If there is at least one video in the playlist
-        to_add_df = to_add_df.loc[~to_add_df.video_id.isin(already_in.video_id)]  # Check if new videos are already in
+        if not to_add_df.empty:  # Check if there are some new videos and new videos are already in
+            to_add_df = to_add_df.loc[~to_add_df.video_id.isin(already_in.video_id)]
 
         if is_live:  # If the update is done on a YouTube livestreams playlist
             # Retrieve live status
