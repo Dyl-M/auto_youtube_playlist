@@ -19,6 +19,9 @@ Repository structure
 Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy purpose.
 
 ```
+├── cmd (IGNORED)
+│   └── main.cmd
+│
 ├── data
 │   ├── ignore.json
 │   ├── music_channels.json
