@@ -397,14 +397,15 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
             delete_cond = (already_in.status == 'private') | (already_in.release_date < date_delta)  # Delete condition
             to_delete_df = already_in.loc[delete_cond]  # To keep public and newest videos.
 
-            # Get durations of videos to add
-            durations = pd.DataFrame(get_durations(service=service, videos_list=videos_to_add))
-            to_add_df = to_add_df.merge(durations)
+            if not to_add_df.empty:  # Check if there are videos to add
+                # Get durations of videos to add
+                durations = pd.DataFrame(get_durations(service=service, videos_list=videos_to_add))
+                to_add_df = to_add_df.merge(durations)
 
-            # Keep videos with duration above `min_duration` minutes and don't keep "Premiere" type videos
-            to_add_df = to_add_df.loc[(to_add_df.duration >= min_duration) & (to_add_df.live_status != 'upcoming')]
+                # Keep videos with duration above `min_duration` minutes and don't keep "Premiere" type videos
+                to_add_df = to_add_df.loc[(to_add_df.duration >= min_duration) & (to_add_df.live_status != 'upcoming')]
 
-            if not to_add_df.empty:  # If there are videos to add
+            if not to_add_df.empty:  # Check again if there are videos to add
                 add_to_playlist(service=service, playlist_id=playlist_id, videos_list=to_add_df.video_id)
                 history.info(f'{to_add_df.shape[0]} new video(s) added.')
                 last_exe.info(f'{to_add_df.shape[0]} new video(s) added.')
@@ -425,17 +426,22 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
             last_exe.info(f'{to_add_df.shape[0]} new livestream(s) added.')
 
         else:  # For regular videos
-            # Get durations of videos to add
-            durations = pd.DataFrame(get_durations(service=service, videos_list=videos_to_add))
-            to_add_df = to_add_df.merge(durations)
+            if not to_add_df.empty:  # Check if there are videos to add
+                # Get durations of videos to add
+                durations = pd.DataFrame(get_durations(service=service, videos_list=videos_to_add))
+                to_add_df = to_add_df.merge(durations)
 
-            # Keep videos with duration above `min_duration` minutes and don't keep "Premiere" type videos
-            to_add_df = to_add_df.loc[(to_add_df.duration >= min_duration) & (to_add_df.live_status != 'upcoming')]
+                # Keep videos with duration above `min_duration` minutes and don't keep "Premiere" type videos
+                to_add_df = to_add_df.loc[(to_add_df.duration >= min_duration) & (to_add_df.live_status != 'upcoming')]
 
-            if not to_add_df.empty:  # If there are videos to add
+            if not to_add_df.empty:  # Check again if there are videos to add
                 add_to_playlist(service=service, playlist_id=playlist_id, videos_list=to_add_df.video_id)
                 history.info(f'{to_add_df.shape[0]} new video(s) added.')
                 last_exe.info(f'{to_add_df.shape[0]} new video(s) added.')
+
+            else:
+                history.info('No video added.')
+                last_exe.info('No video added.')
 
 
 def add_to_playlist(service: googleapiclient.discovery, playlist_id: str, videos_list: list):
