@@ -17,8 +17,9 @@ def create_service():
     """"
     :return:
     """
-    cred_file = glob.glob("../gha-creds-*.json")[0]
-    cred = Credentials.from_authorized_user_file(cred_file)  # Retrieve credentials
+    cred_files = glob.glob("../gha-creds-*.json")
+    print(cred_files)
+    cred = Credentials.from_authorized_user_file(cred_files[0])  # Retrieve credentials
 
     try:
         service = googleapiclient.discovery.build('youtube', 'v3', credentials=cred)
