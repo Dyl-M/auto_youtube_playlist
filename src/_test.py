@@ -2,9 +2,12 @@
 
 import googleapiclient.discovery
 import glob
+import json
 import sys
 
+from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
 
 """File Information
 @file_name: _test.py
@@ -17,9 +20,18 @@ def create_service():
     """"
     :return:
     """
-    cred_files = glob.glob("../gha-creds-*.json")
-    print(cred_files)
-    cred = Credentials.from_authorized_user_file(cred_files[0])  # Retrieve credentials
+    cred_file = glob.glob("../gha-creds-*.json")[0]
+
+    with open(cred_file, 'r', encoding='utf8') as cred_f:
+        cred_d = json.load(cred_f)
+
+    print(cred_d.keys())
+
+    cred = Credentials.from_authorized_user_file(cred_file)  # Retrieve credentials
+
+    if not cred or not cred.valid:  # Cover outdated credentials
+        if cred and cred.expired and cred.refresh_token:
+            cred.refresh(Request())
 
     try:
         service = googleapiclient.discovery.build('youtube', 'v3', credentials=cred)
