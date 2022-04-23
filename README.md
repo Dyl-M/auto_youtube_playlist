@@ -19,6 +19,10 @@ Repository structure
 Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy purpose.
 
 ```
+├── .github
+│   └── workflows
+│       └── action_test.yml
+│
 ├── cmd (IGNORED)
 │   └── main.cmd
 │
