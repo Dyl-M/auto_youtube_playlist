@@ -26,11 +26,6 @@ jobs:
                     workload_identity_provider: 'projects/607462168294/locations/global/workloadIdentityPools/auto-youtube-playlist/providers/gh-provider'
                     service_account: 'github-x-google@youtube-automatic-playlists.iam.gserviceaccount.com'
 
-            -   id: get-info
-                run: |
-                    echo "Credentials file path: ${{ steps.google-auth.outputs.credentials_file_path }}"
-                    echo "Access token: ${{ steps.google-auth.outputs.access_token }}"
-
             -   id: python-setup
                 name: Set up Python 3.9
                 uses: actions/setup-python@v3
@@ -51,6 +46,15 @@ jobs:
                     flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
                     # Exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
                     flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+            -   id: cloud-sdk
+                name: Install gcloud, `setup-gcloud` automatically picks up authentication from `auth`.
+                uses: 'google-github-actions/setup-gcloud@v0'
+
+            -   id: gcloud
+                name: Run gcloud commands authenticated as the impersonated service account.
+                run: |-
+                gcloud secrets versions access "latest" --secret "my-secret"
 
 #            -   id: test
 #                name: Test / _test.py execution
