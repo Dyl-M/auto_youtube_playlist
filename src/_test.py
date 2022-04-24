@@ -13,7 +13,7 @@ To test things / backup functions: currently testing Google Cloud authentication
 
 
 def create_service():
-    """"Retrieve authentication credentials"""
+    """Retrieve authentication credentials"""
     import json
     service_account_file = glob.glob("../gha-creds-*.json")[0]
 
