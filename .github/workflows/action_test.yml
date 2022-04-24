@@ -7,6 +7,10 @@ on:
 jobs:
     build-linux:
         runs-on: ubuntu-latest
+        name: Build
+        permissions:
+            contents: 'read'
+            id-token: 'write'
 
         steps:
             -   id: checkout
