@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
-
+import googleapiclient.discovery
 import glob
-import json
+
+from google.oauth2 import service_account
 
 """File Information
 @file_name: _test.py
@@ -13,10 +14,11 @@ To test things / backup functions: currently testing Google Cloud authentication
 
 def create_service():
     """"Retrieve authentication credentials"""
-    cred_file = glob.glob("../gha-creds-*.json")[0]
-    with open(cred_file, 'r', encoding='utf8') as cred_f:
-        cred_d = json.load(cred_f)
-    return cred_d.keys()
+    service_account_file = glob.glob("../gha-creds-*.json")[0]
+    scopes = ["https://www.googleapis.com/auth/youtube.force-ssl"]
+    credentials = service_account.Credentials.from_service_account_file(service_account_file, scopes=scopes)
+    service = googleapiclient.discovery.build('youtube', 'v3', credentials=credentials)
+    return service
 
 
 if __name__ == '__main__':
