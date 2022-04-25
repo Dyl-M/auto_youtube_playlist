@@ -6,7 +6,7 @@ on:
 
 jobs:
     build-linux:
-        name: API execution environment
+        name: Automation environment
         runs-on: ubuntu-latest
         permissions:
             contents: 'read'
