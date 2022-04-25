@@ -49,5 +49,5 @@ jobs:
                 name: Test / _test.py execution
                 run: |
                     cd src
-                    python _test.py
+                    python _test.py 'action'
                     cd ../
