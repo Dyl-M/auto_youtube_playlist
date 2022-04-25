@@ -3,6 +3,7 @@
 import ast
 import bs4
 import datetime as dt
+import google.auth
 import googleapiclient.discovery
 import googleapiclient.errors
 import isodate
@@ -80,7 +81,7 @@ last_exe.addHandler(last_exe_file)
 "FUNCTIONS"
 
 
-def get_authenticated_service(log: bool = True):
+def create_service_local(log: bool = True):
     """Retrieve authentication credentials at specified path or create new ones, mostly inspired by this source
     code: https://learndataanalysis.org/google-py-file-source-code/
     :param log: to apply logging or not
@@ -119,6 +120,14 @@ def get_authenticated_service(log: bool = True):
             last_exe.critical(f'({error}) {instance_fail_message}')
 
         sys.exit()
+
+
+def create_service_workflow():
+    """Retrieve authentication credentials"""
+    scopes = ["https://www.googleapis.com/auth/youtube.force-ssl"]
+    credentials, _ = google.auth.default(scopes=scopes)
+    service = googleapiclient.discovery.build('youtube', 'v3', credentials=credentials)
+    return service
 
 
 def get_channels(service: googleapiclient.discovery, channel_list: list, save: bool = False,
