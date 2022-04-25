@@ -22,7 +22,7 @@ jobs:
                 uses: google-github-actions/auth@v0
                 with:
                     token_format: 'access_token'
-                    create_credentials_file: true
+                    access_token_scopes: 'https://www.googleapis.com/auth/youtube.force-ssl'
                     workload_identity_provider: 'projects/607462168294/locations/global/workloadIdentityPools/auto-youtube-playlist/providers/gh-provider'
                     service_account: 'github-x-google@youtube-automatic-playlists.iam.gserviceaccount.com'
 
