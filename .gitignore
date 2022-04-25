@@ -134,3 +134,4 @@ dmypy.json
 # Private
 /tokens/
 /cmd/
+gha-creds-*.json
