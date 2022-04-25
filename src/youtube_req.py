@@ -81,7 +81,7 @@ last_exe.addHandler(last_exe_file)
 
 
 def get_authenticated_service(log: bool = True):
-    """Retrieve authentification credentials at specified path or create new ones, mostly inspired by this source
+    """Retrieve authentication credentials at specified path or create new ones, mostly inspired by this source
     code: https://learndataanalysis.org/google-py-file-source-code/
     :param log: to apply logging or not
     :return service: a Google API service object build with 'googleapiclient.discovery.build'.
@@ -100,7 +100,7 @@ def get_authenticated_service(log: bool = True):
 
         else:
             flow = InstalledAppFlow.from_client_secrets_file(oauth_file, scopes)  # Create a Flow from 'oauth_file'
-            cred = flow.run_local_server()  # Run authentification process
+            cred = flow.run_local_server()  # Run authentication process
 
         with open('../tokens/credentials.json', 'w') as cred_file:  # Save credentials as a JSON file
             json.dump(ast.literal_eval(cred.to_json()), cred_file, ensure_ascii=False, indent=4)
