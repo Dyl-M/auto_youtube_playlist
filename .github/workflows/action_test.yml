@@ -23,8 +23,8 @@ jobs:
                 with:
                     token_format: 'access_token'
                     access_token_scopes: 'https://www.googleapis.com/auth/youtube.force-ssl'
-                    workload_identity_provider: 'projects/607462168294/locations/global/workloadIdentityPools/auto-youtube-playlist/providers/gh-provider'
-                    service_account: 'github-x-google@youtube-automatic-playlists.iam.gserviceaccount.com'
+                    workload_identity_provider: '${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}'
+                    service_account: '${{ secrets.SERVICE_ACCOUNT }}'
 
             -   id: python-setup
                 name: Set up Python 3.9
@@ -42,9 +42,7 @@ jobs:
                 name: Lint with flake8
                 run: |
                     pip install flake8
-                    # Stop the build if there are Python syntax errors or undefined names
                     flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-                    # Exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
                     flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
             -   id: test
