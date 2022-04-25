@@ -20,7 +20,6 @@ except IndexError:
 
 if exe_mode == 'local':
     YOUTUBE_OAUTH = youtube_req.create_service_local()  # YouTube service in local mode
-
 else:
     YOUTUBE_OAUTH = youtube_req.create_service_workflow()  # YouTube service with GitHub workflow
 

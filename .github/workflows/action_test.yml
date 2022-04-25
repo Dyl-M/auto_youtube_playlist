@@ -6,7 +6,7 @@ on:
 
 jobs:
     build-linux:
-        name: Automation environment
+        name: YouTube automation
         runs-on: ubuntu-latest
         permissions:
             contents: 'read'
@@ -45,9 +45,24 @@ jobs:
                     flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
                     flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
-            -   id: test
-                name: Test / _test.py execution
+            -   id: main
+                name: main.py execution
                 run: |
                     cd src
                     python main.py 'action'
                     cd ../
+
+            -   id: commit
+                name: Commit logging changes
+                run: |
+                    git config --local user.email "action@github.com"
+                    git config --local user.name "github-actions"
+                    git add --all
+                    git commit -m "chore(r/log): latest logging."
+
+            -   id: push
+                name: Push logging changes
+                uses: ad-m/github-push-action@master
+                with:
+                    github_token: ${{ secrets.GITHUB_TOKEN }}
+                    force: true
