@@ -461,3 +461,9 @@
 2022-04-26 15:59:11+0000 [ERROR] - (HttpError) Something went wrong with this item: UExPTVVkUUZkUy1YTUo0TkZISmxTQUxZQXQ0bC1MUGdTMS5BNTRGQTE1QjY2NUE5NTAz
 2022-04-26 15:59:11+0000 [INFO] - 1 livestream(s) removed.
 2022-04-26 15:59:11+0000 [INFO] - Process ended.
+2022-04-26 18:07:35+0000 [INFO] - Process started.
+2022-04-26 18:07:35+0000 [INFO] - YouTube service created successfully.
+2022-04-26 18:08:17+0000 [INFO] - No livestream added or removed.
+2022-04-26 18:08:37+0000 [ERROR] - (HttpError) Something went wrong with this item: UExPTVVkUUZkUy1YTUo0TkZISmxTQUxZQXQ0bC1MUGdTMS5BNTRGQTE1QjY2NUE5NTAz
+2022-04-26 18:08:37+0000 [INFO] - 1 livestream(s) removed.
+2022-04-26 18:08:37+0000 [INFO] - Process ended.
