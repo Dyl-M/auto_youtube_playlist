@@ -9,8 +9,8 @@ jobs:
         name: YouTube automation
         runs-on: ubuntu-latest
         permissions:
-            contents: 'read'
-            id-token: 'write'
+            contents: write
+            id-token: write
 
         steps:
             -   id: checkout
@@ -57,8 +57,7 @@ jobs:
                 run: |
                     git config --local user.email "action@github.com"
                     git config --local user.name "github-actions"
-                    git add --all
-                    git commit -m "chore(r/log): latest logging."
+                    git commit -m "chore(r/log): latest logging." -a
 
             -   id: push
                 name: Push logging changes
