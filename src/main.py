@@ -20,8 +20,10 @@ except IndexError:
 
 if exe_mode == 'local':
     YOUTUBE_OAUTH = youtube_req.create_service_local()  # YouTube service in local mode
+    PROG_BAR = True
 else:
     YOUTUBE_OAUTH = youtube_req.create_service_workflow()  # YouTube service with GitHub workflow
+    PROG_BAR = False
 
 "MAIN FUNCTION"
 
@@ -72,12 +74,12 @@ def main(youtube_service=YOUTUBE_OAUTH):
     last_exe_main_s.info('Process started.')
 
     # Update live playlist
-    current_live = youtube_req.iter_livestreams(music_channels_ids)
-    youtube_req.update_playlist(youtube_service, playlists_lives, current_live, is_live=True)
+    current_live = youtube_req.iter_livestreams(music_channels_ids, prog_bar=PROG_BAR)
+    youtube_req.update_playlist(youtube_service, playlists_lives, current_live, is_live=True, prog_bar=PROG_BAR)
 
     # Update mixes playlist
-    to_add = youtube_req.iter_playlists(youtube_service, music_channels_uploads)
-    youtube_req.update_playlist(youtube_service, playlists_mixes, to_add)
+    to_add = youtube_req.iter_playlists(youtube_service, music_channels_uploads, prog_bar=PROG_BAR)
+    youtube_req.update_playlist(youtube_service, playlists_mixes, to_add, prog_bar=PROG_BAR)
 
     # End
     history_main.info('Process ended.')

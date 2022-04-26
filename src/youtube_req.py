@@ -124,10 +124,20 @@ def create_service_local(log: bool = True):
 
 def create_service_workflow():
     """Retrieve authentication credentials"""
-    scopes = ["https://www.googleapis.com/auth/youtube.force-ssl"]
-    credentials, _ = google.auth.default(scopes=scopes)
-    service = googleapiclient.discovery.build('youtube', 'v3', credentials=credentials)
-    return service
+    instance_fail_message = 'Failed to create service instance for YouTube'
+
+    try:
+        scopes = ["https://www.googleapis.com/auth/youtube.force-ssl"]
+        credentials, _ = google.auth.default(scopes=scopes)
+        service = googleapiclient.discovery.build('youtube', 'v3', credentials=credentials)
+        history.info('YouTube service created successfully.')
+        last_exe.info('YouTube Service created successfully.')
+        return service
+
+    except Exception as error:  # skipcq: PYL-W0703 - No known errors at the moment.
+        history.critical(f'({error}) {instance_fail_message}')
+        last_exe.critical(f'({error}) {instance_fail_message}')
+        sys.exit()
 
 
 def get_channels(service: googleapiclient.discovery, channel_list: list, save: bool = False,
@@ -334,34 +344,43 @@ def get_durations(service: googleapiclient.discovery, videos_list: list):
     return items
 
 
-def iter_livestreams(channel_list: list):
+def iter_livestreams(channel_list: list, prog_bar: bool = True):
     """Apply 'find_livestreams' for a collection of YouTube channel
     :param channel_list: list of YouTube channel IDs
+    :param prog_bar: to use tqdm progress bar or not
     :return: IDs of current live based on channels collection.
     """
-    lives_it = [find_livestreams(chan_id) for chan_id in tqdm.tqdm(channel_list, desc='Looking for livestreams')]
+    if prog_bar:
+        lives_it = [find_livestreams(chan_id) for chan_id in tqdm.tqdm(channel_list, desc='Looking for livestreams')]
+    else:
+        lives_it = [find_livestreams(chan_id) for chan_id in channel_list]
+
     return list(itertools.chain.from_iterable(lives_it))
 
 
 def iter_playlists(service: googleapiclient.discovery, playlists: list, day_ago: int = None,
-                   with_last_exe: bool = True, latest_d: dt.datetime = NOW):
+                   with_last_exe: bool = True, latest_d: dt.datetime = NOW, prog_bar: bool = True):
     """Apply 'get_playlist_items' for a collection of YouTube playlists
     :param playlists: list of YouTube channel IDs
     :param service: a YouTube service build with 'googleapiclient.discovery'
     :param day_ago: day difference with a reference date, delimits items' collection field
     :param latest_d: latest reference date
     :param with_last_exe: to use last execution date extracted from log or not
+    :param prog_bar: to use tqdm progress bar or not
     :return: videos retrieved in playlists.
     """
-    item_it = [get_playlist_items(service=service, playlist_id=playlist_id, day_ago=day_ago, latest_d=latest_d,
-                                  with_last_exe=with_last_exe)
-               for playlist_id in tqdm.tqdm(playlists, desc='Looking for videos to add')]
-
+    if prog_bar:
+        item_it = [get_playlist_items(service=service, playlist_id=playlist_id, day_ago=day_ago, latest_d=latest_d,
+                                      with_last_exe=with_last_exe)
+                   for playlist_id in tqdm.tqdm(playlists, desc='Looking for videos to add')]
+    else:
+        item_it = [get_playlist_items(service=service, playlist_id=playlist_id, day_ago=day_ago, latest_d=latest_d,
+                                      with_last_exe=with_last_exe) for playlist_id in playlists]
     return list(itertools.chain.from_iterable(item_it))
 
 
 def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos_to_add: list, is_live: bool = False,
-                    min_duration: int = 10, del_day_ago: int = 7, ref_date: dt.datetime = NOW):
+                    min_duration: int = 10, del_day_ago: int = 7, ref_date: dt.datetime = NOW, prog_bar: bool = True):
     """Update a YouTube playlist with temporal criteria
     :param service: a YouTube service build with 'googleapiclient.discovery'
     :param playlist_id: a YouTube playlist ID
@@ -369,8 +388,29 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
     :param is_live: to update a list containing specifically livestreams only (or not)
     :param del_day_ago: day difference with NOW, to keep in playlist video published in the last 'del_day_ago' days
     :param ref_date: reference date (NOW by default)
-    :param min_duration: minimal video duration filter.
+    :param min_duration: minimal video duration filter
+    :param prog_bar: to use tqdm progress bar or not.
     """
+
+    def add_and_remove(_service, _playlist_id, _to_add_df, _to_delete_df):
+        """Perform a playlist update, avoid code duplication
+        :param _service: a YouTube service build with 'googleapiclient.discovery'
+        :param _playlist_id: a YouTube playlist ID
+        :param _to_add_df: pd.DataFrame of videos to add to the playlist
+        :param _to_delete_df: pd.DataFrame of videos to remove from the playlist
+        """
+        if not _to_add_df.empty:  # If there are videos to add
+            add_to_playlist(service=_service, playlist_id=_playlist_id, videos_list=_to_add_df.video_id,
+                            prog_bar=prog_bar)
+            history.info(f'{_to_add_df.shape[0]} new livestream(s) added.')
+            last_exe.info(f'{_to_add_df.shape[0]} new livestream(s) added.')
+
+        if not _to_delete_df.empty:  # If there are videos to delete
+            del_from_playlist(service=_service, playlist_id=_playlist_id, items_list=_to_delete_df.item_id,
+                              prog_bar=prog_bar)
+            history.info(f'{_to_delete_df.shape[0]} livestream(s) removed.')
+            last_exe.info(f'{_to_delete_df.shape[0]} livestream(s) removed.')
+
     # Pass playlist as pandas Dataframes (for easier filtering)
     already_in = pd.DataFrame(get_playlist_items(service=service, playlist_id=playlist_id))  # Get videos already in
     to_add_df = pd.DataFrame(videos_to_add)
@@ -387,15 +427,7 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
             # Do not keep private videos. Do not keep upcoming and finished livestreams.
             to_delete_df = already_in.loc[(already_in.status == 'private') | (already_in.live_status != 'live')]
 
-            if not to_add_df.empty:  # If there are videos to add
-                add_to_playlist(service=service, playlist_id=playlist_id, videos_list=to_add_df.video_id)
-                history.info(f'{to_add_df.shape[0]} new livestream(s) added.')
-                last_exe.info(f'{to_add_df.shape[0]} new livestream(s) added.')
-
-            if not to_delete_df.empty:  # If there are videos to delete
-                del_from_playlist(service=service, playlist_id=playlist_id, items_list=to_delete_df.item_id)
-                history.info(f'{to_delete_df.shape[0]} livestream(s) removed.')
-                last_exe.info(f'{to_delete_df.shape[0]} livestream(s) removed.')
+            add_and_remove(_service=service, _playlist_id=playlist_id, _to_add_df=to_add_df, _to_delete_df=to_delete_df)
 
             if to_add_df.empty and to_delete_df.empty:
                 history.info('No livestream added or removed.')
@@ -414,15 +446,7 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
                 # Keep videos with duration above `min_duration` minutes and don't keep "Premiere" type videos
                 to_add_df = to_add_df.loc[(to_add_df.duration >= min_duration) & (to_add_df.live_status != 'upcoming')]
 
-            if not to_add_df.empty:  # Check again if there are videos to add
-                add_to_playlist(service=service, playlist_id=playlist_id, videos_list=to_add_df.video_id)
-                history.info(f'{to_add_df.shape[0]} new video(s) added.')
-                last_exe.info(f'{to_add_df.shape[0]} new video(s) added.')
-
-            if not to_delete_df.empty:  # If there are videos to delete
-                del_from_playlist(service=service, playlist_id=playlist_id, items_list=to_delete_df.item_id)
-                history.info(f'{to_delete_df.shape[0]} video(s) removed.')
-                last_exe.info(f'{to_delete_df.shape[0]} video(s) removed.')
+            add_and_remove(_service=service, _playlist_id=playlist_id, _to_add_df=to_add_df, _to_delete_df=to_delete_df)
 
             if to_add_df.empty and to_delete_df.empty:
                 history.info('No video added or removed.')
@@ -430,7 +454,7 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
 
     else:  # If there is no video in the playlist
         if is_live and to_add_df.empty:  # If there are livestreams to add
-            add_to_playlist(service=service, playlist_id=playlist_id, videos_list=to_add_df.video_id)
+            add_to_playlist(service=service, playlist_id=playlist_id, videos_list=to_add_df.video_id, prog_bar=prog_bar)
             history.info(f'{to_add_df.shape[0]} new livestream(s) added.')
             last_exe.info(f'{to_add_df.shape[0]} new livestream(s) added.')
 
@@ -444,7 +468,8 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
                 to_add_df = to_add_df.loc[(to_add_df.duration >= min_duration) & (to_add_df.live_status != 'upcoming')]
 
             if not to_add_df.empty:  # Check again if there are videos to add
-                add_to_playlist(service=service, playlist_id=playlist_id, videos_list=to_add_df.video_id)
+                add_to_playlist(service=service, playlist_id=playlist_id, videos_list=to_add_df.video_id,
+                                prog_bar=prog_bar)
                 history.info(f'{to_add_df.shape[0]} new video(s) added.')
                 last_exe.info(f'{to_add_df.shape[0]} new video(s) added.')
 
@@ -453,13 +478,20 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
                 last_exe.info('No video added.')
 
 
-def add_to_playlist(service: googleapiclient.discovery, playlist_id: str, videos_list: list):
+def add_to_playlist(service: googleapiclient.discovery, playlist_id: str, videos_list: list, prog_bar: bool = True):
     """Add a list of video to a YouTube playlist
     :param service: a YouTube service build with 'googleapiclient.discovery'
     :param playlist_id: a YouTube playlist ID
-    :param videos_list: list of YouTube video IDs.
+    :param videos_list: list of YouTube video IDs
+    :param prog_bar: to use tqdm progress bar or not.
     """
-    for video_id in tqdm.tqdm(videos_list, desc=f'Adding videos to the playlist ({playlist_id})'):
+    if prog_bar:
+        add_iterator = tqdm.tqdm(videos_list, desc=f'Adding videos to the playlist ({playlist_id})')
+
+    else:
+        add_iterator = videos_list
+
+    for video_id in add_iterator:
         r_body = {'snippet': {'playlistId': playlist_id, 'resourceId': {'kind': 'youtube#video', 'videoId': video_id}}}
         request = service.playlistItems().insert(part="snippet", body=r_body)
 
@@ -471,13 +503,20 @@ def add_to_playlist(service: googleapiclient.discovery, playlist_id: str, videos
             last_exe.error(f'(HttpError) Something went wrong with this video: {video_id}')
 
 
-def del_from_playlist(service: googleapiclient.discovery, playlist_id: str, items_list: list):
+def del_from_playlist(service: googleapiclient.discovery, playlist_id: str, items_list: list, prog_bar: bool = True):
     """Delete a list of video from a YouTube playlist
     :param service: a YouTube service build with 'googleapiclient.discovery'
     :param playlist_id: a YouTube playlist ID
-    :param items_list: list of YouTube playlist items.
+    :param items_list: list of YouTube playlist items
+    :param prog_bar: to use tqdm progress bar or not.
     """
-    for item_id in tqdm.tqdm(items_list, desc=f'Deleting videos from the playlist ({playlist_id})'):
+    if prog_bar:
+        del_iterator = tqdm.tqdm(items_list, desc=f'Deleting videos from the playlist ({playlist_id})')
+
+    else:
+        del_iterator = items_list
+
+    for item_id in del_iterator:
         request = service.playlistItems().delete(id=item_id)
 
         try:
