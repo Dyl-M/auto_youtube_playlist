@@ -392,24 +392,29 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
     :param prog_bar: to use tqdm progress bar or not.
     """
 
-    def add_and_remove(_service, _playlist_id, _to_add_df, _to_delete_df):
+    def add_and_remove(_service, _playlist_id, _to_add_df, _to_delete_df, _type: str = 'video'):
         """Perform a playlist update, avoid code duplication
         :param _service: a YouTube service build with 'googleapiclient.discovery'
         :param _playlist_id: a YouTube playlist ID
         :param _to_add_df: pd.DataFrame of videos to add to the playlist
         :param _to_delete_df: pd.DataFrame of videos to remove from the playlist
+        :param _type: content type (livestream or video).
         """
         if not _to_add_df.empty:  # If there are videos to add
             add_to_playlist(service=_service, playlist_id=_playlist_id, videos_list=_to_add_df.video_id,
                             prog_bar=prog_bar)
-            history.info(f'{_to_add_df.shape[0]} new livestream(s) added.')
-            last_exe.info(f'{_to_add_df.shape[0]} new livestream(s) added.')
+            history.info(f'{_to_add_df.shape[0]} new {_type}(s) added.')
+            last_exe.info(f'{_to_add_df.shape[0]} new {_type}(s) added.')
 
         if not _to_delete_df.empty:  # If there are videos to delete
             del_from_playlist(service=_service, playlist_id=_playlist_id, items_list=_to_delete_df.item_id,
                               prog_bar=prog_bar)
-            history.info(f'{_to_delete_df.shape[0]} livestream(s) removed.')
-            last_exe.info(f'{_to_delete_df.shape[0]} livestream(s) removed.')
+            history.info(f'{_to_delete_df.shape[0]} {_type}(s) removed.')
+            last_exe.info(f'{_to_delete_df.shape[0]} {_type}(s) removed.')
+
+        if _to_add_df.empty and _to_delete_df.empty:
+            history.info(f'No {_type} added or removed.')
+            last_exe.info(f'No {_type} added or removed.')
 
     # Pass playlist as pandas Dataframes (for easier filtering)
     already_in = pd.DataFrame(get_playlist_items(service=service, playlist_id=playlist_id))  # Get videos already in
@@ -427,11 +432,9 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
             # Do not keep private videos. Do not keep upcoming and finished livestreams.
             to_delete_df = already_in.loc[(already_in.status == 'private') | (already_in.live_status != 'live')]
 
-            add_and_remove(_service=service, _playlist_id=playlist_id, _to_add_df=to_add_df, _to_delete_df=to_delete_df)
-
-            if to_add_df.empty and to_delete_df.empty:
-                history.info('No livestream added or removed.')
-                last_exe.info('No livestream added or removed.')
+            # Perform update
+            add_and_remove(_service=service, _playlist_id=playlist_id, _to_add_df=to_add_df,
+                           _to_delete_df=to_delete_df, _type='livestream')
 
         else:
             date_delta = ref_date - dt.timedelta(days=del_day_ago)  # Days subtraction
@@ -446,11 +449,8 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
                 # Keep videos with duration above `min_duration` minutes and don't keep "Premiere" type videos
                 to_add_df = to_add_df.loc[(to_add_df.duration >= min_duration) & (to_add_df.live_status != 'upcoming')]
 
+            # Perform update
             add_and_remove(_service=service, _playlist_id=playlist_id, _to_add_df=to_add_df, _to_delete_df=to_delete_df)
-
-            if to_add_df.empty and to_delete_df.empty:
-                history.info('No video added or removed.')
-                last_exe.info('No video added or removed.')
 
     else:  # If there is no video in the playlist
         if is_live and to_add_df.empty:  # If there are livestreams to add
