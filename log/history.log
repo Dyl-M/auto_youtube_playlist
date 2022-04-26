@@ -419,3 +419,24 @@
 2022-04-25 18:25:50+0200 [INFO] - No livestream added or removed.
 2022-04-25 18:26:05+0200 [INFO] - 2 new video(s) added.
 2022-04-25 18:26:05+0200 [INFO] - Process ended.
+2022-04-25 22:00:53+0200 [INFO] - YouTube service created successfully.
+2022-04-25 22:00:53+0200 [INFO] - Process started.
+2022-04-25 22:01:17+0200 [WARNING] - ConnectionError with this channel: UCjyDT0luQUb9d5Cr2jL8Q4A
+2022-04-25 22:01:23+0200 [WARNING] - ConnectionError with this channel: UCdbFjONDWTsdy8pgCsgvlxg
+2022-04-25 22:01:33+0200 [WARNING] - ConnectionError with this channel: UCPfyre-gaEZkTl5oCoxtkSQ
+2022-04-25 22:01:53+0200 [WARNING] - ConnectionError with this channel: UCF1FENB3dyH9qRLcQpIwovA
+2022-04-25 22:02:34+0200 [WARNING] - ConnectionError with this channel: UC2ZsqkwvxEpw-aYAIJHTRDg
+2022-04-25 22:02:35+0200 [INFO] - No livestream added or removed.
+2022-04-25 22:05:07+0200 [INFO] - 1 new video(s) added.
+2022-04-25 22:05:07+0200 [INFO] - 1 video(s) removed.
+2022-04-25 22:05:07+0200 [INFO] - Process ended.
+2022-04-26 00:14:08+0200 [INFO] - YouTube service created successfully.
+2022-04-26 00:14:08+0200 [INFO] - Process started.
+2022-04-26 00:15:26+0200 [INFO] - No livestream added or removed.
+2022-04-26 00:16:03+0200 [INFO] - No video added or removed.
+2022-04-26 00:16:03+0200 [INFO] - Process ended.
+2022-04-26 11:29:01+0200 [INFO] - YouTube service created successfully.
+2022-04-26 11:29:01+0200 [INFO] - Process started.
+2022-04-26 11:29:50+0200 [INFO] - No livestream added or removed.
+2022-04-26 11:30:17+0200 [INFO] - No video added or removed.
+2022-04-26 11:30:17+0200 [INFO] - Process ended.
