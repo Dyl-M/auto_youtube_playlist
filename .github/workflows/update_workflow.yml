@@ -4,8 +4,8 @@ on:
     push:
         branches: [main]
 
-    schedule:
-        -   cron: "0 0,6,12,18 * * *"
+#    schedule:
+#        -   cron: "0 0,6,12,18 * * *"
 
 jobs:
     build-linux:
@@ -29,42 +29,42 @@ jobs:
                     workload_identity_provider: '${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}'
                     service_account: '${{ secrets.SERVICE_ACCOUNT }}'
 
-            -   id: python-setup
-                name: Set up Python 3.9
-                uses: actions/setup-python@v3
-                with:
-                    python-version: 3.9
-
-            -   id: dependencies
-                name: Install dependencies
-                run: |
-                    python -m pip install --upgrade pip
-                    pip install -r requirements.txt
-
-            -   id: flake8
-                name: Lint with flake8
-                run: |
-                    pip install flake8
-                    flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-                    flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-
-            -   id: main
-                name: main.py execution
-                run: |
-                    cd src
-                    python main.py 'action'
-                    cd ../
-
-            -   id: commit
-                name: Commit logging changes
-                run: |
-                    git config --local user.email "action@github.com"
-                    git config --local user.name "github-actions"
-                    git commit -m "chore(r/log): latest logging." -a
-
-            -   id: push
-                name: Push logging changes
-                uses: ad-m/github-push-action@master
-                with:
-                    github_token: ${{ secrets.GITHUB_TOKEN }}
-                    force: true
+#            -   id: python-setup
+#                name: Set up Python 3.9
+#                uses: actions/setup-python@v3
+#                with:
+#                    python-version: 3.9
+#
+#            -   id: dependencies
+#                name: Install dependencies
+#                run: |
+#                    python -m pip install --upgrade pip
+#                    pip install -r requirements.txt
+#
+#            -   id: flake8
+#                name: Lint with flake8
+#                run: |
+#                    pip install flake8
+#                    flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+#                    flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+#
+#            -   id: main
+#                name: main.py execution
+#                run: |
+#                    cd src
+#                    python main.py 'action'
+#                    cd ../
+#
+#            -   id: commit
+#                name: Commit logging changes
+#                run: |
+#                    git config --local user.email "action@github.com"
+#                    git config --local user.name "github-actions"
+#                    git commit -m "chore(r/log): latest logging." -a
+#
+#            -   id: push
+#                name: Push logging changes
+#                uses: ad-m/github-push-action@master
+#                with:
+#                    github_token: ${{ secrets.GITHUB_TOKEN }}
+#                    force: true
