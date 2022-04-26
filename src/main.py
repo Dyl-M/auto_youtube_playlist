@@ -16,22 +16,7 @@ try:
 except IndexError:
     exe_mode = 'local'
 
-"GLOBAL"
-
-if exe_mode == 'local':
-    YOUTUBE_OAUTH = youtube_req.create_service_local()  # YouTube service in local mode
-    PROG_BAR = True
-else:
-    YOUTUBE_OAUTH = youtube_req.create_service_workflow()  # YouTube service with GitHub workflow
-    PROG_BAR = False
-
-"MAIN FUNCTION"
-
-
-def main(youtube_service=YOUTUBE_OAUTH):
-    """Execute playlists updates with logging
-    :param youtube_service: a Google API service object build with 'googleapiclient.discovery.build'.
-    """
+if __name__ == '__main__':
     # Create loggers
     history_main = logging.Logger(name='history_main', level=0)
     last_exe_main_s = logging.Logger(name='last_exe_main_start', level=0)
@@ -73,18 +58,21 @@ def main(youtube_service=YOUTUBE_OAUTH):
     history_main.info('Process started.')
     last_exe_main_s.info('Process started.')
 
+    if exe_mode == 'local':  # YouTube service creation
+        YOUTUBE_OAUTH = youtube_req.create_service_local()  # YouTube service in local mode
+        PROG_BAR = True  # Display progress bar
+    else:
+        YOUTUBE_OAUTH = youtube_req.create_service_workflow()  # YouTube service with GitHub workflow
+        PROG_BAR = False  # Do not display progress bar
+
     # Update live playlist
     current_live = youtube_req.iter_livestreams(music_channels_ids, prog_bar=PROG_BAR)
-    youtube_req.update_playlist(youtube_service, playlists_lives, current_live, is_live=True, prog_bar=PROG_BAR)
+    youtube_req.update_playlist(YOUTUBE_OAUTH, playlists_lives, current_live, is_live=True, prog_bar=PROG_BAR)
 
     # Update mixes playlist
-    to_add = youtube_req.iter_playlists(youtube_service, music_channels_uploads, prog_bar=PROG_BAR)
-    youtube_req.update_playlist(youtube_service, playlists_mixes, to_add, prog_bar=PROG_BAR)
+    to_add = youtube_req.iter_playlists(YOUTUBE_OAUTH, music_channels_uploads, prog_bar=PROG_BAR)
+    youtube_req.update_playlist(YOUTUBE_OAUTH, playlists_mixes, to_add, prog_bar=PROG_BAR)
 
     # End
     history_main.info('Process ended.')
     last_exe_main_e.info('Process ended.')
-
-
-if __name__ == '__main__':
-    main()
