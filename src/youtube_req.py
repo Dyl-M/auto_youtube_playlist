@@ -522,6 +522,7 @@ def del_from_playlist(service: googleapiclient.discovery, playlist_id: str, item
         try:
             request.execute()
 
-        except googleapiclient.errors.HttpError:
+        except googleapiclient.errors.HttpError as error:  # skipcq: PYL-W0703
+            print(error)
             history.error(f'(HttpError) Something went wrong with this item: {item_id}')
             last_exe.error(f'(HttpError) Something went wrong with this item: {item_id}')
