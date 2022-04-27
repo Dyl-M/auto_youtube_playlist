@@ -15,4 +15,4 @@ oauth_str = sys.argv[1]
 if __name__ == '__main__':
     print('Hello world :)')
     oauth = ast.literal_eval(base64.urlsafe_b64decode(oauth_str).decode('utf-8'))
-    print(oauth.keys())
+    print(oauth['web'].keys())
