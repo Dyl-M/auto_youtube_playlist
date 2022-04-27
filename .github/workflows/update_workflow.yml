@@ -37,8 +37,9 @@ jobs:
             -   id: oauth
                 name: Checking OAUTH value
                 run: |
+                    TEST_SECRET=${{ secrets.OAUTH }}
                     cd src
-                    python _test.py ${{ secrets.OAUTH }}
+                    python _test.py TEST_SECRET
                     cd ../
 
 #            -   id: dependencies
