@@ -407,7 +407,6 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
             last_exe.info(f'{_to_add_df.shape[0]} new {_type}(s) added.')
 
         if not _to_delete_df.empty:  # If there are videos to delete
-            print(_to_delete_df)
             del_from_playlist(service=_service, playlist_id=_playlist_id, items_list=_to_delete_df.item_id,
                               prog_bar=prog_bar)
             history.info(f'{_to_delete_df.shape[0]} {_type}(s) removed.')
