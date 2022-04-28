@@ -124,8 +124,6 @@ def create_service_local(log: bool = True):
 
 def create_service_workflow():
     """Retrieve authentication credentials"""
-    instance_fail_message = 'Failed to create service instance for YouTube'
-
     try:
         scopes = ["https://www.googleapis.com/auth/youtube.force-ssl"]
         credentials, _ = google.auth.default(scopes=scopes)
@@ -135,6 +133,7 @@ def create_service_workflow():
         return service
 
     except Exception as error:  # skipcq: PYL-W0703 - No known errors at the moment.
+        instance_fail_message = 'Failed to create service instance for YouTube'
         history.critical(f'({error}) {instance_fail_message}')
         last_exe.critical(f'({error}) {instance_fail_message}')
         sys.exit()
@@ -498,7 +497,8 @@ def add_to_playlist(service: googleapiclient.discovery, playlist_id: str, videos
         try:
             request.execute()
 
-        except googleapiclient.errors.HttpError:
+        except googleapiclient.errors.HttpError as error:  # skipcq: PYL-W0703
+            print(error)
             history.error(f'(HttpError) Something went wrong with this video: {video_id}')
             last_exe.error(f'(HttpError) Something went wrong with this video: {video_id}')
 
