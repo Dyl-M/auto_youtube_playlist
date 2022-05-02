@@ -20,13 +20,19 @@ jobs:
                 name: Checkout repository
                 uses: actions/checkout@v3
 
+            #            -   id: google-auth
+            #                name: Authentication to Google Cloud services with Workload Identity Federation
+            #                uses: google-github-actions/auth@v0
+            #                with:
+            #                    token_format: 'access_token'
+            #                    workload_identity_provider: '${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}'
+            #                    service_account: '${{ secrets.SERVICE_ACCOUNT }}'
+
             -   id: google-auth
-                name: Authentication to Google Cloud services with Workload Identity Federation
+                name: Authentication to Google Cloud services with GitHub Secret
                 uses: google-github-actions/auth@v0
                 with:
-                    token_format: 'access_token'
-                    workload_identity_provider: '${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}'
-                    service_account: '${{ secrets.SERVICE_ACCOUNT }}'
+                    credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
 
             -   id: python-setup
                 name: Set up Python 3.9
