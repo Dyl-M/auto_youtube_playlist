@@ -59,24 +59,19 @@ LAST_EXE = last_exe_date()
 
 # Create loggers
 history = logging.Logger(name='history', level=0)
-last_exe = logging.Logger(name='last_exe', level=0)
 
 # Create file handlers
 history_file = logging.FileHandler(filename='../log/history.log')  # mode='a'
-last_exe_file = logging.FileHandler(filename='../log/last_exe.log')
 
 # Create formatter
 formatter = logging.Formatter(fmt='%(asctime)s [%(levelname)s] - %(message)s', datefmt='%Y-%m-%d %H:%M:%S%z')
 
 # Set file handlers' level
 history_file.setLevel(logging.DEBUG)
-last_exe_file.setLevel(logging.DEBUG)
 
 # Assign file handlers and formatter to loggers
 history_file.setFormatter(formatter)
 history.addHandler(history_file)
-last_exe_file.setFormatter(formatter)
-last_exe.addHandler(last_exe_file)
 
 "FUNCTIONS"
 
@@ -110,14 +105,12 @@ def create_service_local(log: bool = True):
         service = googleapiclient.discovery.build('youtube', 'v3', credentials=cred)
         if log:
             history.info('YouTube service created successfully.')
-            last_exe.info('YouTube Service created successfully.')
 
         return service
 
     except Exception as error:  # skipcq: PYL-W0703 - No known errors at the moment.
         if log:
             history.critical(f'({error}) {instance_fail_message}')
-            last_exe.critical(f'({error}) {instance_fail_message}')
 
         sys.exit()
 
@@ -129,13 +122,11 @@ def create_service_workflow():
         credentials, _ = google.auth.default(scopes=scopes)
         service = googleapiclient.discovery.build('youtube', 'v3', credentials=credentials)
         history.info('YouTube service created successfully.')
-        last_exe.info('YouTube Service created successfully.')
         return service
 
     except Exception as error:  # skipcq: PYL-W0703 - No known errors at the moment.
         instance_fail_message = 'Failed to create service instance for YouTube'
         history.critical(f'({error}) {instance_fail_message}')
-        last_exe.critical(f'({error}) {instance_fail_message}')
         sys.exit()
 
 
@@ -165,7 +156,6 @@ def get_channels(service: googleapiclient.discovery, channel_list: list, save: b
 
         except googleapiclient.errors.HttpError as http_error:
             history.error(http_error.error_details)
-            last_exe.error(http_error.error_details)
             sys.exit()
 
     information = sorted(information, key=lambda dic: dic['title'].lower())  # Sort by channel name alphabetical order
@@ -232,11 +222,9 @@ def get_playlist_items(service: googleapiclient.discovery, playlist_id: str, day
             if error_reason == 'playlistNotFound':
                 if playlist_id not in TO_IGNORE:
                     history.warning(f'Playlist not found: {playlist_id}')
-                    last_exe.warning(f'Playlist not found: {playlist_id}')
                 break
 
             history.error(f'[{playlist_id}] Unknown error: {error_reason}')
-            last_exe.error(f'[{playlist_id}] Unknown error: {error_reason}')
             sys.exit()
 
     return p_items
@@ -282,7 +270,6 @@ def find_livestreams(channel_id: str):
 
     except requests.exceptions.ConnectionError:
         history.warning(f'ConnectionError with this channel: {channel_id}')
-        last_exe.warning(f'ConnectionError with this channel: {channel_id}')
 
     return []  # Return if no livestream at the moment or in case of ConnectionError
 
@@ -308,7 +295,6 @@ def check_if_live(service: googleapiclient.discovery, videos_list: list):
 
         except googleapiclient.errors.HttpError as http_error:
             history.error(http_error.error_details)
-            last_exe.error(http_error.error_details)
             sys.exit()
 
     return items
@@ -337,7 +323,6 @@ def get_durations(service: googleapiclient.discovery, videos_list: list):
 
         except googleapiclient.errors.HttpError as http_error:
             history.error(http_error.error_details)
-            last_exe.error(http_error.error_details)
             sys.exit()
 
     return items
@@ -403,17 +388,14 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
             add_to_playlist(service=_service, playlist_id=_playlist_id, videos_list=_to_add_df.video_id,
                             prog_bar=prog_bar)
             history.info(f'{_to_add_df.shape[0]} new {_type}(s) added.')
-            last_exe.info(f'{_to_add_df.shape[0]} new {_type}(s) added.')
 
         if not _to_delete_df.empty:  # If there are videos to delete
             del_from_playlist(service=_service, playlist_id=_playlist_id, items_list=_to_delete_df.item_id,
                               prog_bar=prog_bar)
             history.info(f'{_to_delete_df.shape[0]} {_type}(s) removed.')
-            last_exe.info(f'{_to_delete_df.shape[0]} {_type}(s) removed.')
 
         if _to_add_df.empty and _to_delete_df.empty:
             history.info(f'No {_type} added or removed.')
-            last_exe.info(f'No {_type} added or removed.')
 
     # Pass playlist as pandas Dataframes (for easier filtering)
     already_in = pd.DataFrame(get_playlist_items(service=service, playlist_id=playlist_id))  # Get videos already in
@@ -455,7 +437,6 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
         if is_live and to_add_df.empty:  # If there are livestreams to add
             add_to_playlist(service=service, playlist_id=playlist_id, videos_list=to_add_df.video_id, prog_bar=prog_bar)
             history.info(f'{to_add_df.shape[0]} new livestream(s) added.')
-            last_exe.info(f'{to_add_df.shape[0]} new livestream(s) added.')
 
         else:  # For regular videos
             if not to_add_df.empty:  # Check if there are videos to add
@@ -470,11 +451,9 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
                 add_to_playlist(service=service, playlist_id=playlist_id, videos_list=to_add_df.video_id,
                                 prog_bar=prog_bar)
                 history.info(f'{to_add_df.shape[0]} new video(s) added.')
-                last_exe.info(f'{to_add_df.shape[0]} new video(s) added.')
 
             else:
                 history.info('No video added.')
-                last_exe.info('No video added.')
 
 
 def add_to_playlist(service: googleapiclient.discovery, playlist_id: str, videos_list: list, prog_bar: bool = True):
@@ -500,7 +479,6 @@ def add_to_playlist(service: googleapiclient.discovery, playlist_id: str, videos
         except googleapiclient.errors.HttpError as error:  # skipcq: PYL-W0703
             print(error)
             history.error(f'(HttpError) Something went wrong with this video: {video_id}')
-            last_exe.error(f'(HttpError) Something went wrong with this video: {video_id}')
 
 
 def del_from_playlist(service: googleapiclient.discovery, playlist_id: str, items_list: list, prog_bar: bool = True):
@@ -525,4 +503,3 @@ def del_from_playlist(service: googleapiclient.discovery, playlist_id: str, item
         except googleapiclient.errors.HttpError as error:  # skipcq: PYL-W0703
             print(error)
             history.error(f'(HttpError) Something went wrong with this item: {item_id}')
-            last_exe.error(f'(HttpError) Something went wrong with this item: {item_id}')

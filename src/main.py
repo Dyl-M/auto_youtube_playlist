@@ -2,6 +2,7 @@
 
 import json
 import logging
+import re
 import sys
 import youtube_req
 
@@ -11,37 +12,48 @@ import youtube_req
 Main process (still in test phase).
 """
 
+"SYSTEM"
+
 try:
     exe_mode = sys.argv[1]
 except IndexError:
     exe_mode = 'local'
 
+"FUNCTIONS"
+
+
+def copy_last_exe_log(history_path: str = '../log/history.log', last_exe_path: str = '../log/last_exe.log'):
+    """Copy last execution logging from main history file
+    :param history_path: file path to history
+    :param last_exe_path: file path to last execution.
+    """
+    with open(history_path, 'r', encoding='utf8') as history_file:
+        history = history_file.read()
+
+    last_exe = re.findall(r".*?Process started\.", history)[-1]
+    last_exe_idx = history.rfind(last_exe)
+    last_exe_log = history[last_exe_idx:]
+
+    with open(last_exe_path, 'w', encoding='utf8') as last_exe_file:
+        last_exe_file.write(last_exe_log)
+
+
 if __name__ == '__main__':
     # Create loggers
     history_main = logging.Logger(name='history_main', level=0)
-    last_exe_main_s = logging.Logger(name='last_exe_main_start', level=0)
-    last_exe_main_e = logging.Logger(name='last_exe_main_end', level=0)
 
     # Create file handlers
     history_main_file = logging.FileHandler(filename='../log/history.log')  # mode='a'
-    last_exe_main_s_file = logging.FileHandler(filename='../log/last_exe.log', mode='w')  # Last exe. logging start
-    last_exe_main_e_file = logging.FileHandler(filename='../log/last_exe.log')  # Last exe. logging end
 
     # Create formatter
     formatter_main = logging.Formatter(fmt='%(asctime)s [%(levelname)s] - %(message)s', datefmt='%Y-%m-%d %H:%M:%S%z')
 
     # Set file handlers' level
     history_main_file.setLevel(logging.DEBUG)
-    last_exe_main_s_file.setLevel(logging.DEBUG)
-    last_exe_main_e_file.setLevel(logging.DEBUG)
 
     # Assign file handlers and formatter to loggers
     history_main_file.setFormatter(formatter_main)
     history_main.addHandler(history_main_file)
-    last_exe_main_s_file.setFormatter(formatter_main)
-    last_exe_main_s.addHandler(last_exe_main_s_file)
-    last_exe_main_e_file.setFormatter(formatter_main)
-    last_exe_main_e.addHandler(last_exe_main_e_file)
 
     # Open and read data files
     with open('../data/music_channels.json', 'r', encoding='utf8') as music_channel_file:
@@ -56,7 +68,6 @@ if __name__ == '__main__':
 
     # Start
     history_main.info('Process started.')
-    last_exe_main_s.info('Process started.')
 
     if exe_mode == 'local':  # YouTube service creation
         YOUTUBE_OAUTH = youtube_req.create_service_local()  # YouTube service in local mode
@@ -75,4 +86,4 @@ if __name__ == '__main__':
 
     # End
     history_main.info('Process ended.')
-    last_exe_main_e.info('Process ended.')
+    copy_last_exe_log()  # Copy what happened during process execution to the associated file.
