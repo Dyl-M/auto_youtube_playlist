@@ -554,3 +554,18 @@
 2022-05-05 12:32:36+0200 [INFO] - No livestream added or removed.
 2022-05-05 12:32:49+0200 [INFO] - No video added or removed.
 2022-05-05 12:32:49+0200 [INFO] - Process ended.
+2022-05-05 16:56:07+0200 [INFO] - Process started.
+2022-05-05 16:56:07+0200 [INFO] - YouTube service created successfully.
+2022-05-05 16:56:55+0200 [INFO] - 1 new livestream(s) added.
+2022-05-05 16:57:10+0200 [INFO] - 1 new video(s) added.
+2022-05-05 16:57:10+0200 [INFO] - Process ended.
+2022-05-05 18:04:56+0200 [INFO] - Process started.
+2022-05-05 18:04:57+0200 [INFO] - YouTube service created successfully.
+2022-05-05 18:05:43+0200 [INFO] - 1 livestream(s) removed.
+2022-05-05 18:05:56+0200 [ERROR] - [UU-EVnno6x6-aAG6g1ZVoN3A] Unknown error: SERVICE_UNAVAILABLE
+2022-05-05 18:20:27+0200 [INFO] - Process started.
+2022-05-05 18:20:27+0200 [INFO] - YouTube service created successfully.
+2022-05-05 18:21:13+0200 [INFO] - No livestream added or removed.
+2022-05-05 18:21:27+0200 [INFO] - 3 new video(s) added.
+2022-05-05 18:21:27+0200 [INFO] - 2 video(s) removed.
+2022-05-05 18:21:27+0200 [INFO] - Process ended.
