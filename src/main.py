@@ -22,10 +22,8 @@ except IndexError:
 "FUNCTIONS"
 
 
-def copy_last_exe_log(last_exe_path: str = '../log/last_exe.log'):
-    """Copy last execution logging from main history file
-    :param last_exe_path: file path to last execution (export).
-    """
+def copy_last_exe_log():
+    """Copy last execution logging from main history file."""
     with open('../log/history.log', 'r', encoding='utf8') as history_file:
         history = history_file.read()
 
@@ -33,7 +31,7 @@ def copy_last_exe_log(last_exe_path: str = '../log/last_exe.log'):
     last_exe_idx = history.rfind(last_exe)
     last_exe_log = history[last_exe_idx:]
 
-    with open(last_exe_path, 'w', encoding='utf8') as last_exe_file:
+    with open('../log/last_exe.log', 'w', encoding='utf8') as last_exe_file:
         last_exe_file.write(last_exe_log)
 
 
