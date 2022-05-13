@@ -709,3 +709,10 @@
 2022-05-13 13:33:37+0200 [INFO] - YouTube service created successfully.
 2022-05-13 13:35:31+0200 [INFO] - Process started.
 2022-05-13 13:35:31+0200 [INFO] - YouTube service created successfully.
+2022-05-13 18:24:32+0000 [INFO] - Process started.
+2022-05-13 18:24:32+0000 [INFO] - API credentials refreshed.
+2022-05-13 18:24:32+0000 [INFO] - YouTube service created successfully.
+2022-05-13 18:25:18+0000 [INFO] - No livestream added or removed.
+2022-05-13 18:25:34+0000 [INFO] - 4 new video(s) added.
+2022-05-13 18:25:34+0000 [INFO] - 2 video(s) removed.
+2022-05-13 18:25:34+0000 [INFO] - Process ended.
