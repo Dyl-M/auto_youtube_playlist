@@ -69,6 +69,7 @@ if __name__ == '__main__':
     if exe_mode == 'local':  # YouTube service creation
         YOUTUBE_OAUTH = youtube_req.create_service_local()  # YouTube service in local mode
         PROG_BAR = True  # Display progress bar
+
     else:
         YOUTUBE_OAUTH = youtube_req.create_service_workflow()  # YouTube service with GitHub workflow
         PROG_BAR = False  # Do not display progress bar
@@ -84,3 +85,7 @@ if __name__ == '__main__':
     # End
     history_main.info('Process ended.')
     copy_last_exe_log()  # Copy what happened during process execution to the associated file.
+
+    if exe_mode == 'local':  # Optional end: credentials in base64 update
+        youtube_req.encode_key(json_path='../tokens/credentials.json')
+        youtube_req.encode_key(json_path='../tokens/oauth.json')
