@@ -80,9 +80,8 @@ def encode_key(json_path: str, export_dir: str = None, export_name: str = None):
     """Encode a JSON authentication file to base64
     :param json_path: file path to authentication JSON file
     :param export_dir: export directory
-    :param export_name: export file name
+    :param export_name: export file name.
     """
-
     path_split = json_path.split('/')
     file_name = path_split[-1].removesuffix('.json')
 
