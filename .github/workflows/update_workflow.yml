@@ -45,7 +45,7 @@ jobs:
                 name: run _test.py
                 run: |
                     cd src
-                    python test.py
+                    python _test.py
                     cd ../
 
 #            -   id: secret
