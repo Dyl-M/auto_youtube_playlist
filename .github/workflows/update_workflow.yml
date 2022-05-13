@@ -14,6 +14,8 @@ jobs:
         permissions:
             contents: write
             id-token: write
+        env:
+            TEST: '${{ secrets.TEST }}'
 
         steps:
             -   id: checkout
@@ -24,10 +26,9 @@ jobs:
                 name: Create a repository Secret (test phase)
                 uses: gliech/create-github-secret-action@v1.4.10
                 with:
-                    name: TEST
-                    value: "::add-mask::NOUVEAU TEST"
+                    name: TEST_2
+                    value: ${{env.TEST}}
                     pa_token: '${{ secrets.PAT }}'
-
 
 
 #            -   id: google-auth
