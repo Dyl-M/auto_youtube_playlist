@@ -4,8 +4,8 @@ on:
     push:
         branches: [main]
 
-#    schedule:
-#        -   cron: "0 0,6,12,18 * * *"
+    schedule:
+        -   cron: "0 0,6,12,18 * * *"
 
 jobs:
     build-linux:
@@ -40,13 +40,6 @@ jobs:
                     pip install flake8
                     flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
                     flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-
-#            -   id: test
-#                name: run _test.py
-#                run: |
-#                    cd src
-#                    python _test.py
-#                    cd ../
 
             -   id: main
                 name: main.py execution
