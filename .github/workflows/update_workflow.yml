@@ -22,13 +22,39 @@ jobs:
                 name: Checkout repository
                 uses: actions/checkout@v3
 
-            -   id: secret
-                name: Create a repository Secret (test phase)
-                uses: gliech/create-github-secret-action@v1.4.10
+            -   id: python-setup
+                name: Set up Python 3.9
+                uses: actions/setup-python@v3
                 with:
-                    name: TEST_3
-                    value: '${{env.OAUTH_B64}}'
-                    pa_token: '${{ secrets.PAT }}'
+                    python-version: 3.9
+
+            -   id: dependencies
+                name: Install dependencies
+                run: |
+                    python -m pip install --upgrade pip
+                    pip install -r requirements.txt
+
+            -   id: flake8
+                name: Lint with flake8
+                run: |
+                    pip install flake8
+                    flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+                    flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+            -   id: test
+                name: run _test.py
+                run: |
+                    cd src
+                    python test.py
+                    cd ../
+
+#            -   id: secret
+#                name: Create a repository Secret (test phase)
+#                uses: gliech/create-github-secret-action@v1.4.10
+#                with:
+#                    name: TEST
+#                    value: '${{env.OAUTH_B64}}'
+#                    pa_token: '${{ secrets.PAT }}'
 
 
 #            -   id: google-auth
