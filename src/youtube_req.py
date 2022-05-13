@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import ast
+import base64
 import bs4
 import datetime as dt
-import google.auth
 import googleapiclient.discovery
 import googleapiclient.errors
 import isodate
@@ -76,6 +76,41 @@ history.addHandler(history_file)
 "FUNCTIONS"
 
 
+def encode_key(json_path: str, export_dir: str = None, export_name: str = None):
+    """Encode a JSON authentication file to base64
+    :param json_path: file path to authentication JSON file
+    :param export_dir: export directory
+    :param export_name: export file name
+    """
+
+    path_split = json_path.split('/')
+    file_name = path_split[-1].removesuffix('.json')
+
+    if export_dir is None:
+        export_dir = json_path.removesuffix(f'{file_name}.json')
+
+    if export_name is None:
+        export_name = f'{file_name}_b64.txt'
+
+    if 'tokens' not in json_path:
+        print('FORBIDDEN ACCESS. Invalid file path.')
+        sys.exit()
+
+    elif not os.path.exists(json_path):
+        print('This file does not exist.')
+        sys.exit()
+
+    else:
+        with open(json_path, 'r', encoding='utf8') as json_file:
+            key_dict = json.load(json_file)
+
+        key_str = json.dumps(key_dict).encode('utf-8')
+        key_b64 = base64.urlsafe_b64encode(key_str)
+
+        with open(export_dir + export_name, 'wb') as key_file:
+            key_file.write(key_b64)
+
+
 def create_service_local(log: bool = True):
     """Retrieve authentication credentials at specified path or create new ones, mostly inspired by this source
     code: https://learndataanalysis.org/google-py-file-source-code/
@@ -116,16 +151,45 @@ def create_service_local(log: bool = True):
 
 
 def create_service_workflow():
-    """Retrieve authentication credentials"""
+    """Retrieve authentication credentials from dedicated repository secrets
+    :return service: a Google API service object build with 'googleapiclient.discovery.build'.
+    """
+
+    def import_env_var(var_name: str):
+        """Import variable environment and perform base64 decoding
+        :param var_name: environment variable name
+        :return value: decoded value
+        """
+        v_b64 = os.environ.get(var_name)  # Get environment variable
+        v_str = base64.urlsafe_b64decode(v_b64).decode(encoding='utf8')  # Decode
+        value = ast.literal_eval(v_str)  # Eval
+        return value
+
+    creds_dict = import_env_var(var_name='CREDS_B64')  # Import pre-registered credentials
+    creds = Credentials.from_authorized_user_info(creds_dict)  # Conversion to suitable object
+    instance_fail_message = 'Failed to create service instance for YouTube'
+
+    if not creds.valid:  # Cover outdated credentials
+        if creds.expired and creds.refresh_token:
+            creds.refresh(Request())  # Refresh token
+
+            # Get refreshed token as JSON-like string
+            creds_str = json.dumps(ast.literal_eval(creds.to_json())).encode('utf-8')
+
+            creds_b64 = str(base64.urlsafe_b64encode(creds_str))[2:-1]  # Encode token
+            os.environ["CREDS_B64"] = creds_b64  # Update environment variable value
+            history.info('API credentials refreshed.')
+
+        else:
+            history.critical('ERROR: Unable to refresh credentials. Check Google API OAUTH parameter.')
+            sys.exit()
+
     try:
-        scopes = ["https://www.googleapis.com/auth/youtube.force-ssl"]
-        credentials, _ = google.auth.default(scopes=scopes)
-        service = googleapiclient.discovery.build('youtube', 'v3', credentials=credentials)
+        service = googleapiclient.discovery.build('youtube', 'v3', credentials=creds)  # Build service.
         history.info('YouTube service created successfully.')
         return service
 
     except Exception as error:  # skipcq: PYL-W0703 - No known errors at the moment.
-        instance_fail_message = 'Failed to create service instance for YouTube'
         history.critical(f'({error}) {instance_fail_message}')
         sys.exit()
 
