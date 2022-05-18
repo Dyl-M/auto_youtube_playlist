@@ -380,7 +380,7 @@ def get_durations(service: googleapiclient.discovery, videos_list: list):
             request = get_videos(service=service, videos_list=chunk)
 
             # Keep necessary data
-            items += [{'video_id': item['id'],
+            items += [{'video_id': item['id'],  # TODO: insert viewCount
                        'duration': isodate.parse_duration(item['contentDetails']['duration']).seconds / 60,
                        'live_status': item['snippet']['liveBroadcastContent']} for item in request['items']]
 
