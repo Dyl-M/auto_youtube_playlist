@@ -92,11 +92,11 @@ def encode_key(json_path: str, export_dir: str = None, export_name: str = None):
         export_name = f'{file_name}_b64.txt'
 
     if 'tokens' not in json_path:
-        print('FORBIDDEN ACCESS. Invalid file path.')
+        history.critical('FORBIDDEN ACCESS. Invalid file path.')
         sys.exit()
 
     elif not os.path.exists(json_path):
-        print('This file does not exist.')
+        history.error(f'{json_path} file does not exist.')
         sys.exit()
 
     else:
@@ -299,7 +299,9 @@ def get_videos(service: googleapiclient.discovery, videos_list: list):
     :param videos_list: list of YouTube video IDs
     :return: request results.
     """
-    return service.videos().list(part=['snippet', 'contentDetails'], id=",".join(videos_list), maxResults=50).execute()
+    return service.videos().list(part=['snippet', 'contentDetails', 'statistics'],
+                                 id=",".join(videos_list),
+                                 maxResults=50).execute()
 
 
 def find_livestreams(channel_id: str):
@@ -371,8 +373,13 @@ def get_durations(service: googleapiclient.discovery, videos_list: list):
     """
     items = []
 
+    try:
+        videos_ids = [video['video_id'] for video in videos_list]
+
+    except TypeError:
+        videos_ids = videos_list
+
     # Split task in chunks of size 50 to request on a maximum of 50 videos at each iteration.
-    videos_ids = [video['video_id'] for video in videos_list]
     videos_chunks = [videos_ids[i:i + min(50, len(videos_ids))] for i in range(0, len(videos_ids), 50)]
 
     for chunk in videos_chunks:
@@ -380,7 +387,8 @@ def get_durations(service: googleapiclient.discovery, videos_list: list):
             request = get_videos(service=service, videos_list=chunk)
 
             # Keep necessary data
-            items += [{'video_id': item['id'],  # TODO: insert viewCount
+            items += [{'video_id': item['id'],
+                       'views': item['statistics']['viewCount'],
                        'duration': isodate.parse_duration(item['contentDetails']['duration']).seconds / 60,
                        'live_status': item['snippet']['liveBroadcastContent']} for item in request['items']]
 
@@ -485,6 +493,11 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
             delete_cond = (already_in.status == 'private') | (already_in.release_date < date_delta)  # Delete condition
             to_delete_df = already_in.loc[delete_cond]  # To keep public and newest videos.
 
+            if not to_delete_df.empty:
+                to_delete_stats = pd.DataFrame(get_durations(service=service, videos_list=to_delete_df.video_id))
+                to_delete_df = to_delete_df.merge(to_delete_stats)
+                to_delete_df.to_csv('../data/analytics.csv', encoding='utf8', index=False)
+
             if not to_add_df.empty:  # Check if there are videos to add
                 # Get durations of videos to add
                 durations = pd.DataFrame(get_durations(service=service, videos_list=videos_to_add))
@@ -540,8 +553,7 @@ def add_to_playlist(service: googleapiclient.discovery, playlist_id: str, videos
             request.execute()
 
         except googleapiclient.errors.HttpError as error:  # skipcq: PYL-W0703
-            print(error)
-            history.error(f'(HttpError) Something went wrong with this video: {video_id}')
+            history.error(f'({video_id}) - {error}')
 
 
 def del_from_playlist(service: googleapiclient.discovery, playlist_id: str, items_list: list, prog_bar: bool = True):
@@ -564,5 +576,4 @@ def del_from_playlist(service: googleapiclient.discovery, playlist_id: str, item
             request.execute()
 
         except googleapiclient.errors.HttpError as error:  # skipcq: PYL-W0703
-            print(error)
-            history.error(f'(HttpError) Something went wrong with this item: {item_id}')
+            history.error(f'({item_id}) - {error}')
