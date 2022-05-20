@@ -65,7 +65,7 @@ jobs:
                 run: |
                     git config --local user.email "action@github.com"
                     git config --local user.name "github-actions"
-                    git commit -m "chore(r/log): latest logging." -a
+                    git commit -m "Latest execution changes" -a
 
             -   id: push
                 name: Push logging changes
