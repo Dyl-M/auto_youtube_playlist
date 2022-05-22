@@ -449,15 +449,20 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
     :param log: to apply logging or not.
     """
 
-    def add_and_remove(_service, _playlist_id, _to_add_df, _to_delete_df, _type: str = 'video', _log: bool = True):
+    def add_and_remove(_service, _playlist_id, _to_add_df, _to_delete_df, _is_live: bool, _log: bool = True):
         """Perform a playlist update, avoid code duplication
         :param _service: a YouTube service build with 'googleapiclient.discovery'
         :param _playlist_id: a YouTube playlist ID
         :param _to_add_df: pd.DataFrame of videos to add to the playlist
         :param _to_delete_df: pd.DataFrame of videos to remove from the playlist
-        :param _type: content type (livestream or video)
+        :param _is_live: specify if the updated playlist contains specifically livestreams only (or not)
         :param _log: to apply logging or not.
         """
+        _type = 'video'
+
+        if _is_live:
+            _type = 'livestream'
+
         if not _to_add_df.empty:  # If there are videos to add
             add_to_playlist(service=_service, playlist_id=_playlist_id, videos_list=_to_add_df.video_id,
                             prog_bar=prog_bar)
@@ -511,7 +516,8 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
 
         to_add = to_add.loc[~to_add.video_id.isin(in_playlist.video_id)]  # Keep videos not already in playlist
 
-    add_and_remove(_service=service, _playlist_id=playlist_id, _to_add_df=to_add, _to_delete_df=to_del, _log=log)
+    add_and_remove(_service=service, _playlist_id=playlist_id, _to_add_df=to_add, _to_delete_df=to_del, _log=log,
+                   _is_live=is_live)
 
 
 def add_to_playlist(service: googleapiclient.discovery, playlist_id: str, videos_list: list, prog_bar: bool = True):
