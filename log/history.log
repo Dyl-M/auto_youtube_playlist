@@ -920,3 +920,9 @@
 2022-05-22 01:40:29+0000 [INFO] - 3 new video(s) added.
 2022-05-22 01:40:29+0000 [INFO] - 1 video(s) removed.
 2022-05-22 01:40:29+0000 [INFO] - Process ended.
+2022-05-22 10:17:24+0000 [INFO] - Process started.
+2022-05-22 10:17:25+0000 [INFO] - API credentials refreshed.
+2022-05-22 10:17:25+0000 [INFO] - YouTube service created successfully.
+2022-05-22 10:18:08+0000 [INFO] - No video added or removed.
+2022-05-22 10:18:23+0000 [INFO] - 1 new video(s) added.
+2022-05-22 10:18:23+0000 [INFO] - Process ended.
