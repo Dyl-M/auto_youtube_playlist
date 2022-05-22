@@ -24,7 +24,6 @@ Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy pu
 │       └── update_workflow.yml
 │
 ├── cmd (IGNORED)
-│   └── main.cmd
 │
 ├── data
 │   ├── ignore.json
@@ -38,13 +37,11 @@ Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy pu
 │
 ├── src
 │   ├── _test.py
+│   ├── analytics.py
 │   ├── main.py
 │   └── youtube_req.py
 │
 ├── tokens (IGNORED)
-│   ├── credentials.json
-│   ├── oauth.json
-│   └── service_account_keys.json
 │
 ├── .deepsource.toml
 ├── .gitignore
