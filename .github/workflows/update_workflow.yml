@@ -61,11 +61,11 @@ jobs:
                     pa_token: '${{ secrets.PAT }}'
 
             -   id: commit
-                name: Commit logging changes
+                name: Commit changes
                 run: |
                     git config --local user.email "action@github.com"
                     git config --local user.name "github-actions"
-                    git commit -m "Latest execution changes" -a
+                    git commit -m "chore(r/data, r/log): Latest execution changes." -a
 
             -   id: push
                 name: Push logging changes
