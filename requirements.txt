@@ -1,5 +1,6 @@
 beautifulsoup4~=4.11
 google-api-python-client~=2.48
+google-auth-oauthlib~=0.5
 isodate~=0.6
 pandas~=1.4
 requests~=2.27
