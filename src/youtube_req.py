@@ -496,9 +496,9 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
             del_cond = (in_playlist.status == 'private') | (in_playlist.release_date < date_delta)  # Delete condition
             to_del = in_playlist.loc[del_cond]  # Keep public and newest videos.
 
-            print(to_del)  # To delete after test / check
-
             if not to_del.empty:  # Save deleted videos as CSV
+                print(to_del)  # To delete after test / check
+
                 if not os.path.exists('../data/mix_history.csv'):
                     to_del.to_csv('../data/mixe_history.csv', encoding='utf8', index=False)
 
