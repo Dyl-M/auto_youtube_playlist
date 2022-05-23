@@ -497,17 +497,12 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
             to_del = in_playlist.loc[del_cond]  # Keep public and newest videos.
 
             if not to_del.empty:  # Save deleted videos as CSV
-                print(to_del)  # To delete after test / check
-
                 if not os.path.exists('../data/mix_history.csv'):
                     to_del.to_csv('../data/mix_history.csv', encoding='utf8', index=False)
-                    mix_history = pd.read_csv('../data/mix_history.csv', encoding='utf8', low_memory=False)
-                    print(mix_history)  # To delete after test / check
 
                 else:
                     mix_history = pd.read_csv('../data/mix_history.csv', encoding='utf8', low_memory=False)
                     mix_history = pd.concat([mix_history, to_del], ignore_index=True)
-                    print(mix_history)  # To delete after test / check
                     mix_history.to_csv('../data/mix_history.csv', encoding='utf8', index=False)
 
     to_add = pd.DataFrame(videos_to_add)
