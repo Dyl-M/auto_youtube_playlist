@@ -500,7 +500,7 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
                 print(to_del)  # To delete after test / check
 
                 if not os.path.exists('../data/mix_history.csv'):
-                    to_del.to_csv('../data/mixe_history.csv', encoding='utf8', index=False)
+                    to_del.to_csv('../data/mix_history.csv', encoding='utf8', index=False)
                     mix_history = pd.read_csv('../data/mix_history.csv', encoding='utf8', low_memory=False)
                     print(mix_history)  # To delete after test / check
 
