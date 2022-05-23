@@ -27,6 +27,7 @@ Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy pu
 │
 ├── data
 │   ├── ignore.json
+│   ├── mix_history.csv
 │   ├── music_channels.json
 │   ├── playlists.json
 │   └── pocket_tube.json
