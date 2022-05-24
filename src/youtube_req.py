@@ -389,6 +389,8 @@ def get_stats(service: googleapiclient.discovery, videos_list: list):
             # Keep necessary data
             items += [{'video_id': item['id'],
                        'views': item['statistics']['viewCount'],
+                       'likes': item['statistics']['likeCount'],
+                       'comments': item['statistics']['commentCount'],
                        'duration': isodate.parse_duration(item['contentDetails']['duration']).seconds / 60,
                        'live_status': item['snippet']['liveBroadcastContent']} for item in request['items']]
 
