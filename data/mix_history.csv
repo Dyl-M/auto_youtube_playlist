@@ -1,5 +1,1 @@
-video_id,release_date,channel_id,channel_name,item_id,status,views,duration,live_status
-d_LvZ5MwZFA,2022-05-16 11:00:31+00:00,UCGZXYc32ri4D0gSLPf2pZXQ,Armada Music TV,UExPTVVkUUZkUy1YTUo0TkZISmxTQUxZQXQ0bC1MUGdTMS4wMUIwQkI1NEQ1RTFBNTND,public,3275,60.16666666666666,none
-zNbwaRMIMNE,2022-05-16 17:00:38+00:00,UCDCCLsZ0OBG8Dt-3JMc3hkA,Big Beat Records,UExPTVVkUUZkUy1YTUo0TkZISmxTQUxZQXQ0bC1MUGdTMS5FRUEzOUYxQTE4OEIyMTI3,public,1913,60.483333333333334,none
-ttw1rCLgWrg,2022-05-16 18:00:14+00:00,UCnhHe0_bk_1_0So41vsZvWw,Revealed Music,UExPTVVkUUZkUy1YTUo0TkZISmxTQUxZQXQ0bC1MUGdTMS4yQUYyOTAwNjkwNDE5QjlE,public,2702,59.43333333333333,none
-sgJbLwnLok4,2022-05-16 23:00:30+00:00,UCU4gE6_3JrqOXBlA2npWiBw,TritonalTV,UExPTVVkUUZkUy1YTUo0TkZISmxTQUxZQXQ0bC1MUGdTMS43OTZFNzk1NjVDNDVBRjZG,public,945,60.016666666666666,none
+video_id,release_date,channel_id,channel_name,item_id,status,views,likes,comments,duration,live_status
