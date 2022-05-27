@@ -36,6 +36,8 @@ Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy pu
 │   ├── history.log
 │   └── last_exe.log
 │
+├── notebooks
+│
 ├── src
 │   ├── _test.py
 │   ├── analytics.py
