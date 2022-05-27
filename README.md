@@ -10,7 +10,7 @@
 
 A project related to YouTube API. Add YouTube videos to playlists and update them automatically. This project will concern the following playlist:
 
-- [🎧🔴 Music Lives](https://www.youtube.com/playlist?list=PLOMUdQFdS-XNaPVSol9qCUJvQvN5hO4hJ): Music radios on YouTube.
+- [🎧🔴 Music Livestreams](https://www.youtube.com/playlist?list=PLOMUdQFdS-XNaPVSol9qCUJvQvN5hO4hJ): Music radios on YouTube.
 - [🎧 Mixes - Podcasts - Live performances](https://www.youtube.com/playlist?list=PLOMUdQFdS-XMJ4NFHJlSALYAt4l-LPgS1): Mixes, podcasts and live performances by a selection of DJs / musicians, labels and independent music curators.
 
 Repository structure
