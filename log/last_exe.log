@@ -1,7 +1,7 @@
-2022-05-27 20:24:57+0000 [INFO] - Process started.
-2022-05-27 20:24:58+0000 [INFO] - API credentials refreshed.
-2022-05-27 20:24:58+0000 [INFO] - YouTube service created successfully.
-2022-05-27 20:25:35+0000 [WARNING] - ConnectionError with this channel: UC3ifTl5zKiCAhHIBQYcaTeg
-2022-05-27 20:25:50+0000 [INFO] - 1 livestream(s) removed.
-2022-05-27 20:26:05+0000 [INFO] - 3 video(s) removed.
-2022-05-27 20:26:05+0000 [INFO] - Process ended.
+2022-05-28 01:54:41+0000 [INFO] - Process started.
+2022-05-28 01:54:41+0000 [INFO] - API credentials refreshed.
+2022-05-28 01:54:41+0000 [INFO] - YouTube service created successfully.
+2022-05-28 01:55:25+0000 [INFO] - No livestream added or removed.
+2022-05-28 01:55:40+0000 [INFO] - 3 new video(s) added.
+2022-05-28 01:55:41+0000 [INFO] - 1 video(s) removed.
+2022-05-28 01:55:41+0000 [INFO] - Process ended.
