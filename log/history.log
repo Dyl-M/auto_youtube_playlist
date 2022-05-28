@@ -1138,3 +1138,10 @@
 2022-05-28 04:31:33+0000 [INFO] - No livestream added or removed.
 2022-05-28 04:31:48+0000 [INFO] - No video added or removed.
 2022-05-28 04:31:48+0000 [INFO] - Process ended.
+2022-05-28 08:29:58+0000 [INFO] - Process started.
+2022-05-28 08:29:58+0000 [INFO] - API credentials refreshed.
+2022-05-28 08:29:58+0000 [INFO] - YouTube service created successfully.
+2022-05-28 08:30:38+0000 [INFO] - 1 livestream(s) removed.
+2022-05-28 08:30:57+0000 [INFO] - 1 new video(s) added.
+2022-05-28 08:30:58+0000 [INFO] - 1 video(s) removed.
+2022-05-28 08:30:58+0000 [INFO] - Process ended.
