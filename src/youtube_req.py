@@ -388,11 +388,11 @@ def get_stats(service: googleapiclient.discovery, videos_list: list):
 
             # Keep necessary data
             items += [{'video_id': item['id'],
-                       'views': item['statistics']['viewCount'],
-                       'likes': item['statistics']['likeCount'],
-                       'comments': item['statistics']['commentCount'],
-                       'duration': isodate.parse_duration(item['contentDetails']['duration']).seconds / 60,
-                       'live_status': item['snippet']['liveBroadcastContent']} for item in request['items']]
+                       'views': item['statistics'].get('viewCount', 0),
+                       'likes': item['statistics'].get('likeCount', 0),
+                       'comments': item['statistics'].get('commentCount', 0),
+                       'duration': isodate.parse_duration(item['contentDetails'].get('duration', 0)).seconds / 60,
+                       'live_status': item['snippet'].get('liveBroadcastContent')} for item in request['items']]
 
         except googleapiclient.errors.HttpError as http_error:
             history.error(http_error.error_details)
