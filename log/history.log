@@ -1263,3 +1263,10 @@
 2022-05-31 18:11:43+0000 [INFO] - No livestream added or removed.
 2022-05-31 18:12:04+0000 [INFO] - 2 new video(s) added.
 2022-05-31 18:12:04+0000 [INFO] - Process ended.
+2022-06-01 00:47:31+0000 [INFO] - Process started.
+2022-06-01 00:47:31+0000 [INFO] - API credentials refreshed.
+2022-06-01 00:47:31+0000 [INFO] - YouTube service created successfully.
+2022-06-01 00:48:15+0000 [INFO] - 1 new livestream(s) added.
+2022-06-01 00:48:28+0000 [INFO] - 1 new video(s) added.
+2022-06-01 00:48:28+0000 [INFO] - 1 video(s) removed.
+2022-06-01 00:48:28+0000 [INFO] - Process ended.
