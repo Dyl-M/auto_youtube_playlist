@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 """File Information
-@file_name: _test.py
+@file_name: _sandbox.py
 @author: Dylan "dyl-m" Monfret
-To test things / backup functions. Testing authentication.
+To test things / backup functions.
 """
 
 if __name__ == '__main__':
