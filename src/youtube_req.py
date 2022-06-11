@@ -391,7 +391,7 @@ def get_stats(service: googleapiclient.discovery, videos_list: list):
                        'views': item['statistics'].get('viewCount', 0),
                        'likes': item['statistics'].get('likeCount', 0),
                        'comments': item['statistics'].get('commentCount', 0),
-                       'duration': isodate.parse_duration(item['contentDetails'].get('duration', 0)).seconds / 60,
+                       'duration': isodate.parse_duration(item['contentDetails'].get('duration', 0)).seconds,
                        'live_status': item['snippet'].get('liveBroadcastContent')} for item in request['items']]
 
         except googleapiclient.errors.HttpError as http_error:
@@ -510,7 +510,7 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
             add_stats = pd.DataFrame(get_stats(service=service, videos_list=videos_to_add))  # Get stats of new videos
             to_add = to_add.merge(add_stats)
             # Keep videos with duration above `min_duration` minutes and don't keep "Premiere" type videos
-            to_add = to_add.loc[(to_add.duration >= min_duration) & (to_add.live_status != 'upcoming')]
+            to_add = to_add.loc[(to_add.duration >= min_duration * 60) & (to_add.live_status != 'upcoming')]
 
         to_add = to_add.loc[~to_add.video_id.isin(in_playlist.video_id)]  # Keep videos not already in playlist
 
