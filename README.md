@@ -16,7 +16,7 @@ A project related to YouTube API. Add YouTube videos to playlists and update the
 Repository structure
 -------------
 
-Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy purpose.
+Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy purpose or for being useless for code comprehension or workflow execution.
 
 ```
 ├── .github
