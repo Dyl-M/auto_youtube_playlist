@@ -252,11 +252,12 @@ def get_playlist_items(service: googleapiclient.discovery, playlist_id: str, day
                                                    pageToken=next_page_token).execute()  # Request playlist's items
 
             p_items += [{'video_id': item['contentDetails']['videoId'],
-                         'release_date': dt.datetime.strptime(item['contentDetails']['videoPublishedAt'], date_format),
-                         'channel_id': item['snippet']['videoOwnerChannelId'],
-                         'channel_name': item['snippet']['videoOwnerChannelTitle'],
                          'item_id': item['id'],
-                         'status': item['status']['privacyStatus']} for item in request['items']]  # Keep necessary data
+                         'release_date': dt.datetime.strptime(item['contentDetails']['videoPublishedAt'], date_format),
+                         'status': item['status']['privacyStatus'],
+                         'channel_id': item['snippet']['videoOwnerChannelId'],
+                         'channel_name': item['snippet']['videoOwnerChannelTitle']}
+                        for item in request['items']]  # Keep necessary data
 
             if with_last_exe:  # In case we want to keep videos published between last exe date and your latest_d
                 oldest_d = LAST_EXE.replace(minute=0, second=0, microsecond=0)  # Round hour to XX:00:00.0
@@ -302,6 +303,18 @@ def get_videos(service: googleapiclient.discovery, videos_list: list):
     return service.videos().list(part=['snippet', 'contentDetails', 'statistics'],
                                  id=",".join(videos_list),
                                  maxResults=50).execute()
+
+
+def get_subs(service: googleapiclient.discovery, channel_list: list):
+    """Get number of subscribers for several YouTube channels
+    :param service: a YouTube service build with 'googleapiclient.discovery'
+    :param channel_list: list of YouTube channel IDs
+    :return: playlist items (channels' information) as a list.
+    """
+    req = service.channels().list(part=['statistics'], id=",".join(channel_list), maxResults=50).execute()
+    items = [{'channel_id': item['id'],
+              'subscribers': item['statistics'].get('subscriberCount', 0)} for item in req['items']]
+    return items
 
 
 def find_livestreams(channel_id: str):
@@ -492,8 +505,9 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
             to_del = in_playlist.loc[del_cond]  # Keep active and public livestreams
 
         else:
-            video_stats = pd.DataFrame(get_stats(service=service, videos_list=in_playlist.video_id))  # Get stats
-            in_playlist = in_playlist.merge(video_stats)
+            video_stats = pd.DataFrame(get_stats(service=service, videos_list=in_playlist.video_id))  # Get videos stats
+            channel_stats = pd.DataFrame(get_subs(service=service, channel_list=in_playlist.channel_id))
+            in_playlist = in_playlist.merge(channel_stats).merge(video_stats)
             date_delta = ref_date - dt.timedelta(days=del_day_ago)  # Days subtraction
             del_cond = (in_playlist.status == 'private') | (in_playlist.release_date < date_delta)  # Delete condition
             to_del = in_playlist.loc[del_cond]  # Keep public and newest videos.
