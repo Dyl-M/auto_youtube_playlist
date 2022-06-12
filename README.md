@@ -37,9 +37,11 @@ Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy pu
 │   └── last_exe.log
 │
 ├── notebooks
+│   ├── .ipynb_checkpoints (IGNORED)
+│   └── playlists_report.ipynb
 │
 ├── src
-│   ├── _test.py
+│   ├── _sandbox.py
 │   ├── analytics.py
 │   ├── main.py
 │   └── youtube_req.py
