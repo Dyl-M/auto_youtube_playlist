@@ -1760,3 +1760,9 @@
 2022-06-16 16:30:09+0000 [INFO] - 3 new video(s) added.
 2022-06-16 16:30:10+0000 [INFO] - 2 video(s) removed.
 2022-06-16 16:30:10+0000 [INFO] - Process ended.
+2022-06-16 20:24:03+0000 [INFO] - Process started.
+2022-06-16 20:24:03+0000 [INFO] - API credentials refreshed.
+2022-06-16 20:24:03+0000 [INFO] - YouTube service created successfully.
+2022-06-16 20:24:42+0000 [INFO] - No livestream added or removed.
+2022-06-16 20:25:02+0000 [INFO] - 2 video(s) removed.
+2022-06-16 20:25:02+0000 [INFO] - Process ended.
