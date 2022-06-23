@@ -1964,3 +1964,10 @@
 2022-06-23 16:28:24+0000 [INFO] - YouTube service created successfully.
 2022-06-23 16:29:04+0000 [INFO] - 1 new livestream(s) added.
 2022-06-23 16:29:09+0000 [ERROR] - [UU8y7Xa0E1Lo6PnVsu2KJbOA] Unknown error: SERVICE_UNAVAILABLE
+2022-06-23 20:20:32+0000 [INFO] - Process started.
+2022-06-23 20:20:32+0000 [INFO] - API credentials refreshed.
+2022-06-23 20:20:32+0000 [INFO] - YouTube service created successfully.
+2022-06-23 20:21:11+0000 [INFO] - No livestream added or removed.
+2022-06-23 20:21:33+0000 [INFO] - 2 new video(s) added.
+2022-06-23 20:21:34+0000 [INFO] - 4 video(s) removed.
+2022-06-23 20:21:34+0000 [INFO] - Process ended.
