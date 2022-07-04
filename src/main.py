@@ -75,8 +75,9 @@ if __name__ == '__main__':
         PROG_BAR = False  # Do not display progress bar
 
     # Update live playlist
-    current_live = youtube_req.iter_livestreams(music_channels_ids, prog_bar=PROG_BAR)
+    current_live = youtube_req.iter_livestreams(music_channels_ids, prog_bar=PROG_BAR)  # FIXME: Handle `requests.exceptions.ReadTimeout`
     youtube_req.update_playlist(YOUTUBE_OAUTH, playlists_lives, current_live, is_live=True, prog_bar=PROG_BAR)
+
 
     # Update mixes playlist
     to_add = youtube_req.iter_playlists(YOUTUBE_OAUTH, music_channels_uploads, prog_bar=PROG_BAR)
