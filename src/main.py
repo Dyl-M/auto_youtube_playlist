@@ -3,7 +3,9 @@
 import json
 import logging
 import re
+import requests
 import sys
+
 import youtube_req
 
 """File Information
@@ -74,17 +76,18 @@ if __name__ == '__main__':
         YOUTUBE_OAUTH = youtube_req.create_service_workflow()  # YouTube service with GitHub workflow
         PROG_BAR = False  # Do not display progress bar
 
-    # Update live playlist
-    current_live = youtube_req.iter_livestreams(music_channels_ids, prog_bar=PROG_BAR)  # FIXME: Handle `requests.exceptions.ReadTimeout`
-    youtube_req.update_playlist(YOUTUBE_OAUTH, playlists_lives, current_live, is_live=True, prog_bar=PROG_BAR)
+    try:  # Try to update livestreams playlist
+        current_live = youtube_req.iter_livestreams(music_channels_ids, prog_bar=PROG_BAR)
+        youtube_req.update_playlist(YOUTUBE_OAUTH, playlists_lives, current_live, is_live=True, prog_bar=PROG_BAR)
 
+    except requests.exceptions.ReadTimeout as timeout_error:
+        history_main.warning('TIMEOUT ERROR: Livestreams playlist update cancelled.')
 
     # Update mixes playlist
     to_add = youtube_req.iter_playlists(YOUTUBE_OAUTH, music_channels_uploads, prog_bar=PROG_BAR)
     youtube_req.update_playlist(YOUTUBE_OAUTH, playlists_mixes, to_add, prog_bar=PROG_BAR)
 
-    # End
-    history_main.info('Process ended.')
+    history_main.info('Process ended.')  # End
     copy_last_exe_log()  # Copy what happened during process execution to the associated file.
 
     if exe_mode == 'local':  # Optional end: credentials in base64 update
