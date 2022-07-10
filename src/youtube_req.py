@@ -240,6 +240,18 @@ def get_playlist_items(service: googleapiclient.discovery, playlist_id: str, day
     :param with_last_exe: to use last execution date extracted from log or not
     :return p_items: playlist items (videos) as a list.
     """
+
+    def get_and_format_date(ytb_item: dict, d_format: str):
+        """Get and form a video release date
+        :param ytb_item: YouTube playlist item
+        :param d_format: date format
+        :return: formatted release date or None.
+        """
+        vpa = ytb_item['contentDetails'].get('videoPublishedAt')
+        if vpa:  # Return the date if 'videoPublishedAt' field exist
+            return dt.datetime.strptime(vpa, d_format)
+        return vpa  # Return None instead
+
     p_items = []
     next_page_token = None
     date_format = '%Y-%m-%dT%H:%M:%S%z'
@@ -253,7 +265,7 @@ def get_playlist_items(service: googleapiclient.discovery, playlist_id: str, day
 
             p_items += [{'video_id': item['contentDetails']['videoId'],
                          'item_id': item['id'],
-                         'release_date': dt.datetime.strptime(item['contentDetails']['videoPublishedAt'], date_format),
+                         'release_date': get_and_format_date(ytb_item=item, d_format=date_format),
                          'status': item['status']['privacyStatus'],
                          'channel_id': item['snippet']['videoOwnerChannelId'],
                          'channel_name': item['snippet']['videoOwnerChannelTitle']}
