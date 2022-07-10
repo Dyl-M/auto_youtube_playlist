@@ -267,8 +267,8 @@ def get_playlist_items(service: googleapiclient.discovery, playlist_id: str, day
                          'item_id': item['id'],
                          'release_date': get_and_format_date(ytb_item=item, d_format=date_format),
                          'status': item['status']['privacyStatus'],
-                         'channel_id': item['snippet']['videoOwnerChannelId'],
-                         'channel_name': item['snippet']['videoOwnerChannelTitle']}
+                         'channel_id': item['snippet'].get('videoOwnerChannelId'),
+                         'channel_name': item['snippet'].get('videoOwnerChannelTitle')}
                         for item in request['items']]  # Keep necessary data
 
             if with_last_exe:  # In case we want to keep videos published between last exe date and your latest_d
