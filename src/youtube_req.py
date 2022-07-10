@@ -512,8 +512,12 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
     if not in_playlist.empty:  # If there is at least one video in the playlist
         if is_live:  # If the update is done on a YouTube livestreams playlist
             live_status = pd.DataFrame(check_if_live(service=service, videos_list=in_playlist.video_id))  # Get status
-            in_playlist = in_playlist.merge(live_status)
-            del_cond = (in_playlist.status == 'private') | (in_playlist.live_status != 'live')  # Delete condition
+            in_playlist = in_playlist.merge(live_status, how='outer')
+
+            # Delete condition
+            del_cond = (in_playlist.status.isin({'private', 'privacyStatusUnspecified'})) | \
+                       (in_playlist.live_status != 'live')
+
             to_del = in_playlist.loc[del_cond]  # Keep active and public livestreams
 
         else:
