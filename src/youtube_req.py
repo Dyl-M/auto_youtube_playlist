@@ -335,7 +335,7 @@ def find_livestreams(channel_id: str):
     :return live_list: list of livestream ID (or empty list if no livestream at the moment).
     """
     try:
-        cookies = {'CONSENT': 'YES+cb.20210328-17-p0.en-GB+FX+{}'.format(random.randint(100, 999))}  # Cookies settings
+        cookies = {'CONSENT': f'YES+cb.20210328-17-p0.en-GB+FX+{random.randint(100, 999)}'}  # Cookies settings
         url = f'https://www.youtube.com/channel/{channel_id}'
         web_page = requests.get(url, cookies=cookies, timeout=(5, 5))  # Page request
         soup = bs4.BeautifulSoup(web_page.text, "html.parser")  # HTML parsing
