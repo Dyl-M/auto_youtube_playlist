@@ -8,9 +8,9 @@ on:
                 required: true
                 default: 'warning'
 
-    schedule:
-        -   cron: "0 0,6,12,18 * * 0-3"
-        -   cron: "0 0,4,8,12,16,20 * * 4-6"
+#     schedule:
+#         -   cron: "0 0,6,12,18 * * 0-3"
+#         -   cron: "0 0,4,8,12,16,20 * * 4-6"
 
 jobs:
     build-linux:
@@ -60,7 +60,7 @@ jobs:
                 uses: gliech/create-github-secret-action@v1.4.10
                 with:
                     name: 'CREDS_B64'
-                    value: '${{env.CREDS_B64}}'
+                    value: '${{ env.CREDS_B64 }}'
                     pa_token: '${{ secrets.PAT }}'
 
             -   id: commit
