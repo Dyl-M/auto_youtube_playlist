@@ -2589,3 +2589,8 @@
 2022-07-14 04:45:18+0000 [INFO] - No livestream added or removed.
 2022-07-14 04:45:35+0000 [INFO] - No video added or removed.
 2022-07-14 04:45:35+0000 [INFO] - Process ended.
+2022-07-14 08:17:22+0000 [INFO] - Process started.
+2022-07-14 08:17:22+0000 [INFO] - API credentials refreshed.
+2022-07-14 08:17:22+0000 [INFO] - YouTube service created successfully.
+2022-07-14 08:18:04+0000 [INFO] - No livestream added or removed.
+2022-07-14 08:18:47+0000 [ERROR] - [UULnzhrD2Te8g6x83MhMkkWA] Unknown error: backendError
