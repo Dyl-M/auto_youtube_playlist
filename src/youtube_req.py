@@ -117,7 +117,7 @@ def create_service_local(log: bool = True):
     :return service: a Google API service object build with 'googleapiclient.discovery.build'.
     """
     oauth_file = '../tokens/oauth.json'  # OAUTH 2.0 ID path
-    scopes = ["https://www.googleapis.com/auth/youtube.force-ssl"]
+    scopes = ["https://www.googleapis.com/auth/youtube", "https://www.googleapis.com/auth/youtube.force-ssl"]
     instance_fail_message = 'Failed to create service instance for YouTube'
     cred = None
 
@@ -323,9 +323,19 @@ def get_subs(service: googleapiclient.discovery, channel_list: list):
     :param channel_list: list of YouTube channel IDs
     :return: playlist items (channels' information) as a list.
     """
-    req = service.channels().list(part=['statistics'], id=",".join(channel_list), maxResults=50).execute()
+    ch_filter = [channel_id for channel_id in channel_list if channel_id is not None]
+
+    # Split task in chunks of size 50 to request on a maximum of 50 channels at each iteration.
+    channels_chunks = [ch_filter[i:i + min(50, len(ch_filter))] for i in range(0, len(ch_filter), 50)]
+    raw_chunk = []
+
+    for chunk in channels_chunks:
+        req = service.channels().list(part=['statistics'], id=",".join(chunk), maxResults=50).execute()
+        raw_chunk += req.get('items', [])
+
     items = [{'channel_id': item['id'],
-              'subscribers': item['statistics'].get('subscriberCount', 0)} for item in req['items']]
+              'subscribers': item['statistics'].get('subscriberCount', 0)} for item in raw_chunk]
+
     return items
 
 
@@ -520,17 +530,18 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
 
             to_del = in_playlist.loc[del_cond]  # Keep active and public livestreams
 
-        else:
-            video_stats = pd.DataFrame(get_stats(service=service, videos_list=in_playlist.video_id))  # Get videos stats
-            channel_stats = pd.DataFrame(get_subs(service=service, channel_list=in_playlist.channel_id))
-            in_playlist = in_playlist.merge(channel_stats).merge(video_stats)
+        else:  # Get videos stats
+            video_stats = pd.DataFrame(get_stats(service=service, videos_list=in_playlist.video_id))
+            channel_stats = pd.DataFrame(get_subs(service=service, channel_list=in_playlist.channel_id.tolist()))
+            in_playlist = in_playlist.merge(channel_stats, how='outer').merge(video_stats, how='outer')
             date_delta = ref_date - dt.timedelta(days=del_day_ago)  # Days subtraction
             del_cond = (in_playlist.status == 'private') | (in_playlist.release_date < date_delta)  # Delete condition
             to_del = in_playlist.loc[del_cond]  # Keep public and newest videos.
 
             if not to_del.empty:  # Save deleted videos as CSV
+                to_del_filter = to_del.loc[to_del.channel_id.notna()]
                 mix_history = pd.read_csv('../data/mix_history.csv', encoding='utf8', low_memory=False)
-                mix_history = pd.concat([mix_history, to_del], ignore_index=True)
+                mix_history = pd.concat([mix_history, to_del_filter], ignore_index=True)
                 mix_history.to_csv('../data/mix_history.csv', encoding='utf8', index=False)
 
     to_add = pd.DataFrame(videos_to_add)
