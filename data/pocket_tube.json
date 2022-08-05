@@ -2,7 +2,6 @@
   "APPRENTISSAGE": [
     "UCUR03ZSZlEvCO6EWwv4jU2w",
     "UC4IvegtE25i1iWDUhb5bQhA",
-    "UCF_474QGXupFGA3d-eXc4bw",
     "UCKjDY4joMPcoRMmd-G1yz1Q",
     "UCm5wThREh298TkK8hCT9HuA",
     "UCDrekHmOnkptxq3gUU0IyfA",
@@ -10,7 +9,6 @@
     "UCIu2Fj4x_VMn2dgSB1bFyQA",
     "UCeVpI1jEdMUfboWOtl_Bq6g",
     "UCmGSJVG3mCRXVOP4yZrU1Dw",
-    "UC8uod2hRoXOo_2IpGS2siuQ",
     "UCSzsmZdY_v3aYN-GDz26OoQ",
     "UC1vdi4J54ucetZoFAfQenMg",
     "UCuBzVunAVbcwzMfQaJVacuw",
@@ -31,13 +29,13 @@
     "UCynBu7PDfJsCXeCSqT1QUQw",
     "UCUbsiCjXynjpKU64L65Gu-A",
     "UCtqICqGbPSbTN09K1_7VZ3Q",
-    "UCqA8H22FwgBVcF3GJpp0MQw"
+    "UCqA8H22FwgBVcF3GJpp0MQw",
+    "UCFdEAO81RAnsXGzEHmIw3pQ",
+    "UCYO_jab_esuFRV4b17AJtAw"
   ],
   "DIVERTISSEMENT": [
-    "UCWMYFDuCcvkmPiOf1RP_IKQ",
     "UCZpJLCV3gVP8R_sc8P30VpQ",
     "UCBK2DclO34h6BDqqrh-drPw",
-    "UCqPFL_-UpkO5O-rqPMHw8FQ",
     "UCt08KVHPt7rxSvbouUbz0sg",
     "UCyWqModMQlbIo8274Wh_ZsQ",
     "UC2Ds30pkifFVD0CE08wF50g",
@@ -92,9 +90,9 @@
     "UCVBXlR7YhYUr-DfNG1XLrHA",
     "UClsagI94IabwMKv9LN3kgNA",
     "UCkDtCKtPKlsg-gJO_m5D0mQ",
-    "UCynBu7PDfJsCXeCSqT1QUQw",
     "UCUbsiCjXynjpKU64L65Gu-A",
-    "UC_DRS3lamW6T1_iheYLhEkQ"
+    "UC6UBbvEA8uh6Ulc6ax1Zs0g",
+    "UC8X4WT5_lUXqMjeN8bGFk9w"
   ],
   "GAMING": [
     "UCu7N-V4V9k43_uyD5xleJ1A",
@@ -247,7 +245,9 @@
     "UCVBXlR7YhYUr-DfNG1XLrHA",
     "UCMOgdURr7d8pOVlc-alkfRg",
     "UCZyL_PmshsD4VQtFvhtUSXA",
-    "UCFdEAO81RAnsXGzEHmIw3pQ"
+    "UCFdEAO81RAnsXGzEHmIw3pQ",
+    "UCsCWA3Y3JppL6feQiMRgm6Q",
+    "UCOxqgCwgOqC2lMqC5PYz_Dg"
   ],
   "ysc_collection": {
     "APPRENTISSAGE": "APPRENTISSAGE",
@@ -270,6 +270,7 @@
     }
   },
   "ysc_popup": {
+    "nameapr_2022_open": true,
     "nameapril_2021_update_open": true,
     "nameaugust_2021_update_open": true,
     "namebf2021": true,
@@ -279,7 +280,11 @@
     "namedonation_2019": true,
     "namedonation_2021": true,
     "namefebruary_2021_update_open": true,
+    "nameidea_open": true,
     "namejan_2022_update_open": true,
+    "namejul_2022": true,
+    "namejul_2022_open": true,
+    "namejun_2022_open": true,
     "namejune_2021_update_open": true,
     "namematch_2020_update_open": true,
     "namenovember_2021_update_open": true,
@@ -297,9 +302,8 @@
     "nameupdate_jan_2020": true
   },
   "ysc_settings": {
-    "export_bookmarks": true,
     "file_id": "1ujWtKGw9Q7iLuwVi-llli2iRIUW0Oa8gtzYfzoWIEiV6ujwTXQ",
-    "filters_feed": "{\"off\":[],\"on\":[\"APPRENTISSAGE\",\"DIVERTISSEMENT\",\"GAMING\"],\"hide_live\":\"false\",\"hide_watched\":\"false\"}",
+    "filters_feed": "{\"off\":[],\"on\":[\"APPRENTISSAGE\",\"DIVERTISSEMENT\",\"GAMING\"],\"video_types\":[\"scheduled\",\"shorts\",\"uploads\"]}",
     "fixed_sync": true,
     "hide_main_page": true,
     "install_date": 1570293612515,
