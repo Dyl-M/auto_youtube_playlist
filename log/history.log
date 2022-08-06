@@ -3167,3 +3167,11 @@
 2022-08-06 14:12:15+0000 [INFO] - 3 new video(s) added.
 2022-08-06 14:12:16+0000 [INFO] - 2 video(s) removed.
 2022-08-06 14:12:16+0000 [INFO] - Process ended.
+2022-08-06 18:15:22+0000 [INFO] - Process started.
+2022-08-06 18:15:22+0000 [INFO] - API credentials refreshed.
+2022-08-06 18:15:22+0000 [INFO] - YouTube service created successfully.
+2022-08-06 18:16:06+0000 [INFO] - No livestream added or removed.
+2022-08-06 18:16:25+0000 [INFO] - 2 new video(s) added.
+2022-08-06 18:16:26+0000 [ERROR] - (UExPTVVkUUZkUy1YTUo0TkZISmxTQUxZQXQ0bC1MUGdTMS43MEQ5RjM3MDJBRjE3NDNB) - <HttpError 404 when requesting https://youtube.googleapis.com/youtube/v3/playlistItems?id=UExPTVVkUUZkUy1YTUo0TkZISmxTQUxZQXQ0bC1MUGdTMS43MEQ5RjM3MDJBRjE3NDNB returned "Playlist item not found.". Details: "[{'message': 'Playlist item not found.', 'domain': 'youtube.playlistItem', 'reason': 'playlistItemNotFound', 'location': 'id', 'locationType': 'parameter'}]">
+2022-08-06 18:16:26+0000 [INFO] - 3 video(s) removed.
+2022-08-06 18:16:26+0000 [INFO] - Process ended.
