@@ -76,9 +76,10 @@ if __name__ == '__main__':
         YOUTUBE_OAUTH = youtube_req.create_service_workflow()  # YouTube service with GitHub workflow
         PROG_BAR = False  # Do not display progress bar
 
-    try:  # Try to update livestreams playlist
+    try:  # Try to update & sort livestreams playlist
         current_live = youtube_req.iter_livestreams(music_channels_ids, prog_bar=PROG_BAR)
         youtube_req.update_playlist(YOUTUBE_OAUTH, playlists_lives, current_live, is_live=True, prog_bar=PROG_BAR)
+        youtube_req.sort_livestreams(YOUTUBE_OAUTH, playlists_lives, prog_bar=PROG_BAR)
 
     except requests.exceptions.ReadTimeout as timeout_error:
         history_main.warning('TIMEOUT ERROR: Livestreams playlist update cancelled.')

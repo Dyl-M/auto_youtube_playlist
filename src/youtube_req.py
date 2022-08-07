@@ -507,7 +507,10 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
                 history.info(f'{_to_add_df.shape[0]} new {_type}(s) added.')
 
         if not _to_delete_df.empty:  # If there are videos to delete
-            del_from_playlist(service=_service, playlist_id=_playlist_id, items_list=_to_delete_df.item_id,
+            item_list = [{'item_id': it_id, 'video_id': vid_id}
+                         for it_id, vid_id in zip(_to_delete_df.item_id.tolist(), _to_delete_df.video_id.tolist())]
+
+            del_from_playlist(service=_service, playlist_id=_playlist_id, items_list=item_list,
                               prog_bar=prog_bar)
             if _log:
                 history.info(f'{_to_delete_df.shape[0]} {_type}(s) removed.')
@@ -579,15 +582,15 @@ def add_to_playlist(service: googleapiclient.discovery, playlist_id: str, videos
         try:
             request.execute()
 
-        except googleapiclient.errors.HttpError as error:  # skipcq: PYL-W0703
-            history.error(f'({video_id}) - {error}')
+        except googleapiclient.errors.HttpError as http_error:  # skipcq: PYL-W0703
+            history.warning(f'({video_id}) - {http_error.error_details}')
 
 
 def del_from_playlist(service: googleapiclient.discovery, playlist_id: str, items_list: list, prog_bar: bool = True):
     """Delete a list of video from a YouTube playlist
     :param service: a YouTube service build with 'googleapiclient.discovery'
     :param playlist_id: a YouTube playlist ID
-    :param items_list: list of YouTube playlist items
+    :param items_list: list of YouTube playlist items [{"item_id": ..., "video_id": ...}]
     :param prog_bar: to use tqdm progress bar or not.
     """
     if prog_bar:
@@ -596,11 +599,59 @@ def del_from_playlist(service: googleapiclient.discovery, playlist_id: str, item
     else:
         del_iterator = items_list
 
-    for item_id in del_iterator:
-        request = service.playlistItems().delete(id=item_id)
+    for item in del_iterator:
+        request = service.playlistItems().delete(id=item['item_id'])
 
         try:
             request.execute()
 
-        except googleapiclient.errors.HttpError as error:  # skipcq: PYL-W0703
-            history.error(f'({item_id}) - {error}')
+        except googleapiclient.errors.HttpError as http_error:  # skipcq: PYL-W0703
+            history.warning(f'({item["video_id"]}) - {http_error.error_details}')
+
+
+def sort_livestreams(service: googleapiclient.discovery, playlist_id: str, prog_bar: bool = True):
+    """Update livestreams position in a YouTube playlist
+    :param service: a YouTube service build with 'googleapiclient.discovery'
+    :param playlist_id: a YouTube playlist ID
+    :param prog_bar: to use tqdm progress bar or not.
+    """
+    livestreams = get_playlist_items(service=service, playlist_id=playlist_id)  # Retrieve livestreams
+    livestreams_df = pd.DataFrame(livestreams).loc[:, ['video_id', 'item_id']]
+    livestreams_df['position'] = livestreams_df.index
+
+    req = service.videos().list(part=['statistics', 'liveStreamingDetails'],  # Then statistics
+                                id=",".join(livestreams_df.video_id.tolist()),
+                                maxResults=50).execute()
+
+    stats = [{'video_id': item['id'],
+              'viewers': int(item['liveStreamingDetails'].get('concurrentViewers', 0)),
+              'total_view': int(item['statistics'].get('viewCount', 0))} for item in req.get('items', [])]
+
+    stats_df = pd.DataFrame(stats).sort_values(['viewers', 'total_view'], ascending=False, axis=0, ignore_index=True)
+    stats_df['new_position'] = stats_df.index
+
+    # Merge then sort by concurrent viewers
+    df_ordered = livestreams_df.merge(stats_df).sort_values(['viewers', 'total_view', 'new_position'],
+                                                            ascending=True, axis=0, ignore_index=True)
+
+    to_change = df_ordered.loc[df_ordered.position != df_ordered.new_position].to_dict('records')
+
+    if to_change:  # If an update is needed, change position in the playlist
+        if prog_bar:
+            change_iterator = tqdm.tqdm(to_change, desc=f'Moving livestreams in the playlist ({playlist_id})')
+
+        else:
+            change_iterator = to_change
+
+        for change in change_iterator:
+            r_body = {'id': change['item_id'],
+                      'snippet': {'playlistId': playlist_id,
+                                  'resourceId': {'kind': 'youtube#video', 'videoId': change['video_id']},
+                                  'position': change['new_position']}}
+            try:
+                service.playlistItems().update(part='snippet', body=r_body).execute()
+
+            except googleapiclient.errors.HttpError as http_error:  # skipcq: PYL-W0703
+                history.warning(f'({change["video_id"]}) - {http_error.error_details}')
+
+        history.info('Livestreams playlist sorted.')
