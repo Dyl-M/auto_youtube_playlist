@@ -536,7 +536,7 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
         else:  # Get videos stats
             video_stats = pd.DataFrame(get_stats(service=service, videos_list=in_playlist.video_id))
             channel_stats = pd.DataFrame(get_subs(service=service, channel_list=in_playlist.channel_id.tolist()))
-            in_playlist = in_playlist.merge(channel_stats, how='outer').merge(video_stats, how='outer')
+            in_playlist = in_playlist.merge(channel_stats, how='outer').merge(video_stats, how='left')
             date_delta = ref_date - dt.timedelta(days=del_day_ago)  # Days subtraction
             del_cond = (in_playlist.status == 'private') | (in_playlist.release_date < date_delta)  # Delete condition
             to_del = in_playlist.loc[del_cond]  # Keep public and newest videos.
