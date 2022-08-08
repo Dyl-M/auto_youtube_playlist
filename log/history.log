@@ -3359,3 +3359,7 @@
 2022-08-08 16:18:41+0000 [WARNING] - (uH5X3lZJHiI) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
 2022-08-08 16:18:41+0000 [INFO] - 202 video(s) removed.
 2022-08-08 16:18:41+0000 [INFO] - Process ended.
+2022-08-08 20:13:30+0000 [INFO] - Process started.
+2022-08-08 20:13:31+0000 [INFO] - API credentials refreshed.
+2022-08-08 20:13:31+0000 [INFO] - YouTube service created successfully.
+2022-08-08 20:14:16+0000 [ERROR] - [PLOMUdQFdS-XNaPVSol9qCUJvQvN5hO4hJ] Unknown error: quotaExceeded
