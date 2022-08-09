@@ -3363,3 +3363,16 @@
 2022-08-08 20:13:31+0000 [INFO] - API credentials refreshed.
 2022-08-08 20:13:31+0000 [INFO] - YouTube service created successfully.
 2022-08-08 20:14:16+0000 [ERROR] - [PLOMUdQFdS-XNaPVSol9qCUJvQvN5hO4hJ] Unknown error: quotaExceeded
+2022-08-09 01:11:45+0000 [INFO] - Process started.
+2022-08-09 01:11:45+0000 [INFO] - API credentials refreshed.
+2022-08-09 01:11:45+0000 [INFO] - YouTube service created successfully.
+2022-08-09 01:12:28+0000 [INFO] - No livestream added or removed.
+2022-08-09 01:12:28+0000 [WARNING] - (FoGS6-XqzFU) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2022-08-09 01:12:28+0000 [WARNING] - (d8Oc90QevaI) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2022-08-09 01:12:28+0000 [WARNING] - (MsSrIlOi81o) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2022-08-09 01:12:28+0000 [WARNING] - (5lMmnfVylEE) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2022-08-09 01:12:28+0000 [WARNING] - (WsDyRAPFBC8) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2022-08-09 01:12:29+0000 [WARNING] - (6Qq2OMFh8Pc) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2022-08-09 01:12:29+0000 [WARNING] - (7tNtU5XFwrU) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2022-08-09 01:12:29+0000 [INFO] - Livestreams playlist sorted.
+2022-08-09 01:12:29+0000 [ERROR] - [UUvNjdDE6xRuvYVhUGAl2BIQ] Unknown error: quotaExceeded
