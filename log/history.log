@@ -3538,3 +3538,12 @@
 2022-08-13 14:12:59+0000 [INFO] - 2 new video(s) added.
 2022-08-13 14:13:00+0000 [INFO] - 4 video(s) removed.
 2022-08-13 14:13:00+0000 [INFO] - Process ended.
+2022-08-13 18:15:05+0000 [INFO] - Process started.
+2022-08-13 18:15:05+0000 [INFO] - API credentials refreshed.
+2022-08-13 18:15:05+0000 [INFO] - YouTube service created successfully.
+2022-08-13 18:15:45+0000 [INFO] - No livestream added or removed.
+2022-08-13 18:15:48+0000 [INFO] - Livestreams playlist sorted.
+2022-08-13 18:16:10+0000 [WARNING] - Playlist not found: UUiJnBO_XuDsi1SSRAmt4n5g
+2022-08-13 18:16:21+0000 [INFO] - 4 new video(s) added.
+2022-08-13 18:16:22+0000 [INFO] - 1 video(s) removed.
+2022-08-13 18:16:22+0000 [INFO] - Process ended.
