@@ -274,7 +274,8 @@ def get_playlist_items(service: googleapiclient.discovery, playlist_id: str, day
             if with_last_exe:  # In case we want to keep videos published between last exe date and your latest_d
                 oldest_d = LAST_EXE.replace(minute=0, second=0, microsecond=0)  # Round hour to XX:00:00.0
                 latest_d = latest_d.replace(minute=0, second=0, microsecond=0)  # Round hour to XX:00:00.0
-                p_items = [item for item in p_items if latest_d > item['release_date'] > oldest_d]  # Filtering
+                p_items = [item for item in p_items if item['release_date']]  # Filter 1 - 'release_date' exists
+                p_items = [item for item in p_items if latest_d > item['release_date'] > oldest_d]  # Filter 2 - Date
 
                 if len(p_items) <= 50:  # No need for more requests (the playlist must be ordered chronologically!)
                     break
