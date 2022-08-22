@@ -3787,3 +3787,11 @@
 2022-08-22 01:04:58+0000 [INFO] - Livestreams playlist sorted.
 2022-08-22 01:05:19+0000 [INFO] - No video added or removed.
 2022-08-22 01:05:19+0000 [INFO] - Process ended.
+2022-08-22 12:25:55+0000 [INFO] - Process started.
+2022-08-22 12:25:55+0000 [INFO] - API credentials refreshed.
+2022-08-22 12:25:55+0000 [INFO] - YouTube service created successfully.
+2022-08-22 12:26:46+0000 [INFO] - No livestream added or removed.
+2022-08-22 12:26:48+0000 [INFO] - Livestreams playlist sorted.
+2022-08-22 12:27:11+0000 [INFO] - 1 new video(s) added.
+2022-08-22 12:27:11+0000 [INFO] - 1 video(s) removed.
+2022-08-22 12:27:11+0000 [INFO] - Process ended.
