@@ -8,11 +8,11 @@ on:
                 required: true
                 default: 'warning'
 
-    schedule:
-        -   cron: "0 0,12,16,20 * * 1"
-        -   cron: "0 0,21 * * 0,2,3"
-        -   cron: "0 0,12,15,18,21 * * 4"
-        -   cron: "0 0,6,10,14,18,22 * * 5,6"
+#    schedule:
+#        -   cron: "0 0,12,16,20 * * 1"
+#        -   cron: "0 0,21 * * 0,2,3"
+#        -   cron: "0 0,12,15,18,21 * * 4"
+#        -   cron: "0 0,6,10,14,18,22 * * 5,6"
 
 jobs:
     build-linux:
