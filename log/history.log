@@ -3959,3 +3959,11 @@
 2022-08-29 12:52:03+0000 [INFO] - 1 new video(s) added.
 2022-08-29 12:52:03+0000 [INFO] - 1 video(s) removed.
 2022-08-29 12:52:03+0000 [INFO] - Process ended.
+2022-08-29 16:33:57+0000 [INFO] - Process started.
+2022-08-29 16:33:57+0000 [INFO] - API credentials refreshed.
+2022-08-29 16:33:57+0000 [INFO] - YouTube service created successfully.
+2022-08-29 16:34:33+0000 [WARNING] - ConnectionError with this channel: UCZDbwxi1owenInykTi6Y8Bw
+2022-08-29 16:34:48+0000 [INFO] - No livestream added or removed.
+2022-08-29 16:34:52+0000 [INFO] - Livestreams playlist sorted.
+2022-08-29 16:35:24+0000 [INFO] - 1 new video(s) added.
+2022-08-29 16:35:24+0000 [INFO] - Process ended.
