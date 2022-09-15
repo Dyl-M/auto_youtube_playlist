@@ -4419,3 +4419,10 @@
 2022-09-15 00:44:03+0000 [INFO] - Livestreams playlist sorted.
 2022-09-15 00:44:22+0000 [INFO] - 1 video(s) removed.
 2022-09-15 00:44:22+0000 [INFO] - Process ended.
+2022-09-15 12:16:48+0000 [INFO] - Process started.
+2022-09-15 12:16:48+0000 [INFO] - API credentials refreshed.
+2022-09-15 12:16:48+0000 [INFO] - YouTube service created successfully.
+2022-09-15 12:17:33+0000 [INFO] - No livestream added or removed.
+2022-09-15 12:17:39+0000 [INFO] - Livestreams playlist sorted.
+2022-09-15 12:18:23+0000 [INFO] - 2 video(s) removed.
+2022-09-15 12:18:23+0000 [INFO] - Process ended.
