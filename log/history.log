@@ -4637,3 +4637,14 @@
 2022-09-22 15:09:17+0000 [INFO] - Livestreams playlist sorted.
 2022-09-22 15:09:52+0000 [INFO] - 2 video(s) removed.
 2022-09-22 15:09:52+0000 [INFO] - Process ended.
+2022-09-22 18:09:40+0000 [INFO] - Process started.
+2022-09-22 18:09:40+0000 [INFO] - API credentials refreshed.
+2022-09-22 18:09:40+0000 [INFO] - YouTube service created successfully.
+2022-09-22 18:10:31+0000 [INFO] - 1 new livestream(s) added.
+2022-09-22 18:10:31+0000 [INFO] - 1 livestream(s) removed.
+2022-09-22 18:10:32+0000 [WARNING] - (CIVFy3NKGMU) - [{'message': 'Invalid playlist item position.', 'domain': 'youtube.playlistItem', 'reason': 'invalidPlaylistItemPosition'}]
+2022-09-22 18:10:32+0000 [WARNING] - (2gSL3MTjung) - [{'message': 'Invalid specified snippet.', 'domain': 'youtube.playlistItem', 'reason': 'invalidSnippet'}]
+2022-09-22 18:10:35+0000 [INFO] - Livestreams playlist sorted.
+2022-09-22 18:10:57+0000 [INFO] - 2 new video(s) added.
+2022-09-22 18:10:57+0000 [INFO] - 1 video(s) removed.
+2022-09-22 18:10:57+0000 [INFO] - Process ended.
