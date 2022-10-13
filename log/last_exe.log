@@ -1,9 +1,7 @@
-2022-10-13 18:17:34+0000 [INFO] - Process started.
-2022-10-13 18:17:34+0000 [INFO] - API credentials refreshed.
-2022-10-13 18:17:34+0000 [INFO] - YouTube service created successfully.
-2022-10-13 18:18:18+0000 [INFO] - 1 new livestream(s) added.
-2022-10-13 18:18:18+0000 [INFO] - 1 livestream(s) removed.
-2022-10-13 18:18:21+0000 [INFO] - Livestreams playlist sorted.
-2022-10-13 18:18:42+0000 [INFO] - 4 new video(s) added.
-2022-10-13 18:18:43+0000 [INFO] - 1 video(s) removed.
-2022-10-13 18:18:43+0000 [INFO] - Process ended.
+2022-10-13 21:10:11+0000 [INFO] - Process started.
+2022-10-13 21:10:11+0000 [INFO] - API credentials refreshed.
+2022-10-13 21:10:11+0000 [INFO] - YouTube service created successfully.
+2022-10-13 21:10:19+0000 [WARNING] - TIMEOUT ERROR: Livestreams playlist update cancelled.
+2022-10-13 21:10:38+0000 [INFO] - 1 new video(s) added.
+2022-10-13 21:10:38+0000 [INFO] - 1 video(s) removed.
+2022-10-13 21:10:38+0000 [INFO] - Process ended.
