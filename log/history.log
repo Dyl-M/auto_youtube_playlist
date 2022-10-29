@@ -5704,3 +5704,10 @@
 2022-10-29 01:22:50+0000 [INFO] - Livestreams playlist sorted.
 2022-10-29 01:23:08+0000 [INFO] - 1 new video(s) added.
 2022-10-29 01:23:08+0000 [INFO] - Process ended.
+2022-10-29 06:21:09+0000 [INFO] - Process started.
+2022-10-29 06:21:09+0000 [INFO] - API credentials refreshed.
+2022-10-29 06:21:09+0000 [INFO] - YouTube service created successfully.
+2022-10-29 06:22:00+0000 [INFO] - No livestream added or removed.
+2022-10-29 06:22:03+0000 [INFO] - Livestreams playlist sorted.
+2022-10-29 06:22:28+0000 [INFO] - 1 video(s) removed.
+2022-10-29 06:22:28+0000 [INFO] - Process ended.
