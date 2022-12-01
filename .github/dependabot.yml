@@ -5,4 +5,4 @@ updates:
     schedule:
       interval: "weekly"
 
-# Documentation: https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+# Docs: https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
