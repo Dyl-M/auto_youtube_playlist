@@ -1,0 +1,8 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "weekly"
+
+# Docs: https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
