@@ -33,7 +33,7 @@ jobs:
 
             -   id: python-setup
                 name: Set up Python 3.9
-                uses: actions/setup-python@v3
+                uses: actions/setup-python@v4
                 with:
                     python-version: 3.9
 
@@ -59,7 +59,7 @@ jobs:
 
             -   id: update-secret
                 name: Repository Secret update.
-                uses: gliech/create-github-secret-action@v1.4.10
+                uses: gliech/create-github-secret-action@v1
                 with:
                     name: 'CREDS_B64'
                     value: '${{ env.CREDS_B64 }}'
