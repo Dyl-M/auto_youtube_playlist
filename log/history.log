@@ -7041,3 +7041,11 @@
 2022-12-15 15:08:13+0000 [INFO] - Livestreams playlist sorted.
 2022-12-15 15:08:36+0000 [INFO] - No video added or removed.
 2022-12-15 15:08:36+0000 [INFO] - Process ended.
+2022-12-15 18:07:11+0000 [INFO] - Process started.
+2022-12-15 18:07:11+0000 [INFO] - API credentials refreshed.
+2022-12-15 18:07:11+0000 [INFO] - YouTube service created successfully.
+2022-12-15 18:08:06+0000 [INFO] - No livestream added or removed.
+2022-12-15 18:08:07+0000 [INFO] - Livestreams playlist sorted.
+2022-12-15 18:08:57+0000 [INFO] - 1 new video(s) added.
+2022-12-15 18:08:58+0000 [INFO] - 2 video(s) removed.
+2022-12-15 18:08:58+0000 [INFO] - Process ended.
