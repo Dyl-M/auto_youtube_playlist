@@ -20,7 +20,11 @@ Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy pu
 
 ```
 ├── .github
+│   ├── ISSUE_TEMPLATE
+│   │   ├── feature_request.yml
+│   │   └── issue_report.yml
 │   └── workflows
+│       ├── licence_workflow.yml
 │       └── update_workflow.yml
 │
 ├── cmd (IGNORED)
