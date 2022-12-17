@@ -1,0 +1,87 @@
+name: 🐞 Issue report
+description: Create a report to indicate a problem with the project
+labels: [bug]
+body:
+
+    -   type: textarea
+        id: reproduce-steps
+        attributes:
+            label: Steps to reproduce
+            description: Sequence of events leading to the behavior.
+            placeholder: |
+                Example:
+                    1. Run exe.py launch on X mode...
+                    2. Calling exe_2.sh on Y mode...
+                    3. Leading to following error: `<ERROR_CODE>`
+        validations:
+            required: true
+
+    -   type: textarea
+        id: expected-behavior
+        attributes:
+            label: Expected behavior
+            description: A clear and concise description of what you expected to happen.
+            placeholder: |
+                Example:
+                  "This should happen..."
+        validations:
+            required: true
+
+    -   type: textarea
+        id: actual-behavior
+        attributes:
+            label: Actual behavior
+            description: A clear and concise description of what what actually happens (include Error codes).
+            placeholder: |
+                Example:
+                  "This happened instead..."
+        validations:
+            required: true
+
+    -   type: input
+        id: os
+        attributes:
+            label: Operating system
+            description: The OS used.
+            placeholder: |
+                Example: "Windows 11"
+        validations:
+            required: true
+
+    -   type: input
+        id: distribution
+        attributes:
+            label: Package-management system and Python version
+            description: Package manager used for program execution.
+            placeholder: |
+                Example: "PiP, Anaconda, etc. w/ Python 3.x"
+        validations:
+            required: true
+
+    -   type: input
+        id: requirements
+        attributes:
+            label: Dependencies
+            description: If different from dependencies written in `requirements.txt`
+            placeholder: |
+                Example: "pandas~=1.x, etc."
+
+    -   type: textarea
+        id: other-details
+        attributes:
+            label: Other details
+            placeholder: |
+                Additional details and attachments.
+
+    -   type: checkboxes
+        id: acknowledgements
+        attributes:
+            label: Acknowledgements
+            description: Read this carefully, we will close and ignore your issue if you skimmed through this.
+            options:
+                -   label: I have searched the existing issues and this is a new ticket, **NOT** a duplicate or related to another open issue.
+                    required: true
+                -   label: I have written a short but informative title.
+                    required: true
+                -   label: I have filled out all of the requested information in this form.
+                    required: true
