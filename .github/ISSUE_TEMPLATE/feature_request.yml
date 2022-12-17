@@ -1,6 +1,6 @@
 name: 💡 Feature request
 description: Suggest a feature to improve Neko
-labels: [feature]
+labels: [enhancement]
 body:
 
     -   type: textarea
