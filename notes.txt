@@ -5,9 +5,12 @@
 
 ```
 if __name__ == '__main__':
+    import json
+    import youtube_req
+
     with open('../data/pocket_tube.json') as pt_file:
         PT = json.load(pt_file)
 
-    youtube = get_authenticated_service(log=False)
-    get_channels(youtube, PT['MUSIQUE'], save=True, save_name='music_channels')
+    youtube = youtube_req.create_service_local(log=False)
+    youtube_req.get_channels(youtube, PT['MUSIQUE'], save=True, save_name='music_channels')
 ```
