@@ -31,7 +31,9 @@
     "UCtqICqGbPSbTN09K1_7VZ3Q",
     "UCqA8H22FwgBVcF3GJpp0MQw",
     "UCFdEAO81RAnsXGzEHmIw3pQ",
-    "UCYO_jab_esuFRV4b17AJtAw"
+    "UCYO_jab_esuFRV4b17AJtAw",
+    "UCP46_MXP_WG_auH88FnfS1A",
+    "UCxH16958KSxT4Z9yL_9JYtw"
   ],
   "DIVERTISSEMENT": [
     "UCZpJLCV3gVP8R_sc8P30VpQ",
@@ -92,7 +94,9 @@
     "UCkDtCKtPKlsg-gJO_m5D0mQ",
     "UCUbsiCjXynjpKU64L65Gu-A",
     "UC6UBbvEA8uh6Ulc6ax1Zs0g",
-    "UC8X4WT5_lUXqMjeN8bGFk9w"
+    "UC8X4WT5_lUXqMjeN8bGFk9w",
+    "UCQh3tqrZeoNdowuB6vp3uXg",
+    "UCxH16958KSxT4Z9yL_9JYtw"
   ],
   "GAMING": [
     "UCu7N-V4V9k43_uyD5xleJ1A",
@@ -275,7 +279,12 @@
     "nameapril_2021_update_open": true,
     "nameaugust_2021_update_open": true,
     "namebf2021": true,
+    "namebf22d": true,
+    "namebfb22": true,
     "namecm2021": true,
+    "namecm22": true,
+    "namede_2022": true,
+    "namede_2022_open": true,
     "namedec_2021_update_open": true,
     "namedecember_2020_update_open": true,
     "namedonation_2019": true,
@@ -290,12 +299,17 @@
     "namematch_2020_update_open": true,
     "namenovember_2021_update_open": true,
     "nameny_2022": true,
+    "nameo_2022": true,
+    "nameo_2022_open": true,
     "nameoctober_2019_1": true,
     "nameoctober_2021_update_open": true,
     "nameph_2021_open": true,
     "nameproduct_hunt_2019": true,
     "namerewiews_popup": true,
+    "names_2022": true,
+    "names_2022_open": true,
     "nameseptember_2020_update_open": true,
+    "namesn_2022_open": true,
     "namestart_guide": true,
     "nametutorial_2019": true,
     "nameukr": true,
@@ -304,7 +318,7 @@
   },
   "ysc_settings": {
     "file_id": "1ujWtKGw9Q7iLuwVi-llli2iRIUW0Oa8gtzYfzoWIEiV6ujwTXQ",
-    "filters_feed": "{\"off\":[],\"on\":[\"APPRENTISSAGE\",\"DIVERTISSEMENT\",\"GAMING\"],\"video_types\":[\"scheduled\",\"shorts\",\"uploads\"]}",
+    "filters_feed": "{\"off\":[],\"on\":[\"APPRENTISSAGE\",\"DIVERTISSEMENT\",\"GAMING\"],\"video_types\":[\"uploads\"]}",
     "fixed_sync": true,
     "hide_main_page": true,
     "install_date": 1570293612515,
