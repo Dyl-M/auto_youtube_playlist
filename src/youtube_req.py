@@ -297,7 +297,7 @@ def get_playlist_items(service: googleapiclient.discovery, playlist_id: str, day
             error_reason = http_error.error_details[0]['reason']
 
             if error_reason == 'playlistNotFound':
-                if playlist_id not in TO_IGNORE:
+                if playlist_id not in TO_IGNORE['playlistNotFoundPass']:
                     history.warning(f'Playlist not found: {playlist_id}')
                 break
 
@@ -462,13 +462,15 @@ def iter_playlists(service: googleapiclient.discovery, playlists: list, day_ago:
     :param prog_bar: to use tqdm progress bar or not
     :return: videos retrieved in playlists.
     """
+    playlists_filter = [playlist_id for playlist_id in playlists if playlist_id not in TO_IGNORE['toPass']]
+
     if prog_bar:
         item_it = [get_playlist_items(service=service, playlist_id=playlist_id, day_ago=day_ago, latest_d=latest_d,
                                       with_last_exe=with_last_exe)
-                   for playlist_id in tqdm.tqdm(playlists, desc='Looking for videos to add')]
+                   for playlist_id in tqdm.tqdm(playlists_filter, desc='Looking for videos to add')]
     else:
         item_it = [get_playlist_items(service=service, playlist_id=playlist_id, day_ago=day_ago, latest_d=latest_d,
-                                      with_last_exe=with_last_exe) for playlist_id in playlists]
+                                      with_last_exe=with_last_exe) for playlist_id in playlists_filter]
     return list(itertools.chain.from_iterable(item_it))
 
 
