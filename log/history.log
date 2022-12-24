@@ -7326,3 +7326,10 @@
 2022-12-24 10:14:10+0000 [INFO] - 1 new video(s) added.
 2022-12-24 10:14:11+0000 [INFO] - 1 video(s) removed.
 2022-12-24 10:14:11+0000 [INFO] - Process ended.
+2022-12-24 14:11:10+0000 [INFO] - Process started.
+2022-12-24 14:11:10+0000 [INFO] - API credentials refreshed.
+2022-12-24 14:11:10+0000 [INFO] - YouTube service created successfully.
+2022-12-24 14:12:09+0000 [INFO] - No livestream added or removed.
+2022-12-24 14:12:10+0000 [INFO] - Livestreams playlist sorted.
+2022-12-24 14:12:33+0000 [INFO] - 1 video(s) removed.
+2022-12-24 14:12:33+0000 [INFO] - Process ended.
