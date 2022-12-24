@@ -96,7 +96,7 @@ def encode_key(json_path: str, export_dir: str = None, export_name: str = None):
         sys.exit()
 
     elif not os.path.exists(json_path):
-        history.error(f'{json_path} file does not exist.')
+        history.error(f'%s file does not exist.', json_path)
         sys.exit()
 
     else:
@@ -117,7 +117,7 @@ def create_service_local(log: bool = True):
     :return service: a Google API service object build with 'googleapiclient.discovery.build'.
     """
     oauth_file = '../tokens/oauth.json'  # OAUTH 2.0 ID path
-    scopes = ["https://www.googleapis.com/auth/youtube", "https://www.googleapis.com/auth/youtube.force-ssl"]
+    scopes = ['https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.force-ssl']
     instance_fail_message = 'Failed to create service instance for YouTube'
     cred = None
 
@@ -144,7 +144,7 @@ def create_service_local(log: bool = True):
 
     except Exception as error:  # skipcq: PYL-W0703 - No known errors at the moment.
         if log:
-            history.critical(f'({error}) {instance_fail_message}')
+            history.critical(f'(%s) %s', error, instance_fail_message)
 
         sys.exit()
 
@@ -176,7 +176,7 @@ def create_service_workflow():
             creds_str = json.dumps(ast.literal_eval(creds.to_json())).encode('utf-8')
 
             creds_b64 = str(base64.urlsafe_b64encode(creds_str))[2:-1]  # Encode token
-            os.environ["CREDS_B64"] = creds_b64  # Update environment variable value
+            os.environ['CREDS_B64'] = creds_b64  # Update environment variable value
             history.info('API credentials refreshed.')
 
         else:
@@ -189,7 +189,7 @@ def create_service_workflow():
         return service
 
     except Exception as error:  # skipcq: PYL-W0703 - No known errors at the moment.
-        history.critical(f'({error}) {instance_fail_message}')
+        history.critical(f'(%s) %s', error, instance_fail_message)
         sys.exit()
 
 
@@ -209,7 +209,7 @@ def get_channels(service: googleapiclient.discovery, channel_list: list, save: b
 
     for chunk in channels_chunks:
         try:
-            request = service.channels().list(part=['snippet', 'contentDetails'], id=",".join(chunk),
+            request = service.channels().list(part=['snippet', 'contentDetails'], id=','.join(chunk),
                                               maxResults=50).execute()  # Request channels
 
             # Extract upload playlists, channel names and their ID.
@@ -298,10 +298,10 @@ def get_playlist_items(service: googleapiclient.discovery, playlist_id: str, day
 
             if error_reason == 'playlistNotFound':
                 if playlist_id not in TO_IGNORE['playlistNotFoundPass']:
-                    history.warning(f'Playlist not found: {playlist_id}')
+                    history.warning(f'Playlist not found: %s', playlist_id)
                 break
 
-            history.error(f'[{playlist_id}] Unknown error: {error_reason}')
+            history.error(f'[%s] Unknown error: %s', playlist_id, error_reason)
             sys.exit()
 
     return p_items
@@ -314,7 +314,7 @@ def get_videos(service: googleapiclient.discovery, videos_list: list):
     :return: request results.
     """
     return service.videos().list(part=['snippet', 'contentDetails', 'statistics'],
-                                 id=",".join(videos_list),
+                                 id=','.join(videos_list),
                                  maxResults=50).execute()
 
 
@@ -331,7 +331,7 @@ def get_subs(service: googleapiclient.discovery, channel_list: list):
     raw_chunk = []
 
     for chunk in channels_chunks:
-        req = service.channels().list(part=['statistics'], id=",".join(chunk), maxResults=50).execute()
+        req = service.channels().list(part=['statistics'], id=','.join(chunk), maxResults=50).execute()
         raw_chunk += req.get('items', [])
 
     items = [{'channel_id': item['id'],
@@ -349,11 +349,11 @@ def find_livestreams(channel_id: str):
         cookies = {'CONSENT': f'YES+cb.20210328-17-p0.en-GB+FX+{random.randint(100, 999)}'}  # Cookies settings
         url = f'https://www.youtube.com/channel/{channel_id}'
         web_page = requests.get(url, cookies=cookies, timeout=(5, 5))  # Page request
-        soup = bs4.BeautifulSoup(web_page.text, "html.parser")  # HTML parsing
+        soup = bs4.BeautifulSoup(web_page.text, 'html.parser')  # HTML parsing
 
         # Filtering JS part only, then convert to string
-        js_scripts = [script for script in soup.find_all("script") if "sectionListRenderer" in str(script)][0].text
-        sections_as_dict = json.loads(js_scripts.replace("var ytInitialData = ", '')[:-1])  # Parse JS as dictionary
+        js_scripts = [script for script in soup.find_all('script') if 'sectionListRenderer' in str(script)][0].text
+        sections_as_dict = json.loads(js_scripts.replace('var ytInitialData = ', '')[:-1])  # Parse JS as dictionary
 
         # Extract content from page tabs
         tab = sections_as_dict['contents']['twoColumnBrowseResultsRenderer']['tabs'][0]['tabRenderer']['content']
@@ -370,7 +370,7 @@ def find_livestreams(channel_id: str):
             return livestream_ids
 
     except requests.exceptions.ConnectionError:
-        history.warning(f'ConnectionError with this channel: {channel_id}')
+        history.warning(f'ConnectionError with this channel: %s', channel_id)
 
     return []  # Return if no livestream at the moment or in case of ConnectionError
 
@@ -507,7 +507,7 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
             add_to_playlist(service=_service, playlist_id=_playlist_id, videos_list=_to_add_df.video_id,
                             prog_bar=prog_bar)
             if _log:
-                history.info(f'{_to_add_df.shape[0]} new {_type}(s) added.')
+                history.info(f'%s new %s(s) added.', _to_add_df.shape[0], _type)
 
         if not _to_delete_df.empty:  # If there are videos to delete
             item_list = [{'item_id': it_id, 'video_id': vid_id}
@@ -516,10 +516,10 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
             del_from_playlist(service=_service, playlist_id=_playlist_id, items_list=item_list,
                               prog_bar=prog_bar)
             if _log:
-                history.info(f'{_to_delete_df.shape[0]} {_type}(s) removed.')
+                history.info(f'%s %s(s) removed.', _to_delete_df.shape[0], _type)
 
         if _to_add_df.empty and _to_delete_df.empty and _log:
-            history.info(f'No {_type} added or removed.')
+            history.info(f'No %s added or removed.', _type)
 
     # Pass playlist as pandas Dataframes (for easier filtering)
     in_playlist = pd.DataFrame(get_playlist_items(service=service, playlist_id=playlist_id))  # Get videos already in
@@ -584,13 +584,13 @@ def add_to_playlist(service: googleapiclient.discovery, playlist_id: str, videos
 
     for video_id in add_iterator:
         r_body = {'snippet': {'playlistId': playlist_id, 'resourceId': {'kind': 'youtube#video', 'videoId': video_id}}}
-        request = service.playlistItems().insert(part="snippet", body=r_body)
+        request = service.playlistItems().insert(part='snippet', body=r_body)
 
         try:
             request.execute()
 
         except googleapiclient.errors.HttpError as http_error:  # skipcq: PYL-W0703
-            history.warning(f'({video_id}) - {http_error.error_details}')
+            history.warning(f'(%s) - %s', video_id, http_error.error_details)
 
 
 def del_from_playlist(service: googleapiclient.discovery, playlist_id: str, items_list: list, prog_bar: bool = True):
@@ -613,7 +613,7 @@ def del_from_playlist(service: googleapiclient.discovery, playlist_id: str, item
             request.execute()
 
         except googleapiclient.errors.HttpError as http_error:  # skipcq: PYL-W0703
-            history.warning(f'({item["video_id"]}) - {http_error.error_details}')
+            history.warning(f'(%s) - %s', item['video_id'], http_error.error_details)
 
 
 def sort_livestreams(service: googleapiclient.discovery, playlist_id: str, prog_bar: bool = True):
@@ -627,7 +627,7 @@ def sort_livestreams(service: googleapiclient.discovery, playlist_id: str, prog_
     livestreams_df['position'] = livestreams_df.index
 
     req = service.videos().list(part=['statistics', 'liveStreamingDetails'],  # Then statistics
-                                id=",".join(livestreams_df.video_id.tolist()),
+                                id=','.join(livestreams_df.video_id.tolist()),
                                 maxResults=50).execute()
 
     stats = [{'video_id': item['id'],
@@ -659,6 +659,6 @@ def sort_livestreams(service: googleapiclient.discovery, playlist_id: str, prog_
                 service.playlistItems().update(part='snippet', body=r_body).execute()
 
             except googleapiclient.errors.HttpError as http_error:  # skipcq: PYL-W0703
-                history.warning(f'({change["video_id"]}) - {http_error.error_details}')
+                history.warning(f'(%s) - %s', change['video_id'], http_error.error_details)
 
         history.info('Livestreams playlist sorted.')
