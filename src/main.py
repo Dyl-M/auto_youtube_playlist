@@ -55,15 +55,13 @@ if __name__ == '__main__':
     history_main.addHandler(history_main_file)
 
     # Open and read data files
-    with open('../data/music_channels.json', 'r', encoding='utf8') as music_channel_file:
-        music_channels = json.load(music_channel_file)
+    with open('../data/pocket_tube.json', 'r', encoding='utf8') as pt_file:
+        music_channels = json.load(pt_file)["MUSIQUE"]
 
     with open('../data/playlists.json', 'r', encoding='utf8') as playlists_file:
         playlists = json.load(playlists_file)
 
     playlists_mixes, playlists_lives = playlists['mixes']['id'], playlists['lives']['id']
-    music_channels_ids = [channel['id'] for channel in music_channels]
-    music_channels_uploads = [channel['uploads'] for channel in music_channels]
 
     # Start
     history_main.info('Process started.')
@@ -77,7 +75,7 @@ if __name__ == '__main__':
         PROG_BAR = False  # Do not display progress bar
 
     try:  # Try to update & sort livestreams playlist
-        current_live = youtube_req.iter_livestreams(music_channels_ids, prog_bar=PROG_BAR)
+        current_live = youtube_req.iter_livestreams(music_channels, prog_bar=PROG_BAR)
         youtube_req.update_playlist(YOUTUBE_OAUTH, playlists_lives, current_live, is_live=True, prog_bar=PROG_BAR)
         youtube_req.sort_livestreams(YOUTUBE_OAUTH, playlists_lives, prog_bar=PROG_BAR)
 
@@ -85,7 +83,7 @@ if __name__ == '__main__':
         history_main.warning('TIMEOUT ERROR: Livestreams playlist update cancelled.')
 
     # Update mixes playlist
-    to_add = youtube_req.iter_playlists(YOUTUBE_OAUTH, music_channels_uploads, prog_bar=PROG_BAR)
+    to_add = youtube_req.iter_channels(YOUTUBE_OAUTH, music_channels, prog_bar=PROG_BAR)
     youtube_req.update_playlist(YOUTUBE_OAUTH, playlists_mixes, to_add, prog_bar=PROG_BAR)
 
     history_main.info('Process ended.')  # End

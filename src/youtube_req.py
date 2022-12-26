@@ -44,7 +44,7 @@ def last_exe_date():
     with open('../log/last_exe.log', 'r', encoding='utf8') as log_file:
         first_log = log_file.readlines()[0]  # Get first log
 
-    d_str = re.search(r'(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})\+(\d{4})', first_log).group()  # Extract date
+    d_str = re.search(r'(\d{4}(-\d{2}){2})\s(\d{2}:?){3}.[\d:]+', first_log).group()  # Extract date
     date = dt.datetime.strptime(d_str, '%Y-%m-%d %H:%M:%S%z')  # Parse to datetime object
     return date
 
@@ -193,43 +193,6 @@ def create_service_workflow():
         sys.exit()
 
 
-def get_channels(service: googleapiclient.discovery, channel_list: list, save: bool = False,
-                 save_name: str = 'channels'):
-    """Get YouTube channels basic information
-    :param service: a YouTube service build with 'googleapiclient.discovery'
-    :param channel_list: list of YouTube channel ID
-    :param save: to save results or not as JSON file
-    :param save_name: JSON save name
-    :return information: a dictionary with channels names, IDs and uploads playlist IDs.
-    """
-    information = []
-
-    # Split task in chunks of size 50 to request on a maximum of 50 channels at each iteration.
-    channels_chunks = [channel_list[i:i + min(50, len(channel_list))] for i in range(0, len(channel_list), 50)]
-
-    for chunk in channels_chunks:
-        try:
-            request = service.channels().list(part=['snippet', 'contentDetails'], id=','.join(chunk),
-                                              maxResults=50).execute()  # Request channels
-
-            # Extract upload playlists, channel names and their ID.
-            information += [{'uploads': an_item['contentDetails']['relatedPlaylists']['uploads'],
-                             'title': an_item['snippet']['title'],
-                             'id': an_item['id']} for an_item in request['items']]
-
-        except googleapiclient.errors.HttpError as http_error:
-            history.error(http_error.error_details)
-            sys.exit()
-
-    information = sorted(information, key=lambda dic: dic['title'].lower())  # Sort by channel name alphabetical order
-
-    if save:  # If you choose to save the requests results
-        with open(f'../data/{save_name}.json', 'w', encoding='utf-8') as save_file:  # Export as JSON file
-            json.dump(information, save_file, indent=2, ensure_ascii=False)
-
-    return information
-
-
 def get_playlist_items(service: googleapiclient.discovery, playlist_id: str, day_ago: int = None,
                        with_last_exe: bool = False, latest_d: dt.datetime = NOW):
     """Get the videos in a YouTube playlist
@@ -297,7 +260,7 @@ def get_playlist_items(service: googleapiclient.discovery, playlist_id: str, day
             error_reason = http_error.error_details[0]['reason']
 
             if error_reason == 'playlistNotFound':
-                if playlist_id not in TO_IGNORE['playlistNotFoundPass']:
+                if f'UC{playlist_id[2:]}' not in TO_IGNORE['playlistNotFoundPass']:
                     history.warning('Playlist not found: %s', playlist_id)
                 break
 
@@ -451,10 +414,10 @@ def iter_livestreams(channel_list: list, prog_bar: bool = True):
     return list(itertools.chain.from_iterable(lives_it))
 
 
-def iter_playlists(service: googleapiclient.discovery, playlists: list, day_ago: int = None,
-                   with_last_exe: bool = True, latest_d: dt.datetime = NOW, prog_bar: bool = True):
+def iter_channels(service: googleapiclient.discovery, channels: list, day_ago: int = None, with_last_exe: bool = True,
+                  latest_d: dt.datetime = NOW, prog_bar: bool = True):
     """Apply 'get_playlist_items' for a collection of YouTube playlists
-    :param playlists: list of YouTube channel IDs
+    :param channels: list of YouTube channel IDs
     :param service: a YouTube service build with 'googleapiclient.discovery'
     :param day_ago: day difference with a reference date, delimits items' collection field
     :param latest_d: latest reference date
@@ -462,15 +425,15 @@ def iter_playlists(service: googleapiclient.discovery, playlists: list, day_ago:
     :param prog_bar: to use tqdm progress bar or not
     :return: videos retrieved in playlists.
     """
-    playlists_filter = [playlist_id for playlist_id in playlists if playlist_id not in TO_IGNORE['toPass']]
+    playlists = [f'UU{channel_id[2:]}' for channel_id in channels if channel_id not in TO_IGNORE['toPass']]
 
     if prog_bar:
         item_it = [get_playlist_items(service=service, playlist_id=playlist_id, day_ago=day_ago, latest_d=latest_d,
                                       with_last_exe=with_last_exe)
-                   for playlist_id in tqdm.tqdm(playlists_filter, desc='Looking for videos to add')]
+                   for playlist_id in tqdm.tqdm(playlists, desc='Looking for videos to add')]
     else:
         item_it = [get_playlist_items(service=service, playlist_id=playlist_id, day_ago=day_ago, latest_d=latest_d,
-                                      with_last_exe=with_last_exe) for playlist_id in playlists_filter]
+                                      with_last_exe=with_last_exe) for playlist_id in playlists]
     return list(itertools.chain.from_iterable(item_it))
 
 
@@ -662,3 +625,52 @@ def sort_livestreams(service: googleapiclient.discovery, playlist_id: str, prog_
                 history.warning('(%s) - %s', change['video_id'], http_error.error_details)
 
         history.info('Livestreams playlist sorted.')
+
+
+def sort_db(service):
+    """Sort and save the PocketTube database file
+    :param service: a YouTube service build with 'googleapiclient.discovery'.
+    """
+
+    def get_channels(_service: googleapiclient.discovery, _channel_list: list):
+        """Get YouTube channels basic information
+        :param _service: a YouTube service build with 'googleapiclient.discovery'
+        :param _channel_list: list of YouTube channel ID
+        :return information: a dictionary with channels names, IDs and uploads playlist IDs.
+        """
+        information = []
+
+        # Split task in chunks of size 50 to request on a maximum of 50 channels at each iteration.
+        channels_chunks = [_channel_list[i:i + min(50, len(_channel_list))] for i in range(0, len(_channel_list), 50)]
+
+        for chunk in channels_chunks:
+            try:
+                # Request channels
+                request = _service.channels().list(part=['snippet'], id=','.join(chunk), maxResults=50).execute()
+
+                # Extract upload playlists, channel names and their ID.
+                information += [{'title': an_item['snippet']['title'], 'id': an_item['id']} for an_item in
+                                request['items']]
+
+            except googleapiclient.errors.HttpError as http_error:
+                print(http_error.error_details)
+                sys.exit()
+
+        # Sort by channel name alphabetical order
+        information = sorted(information, key=lambda dic: dic['title'].lower())
+        ids_only = [info['id'] for info in information]  # Get channel IDs only
+
+        return ids_only
+
+    with open('../data/pocket_tube.json', mode='r', encoding='utf-8') as pt_file:  # Open PocketTube JSON file
+        channels_db = json.load(pt_file)
+
+    categories = [db_keys for db_keys in channels_db.keys() if 'ysc' not in db_keys]  # Get PT categories
+    db_sorted = {category: get_channels(_service=service, _channel_list=channels_db[category])
+                 for category in categories}  # Get sorted categories
+
+    for category in categories:  # Rewrite categories in the dict object associated to the PT JSON file
+        channels_db[category] = db_sorted[category]
+
+    with open(f'../data/pocket_tube.json', 'w', encoding='utf-8') as pt_save:  # Export as JSON file
+        json.dump(channels_db, pt_save, indent=2, ensure_ascii=False)
