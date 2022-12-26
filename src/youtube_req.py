@@ -672,5 +672,5 @@ def sort_db(service):
     for category in categories:  # Rewrite categories in the dict object associated to the PT JSON file
         channels_db[category] = db_sorted[category]
 
-    with open(f'../data/pocket_tube.json', 'w', encoding='utf-8') as pt_save:  # Export as JSON file
+    with open('../data/pocket_tube.json', 'w', encoding='utf-8') as pt_save:  # Export as JSON file
         json.dump(channels_db, pt_save, indent=2, ensure_ascii=False)
