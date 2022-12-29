@@ -49,8 +49,8 @@ def last_exe_date():
     return date
 
 
-with open('../data/ignore.json') as ignore_file:
-    TO_IGNORE = json.load(ignore_file)
+with open('../data/add-on.json') as add_on_file:
+    ADD_ON = json.load(add_on_file)
 
 NOW = dt.datetime.now(tz=tzlocal.get_localzone())
 LAST_EXE = last_exe_date()
@@ -260,7 +260,7 @@ def get_playlist_items(service: googleapiclient.discovery, playlist_id: str, day
             error_reason = http_error.error_details[0]['reason']
 
             if error_reason == 'playlistNotFound':
-                if f'UC{playlist_id[2:]}' not in TO_IGNORE['playlistNotFoundPass']:
+                if f'UC{playlist_id[2:]}' not in ADD_ON['playlistNotFoundPass']:
                     history.warning('Playlist not found: %s', playlist_id)
                 break
 
@@ -406,10 +406,12 @@ def iter_livestreams(channel_list: list, prog_bar: bool = True):
     :param prog_bar: to use tqdm progress bar or not
     :return: IDs of current live based on channels collection.
     """
+    all_channels = channel_list + ADD_ON['certified']
+
     if prog_bar:
-        lives_it = [find_livestreams(chan_id) for chan_id in tqdm.tqdm(channel_list, desc='Looking for livestreams')]
+        lives_it = [find_livestreams(chan_id) for chan_id in tqdm.tqdm(all_channels, desc='Looking for livestreams')]
     else:
-        lives_it = [find_livestreams(chan_id) for chan_id in channel_list]
+        lives_it = [find_livestreams(chan_id) for chan_id in all_channels]
 
     return list(itertools.chain.from_iterable(lives_it))
 
@@ -425,7 +427,8 @@ def iter_channels(service: googleapiclient.discovery, channels: list, day_ago: i
     :param prog_bar: to use tqdm progress bar or not
     :return: videos retrieved in playlists.
     """
-    playlists = [f'UU{channel_id[2:]}' for channel_id in channels if channel_id not in TO_IGNORE['toPass']]
+    all_channels = channels + ADD_ON['certified']
+    playlists = [f'UU{channel_id[2:]}' for channel_id in all_channels if channel_id not in ADD_ON['toPass']]
 
     if prog_bar:
         item_it = [get_playlist_items(service=service, playlist_id=playlist_id, day_ago=day_ago, latest_d=latest_d,
