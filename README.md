@@ -30,7 +30,7 @@ Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy pu
 ├── cmd (IGNORED)
 │
 ├── data
-│   ├── ignore.json
+│   ├── add-on.json
 │   ├── mix_history.csv
 │   ├── playlists.json
 │   └── pocket_tube.json
