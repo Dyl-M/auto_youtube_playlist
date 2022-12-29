@@ -7462,3 +7462,10 @@
 2022-12-29 18:08:59+0000 [INFO] - 3 new video(s) added.
 2022-12-29 18:09:00+0000 [INFO] - 4 video(s) removed.
 2022-12-29 18:09:00+0000 [INFO] - Process ended.
+2022-12-29 21:04:37+0000 [INFO] - Process started.
+2022-12-29 21:04:37+0000 [INFO] - API credentials refreshed.
+2022-12-29 21:04:37+0000 [INFO] - YouTube service created successfully.
+2022-12-29 21:05:48+0000 [INFO] - 1 new livestream(s) added.
+2022-12-29 21:05:51+0000 [INFO] - Livestreams playlist sorted.
+2022-12-29 21:06:17+0000 [INFO] - No video added or removed.
+2022-12-29 21:06:17+0000 [INFO] - Process ended.
