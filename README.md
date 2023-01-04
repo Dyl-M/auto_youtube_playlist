@@ -27,6 +27,10 @@ Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy pu
 │       ├── licence_workflow.yml
 │       └── update_workflow.yml
 │
+├── archive (IGNORED)
+│   └── 2022
+│       └── history_2022.log
+│
 ├── cmd (IGNORED)
 │
 ├── data
