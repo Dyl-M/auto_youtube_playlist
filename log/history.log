@@ -146,3 +146,12 @@
 2023-01-06 18:17:53+0000 [INFO] - 1 new video(s) added.
 2023-01-06 18:17:54+0000 [INFO] - 3 video(s) removed.
 2023-01-06 18:17:54+0000 [INFO] - Process ended.
+2023-01-06 22:12:47+0000 [INFO] - Process started.
+2023-01-06 22:12:47+0000 [INFO] - API credentials refreshed.
+2023-01-06 22:12:47+0000 [INFO] - YouTube service created successfully.
+2023-01-06 22:13:51+0000 [INFO] - 1 livestream(s) removed.
+2023-01-06 22:13:52+0000 [WARNING] - (LXaBTSa8gG4) - [{'message': 'Invalid specified snippet.', 'domain': 'youtube.playlistItem', 'reason': 'invalidSnippet'}]
+2023-01-06 22:13:57+0000 [INFO] - Livestreams playlist sorted.
+2023-01-06 22:14:27+0000 [INFO] - 4 new video(s) added.
+2023-01-06 22:14:29+0000 [INFO] - 4 video(s) removed.
+2023-01-06 22:14:29+0000 [INFO] - Process ended.
