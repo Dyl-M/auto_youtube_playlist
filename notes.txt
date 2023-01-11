@@ -10,5 +10,3 @@ if __name__ == '__main__':
     my_service = youtube_req.create_service_local(log=False)
     youtube_req.sort_db(service=my_service)
 ```
-
-test GPG 2
