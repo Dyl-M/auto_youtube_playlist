@@ -29,7 +29,8 @@ Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy pu
 │
 ├── archive (IGNORED)
 │   └── 2022
-│       └── history_2022.log
+│       ├── history_2022.log
+│       └── mix_history_2022.csv
 │
 ├── cmd (IGNORED)
 │
