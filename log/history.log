@@ -646,3 +646,16 @@
 2023-01-23 20:22:07+0000 [INFO] - Livestreams playlist sorted.
 2023-01-23 20:22:28+0000 [INFO] - 1 new video(s) added.
 2023-01-23 20:22:28+0000 [INFO] - Process ended.
+2023-01-24 00:50:47+0000 [INFO] - Process started.
+2023-01-24 00:50:48+0000 [INFO] - API credentials refreshed.
+2023-01-24 00:50:48+0000 [INFO] - YouTube service created successfully.
+2023-01-24 00:51:08+0000 [WARNING] - ConnectionError with this channel: UC8y7Xa0E1Lo6PnVsu2KJbOA
+2023-01-24 00:51:14+0000 [WARNING] - ConnectionError with this channel: UCh8awPsk105z9y9-BwEduGw
+2023-01-24 00:51:20+0000 [WARNING] - ConnectionError with this channel: UCpl_hLTsmqiWTJEiErCOk_g
+2023-01-24 00:51:58+0000 [WARNING] - ConnectionError with this channel: UC-EVnno6x6-aAG6g1ZVoN3A
+2023-01-24 00:52:05+0000 [WARNING] - ConnectionError with this channel: UCB0qpLkjzVlVZ4c8nKiCEyw
+2023-01-24 00:52:27+0000 [WARNING] - ConnectionError with this channel: UCFUMI05jgO_O88Px8qfCQeQ
+2023-01-24 00:52:39+0000 [INFO] - No livestream added or removed.
+2023-01-24 00:52:44+0000 [INFO] - Livestreams playlist sorted.
+2023-01-24 00:53:23+0000 [INFO] - 1 new video(s) added.
+2023-01-24 00:53:23+0000 [INFO] - Process ended.
