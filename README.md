@@ -24,6 +24,7 @@ Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy pu
 │   │   ├── feature_request.yml
 │   │   └── issue_report.yml
 │   └── workflows
+│       ├── cron_workflow.yml
 │       ├── licence_workflow.yml
 │       └── update_workflow.yml
 │
@@ -51,6 +52,7 @@ Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy pu
 ├── src
 │   ├── _sandbox.py
 │   ├── analytics.py
+│   ├── cron_update.py
 │   ├── main.py
 │   └── youtube_req.py
 │
