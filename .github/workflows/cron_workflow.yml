@@ -59,8 +59,8 @@ jobs:
                     git commit -m "ci(.github): Schedule for Playlists Updates adjusted." -a
 
             -   id: push
-                name: Push logging changes
+                name: Push changes
                 uses: ad-m/github-push-action@master
                 with:
-                    github_token: ${{ secrets.GITHUB_TOKEN }}
+                    github_token: ${{ secrets.PAT }}
                     force: true
