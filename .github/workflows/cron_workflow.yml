@@ -9,7 +9,7 @@ on:
                 default: 'warning'
 
     schedule:
-        -   cron: '0 6 * * 0' # 06:00 AM every Sunday
+        -   cron: '0 6 * * *' # Starting @ 06:00 AM everyday
 
 jobs:
     build-linux:
