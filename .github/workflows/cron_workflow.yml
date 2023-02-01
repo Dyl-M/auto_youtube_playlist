@@ -53,8 +53,18 @@ jobs:
                     python cron_update.py
                     cd ../
 
+            -   id: check_dff
+                name: Check if differences after cron_update run
+                run: |
+                    if [[ "$(git diff --exit-code)" =~ 'diff' ]]; then 
+                        echo "IS_VALID=true" >> $GITHUB_ENV; 
+                    else 
+                        echo "IS_VALID=false" >> $GITHUB_ENV ;
+                    fi
+
             -   id: commit
                 name: Commit changes
+                if: ${{ env.IS_VALID == 'true' }}
                 run: |
                     git config --local user.email "action@github.com"
                     git config --local user.name "github-actions"
@@ -62,6 +72,7 @@ jobs:
 
             -   id: push
                 name: Push changes
+                if: ${{ env.IS_VALID == 'true' }}
                 uses: ad-m/github-push-action@master
                 with:
                     github_token: ${{ secrets.PAT }}
