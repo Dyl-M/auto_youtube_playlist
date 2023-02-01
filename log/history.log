@@ -853,3 +853,11 @@
 2023-01-31 12:16:24+0000 [INFO] - Livestreams playlist sorted.
 2023-01-31 12:16:46+0000 [INFO] - No video added or removed.
 2023-01-31 12:16:46+0000 [INFO] - Process ended.
+2023-02-01 00:54:37+0000 [INFO] - Process started.
+2023-02-01 00:54:38+0000 [INFO] - API credentials refreshed.
+2023-02-01 00:54:38+0000 [INFO] - YouTube service created successfully.
+2023-02-01 00:55:43+0000 [INFO] - No livestream added or removed.
+2023-02-01 00:55:47+0000 [INFO] - Livestreams playlist sorted.
+2023-02-01 00:56:17+0000 [INFO] - 1 new video(s) added.
+2023-02-01 00:56:17+0000 [INFO] - 1 video(s) removed.
+2023-02-01 00:56:17+0000 [INFO] - Process ended.
