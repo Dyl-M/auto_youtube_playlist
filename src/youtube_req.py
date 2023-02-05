@@ -199,7 +199,7 @@ def get_playlist_items(service: googleapiclient.discovery, playlist_id: str, day
     :param service: a YouTube service build with 'googleapiclient.discovery'
     :param playlist_id: a YouTube playlist ID
     :param day_ago: day difference with a reference date, delimits items' collection field
-    :param latest_d: latest reference date
+    :param latest_d: the latest reference date
     :param with_last_exe: to use last execution date extracted from log or not
     :return p_items: playlist items (videos) as a list.
     """
@@ -422,7 +422,7 @@ def iter_channels(service: googleapiclient.discovery, channels: list, day_ago: i
     :param channels: list of YouTube channel IDs
     :param service: a YouTube service build with 'googleapiclient.discovery'
     :param day_ago: day difference with a reference date, delimits items' collection field
-    :param latest_d: latest reference date
+    :param latest_d: the latest reference date
     :param with_last_exe: to use last execution date extracted from log or not
     :param prog_bar: to use tqdm progress bar or not
     :return: videos retrieved in playlists.
