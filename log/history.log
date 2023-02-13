@@ -1259,3 +1259,11 @@
 2023-02-13 01:14:52+0000 [INFO] - 2 new video(s) added.
 2023-02-13 01:14:53+0000 [INFO] - 2 video(s) removed.
 2023-02-13 01:14:53+0000 [INFO] - Process ended.
+2023-02-13 12:28:33+0000 [INFO] - Process started.
+2023-02-13 12:28:33+0000 [INFO] - API credentials refreshed.
+2023-02-13 12:28:33+0000 [INFO] - YouTube service created successfully.
+2023-02-13 12:29:39+0000 [INFO] - No livestream added or removed.
+2023-02-13 12:29:42+0000 [INFO] - Livestreams playlist sorted.
+2023-02-13 12:30:05+0000 [INFO] - 1 new video(s) added.
+2023-02-13 12:30:06+0000 [INFO] - 2 video(s) removed.
+2023-02-13 12:30:06+0000 [INFO] - Process ended.
