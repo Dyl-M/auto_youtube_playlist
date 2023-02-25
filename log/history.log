@@ -1741,3 +1741,11 @@
 2023-02-25 14:09:29+0000 [INFO] - Livestreams playlist sorted.
 2023-02-25 14:09:53+0000 [INFO] - 1 new video(s) added.
 2023-02-25 14:09:53+0000 [INFO] - Process ended.
+2023-02-25 16:11:39+0000 [INFO] - Process started.
+2023-02-25 16:11:39+0000 [INFO] - API credentials refreshed.
+2023-02-25 16:11:39+0000 [INFO] - YouTube service created successfully.
+2023-02-25 16:12:46+0000 [INFO] - No livestream added or removed.
+2023-02-25 16:12:54+0000 [INFO] - Livestreams playlist sorted.
+2023-02-25 16:13:23+0000 [INFO] - 1 new video(s) added.
+2023-02-25 16:13:24+0000 [INFO] - 2 video(s) removed.
+2023-02-25 16:13:24+0000 [INFO] - Process ended.
