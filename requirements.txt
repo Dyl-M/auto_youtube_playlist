@@ -7,5 +7,5 @@ jupyter~=1.0
 pandas~=1.5
 plotly~=5.13
 requests~=2.28
-tqdm~=4.64
+tqdm~=4.65
 tzlocal~=4.2
