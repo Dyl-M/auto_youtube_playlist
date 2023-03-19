@@ -32,7 +32,7 @@ def make_update_pattern(n_update: int):
     if n_update == 0:
         return '0 0 * * '
 
-    n_update = min(n_update, 12)
+    n_update = min(n_update, 6)
     step = int(12 / n_update)
     up_hours = list(range(12, 24, step))[-n_update:]
     up_pattern = '0 0,' + ','.join(map(str, up_hours)) + ' * *'
