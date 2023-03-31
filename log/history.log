@@ -3275,3 +3275,10 @@
 2023-03-31 18:08:43+0000 [INFO] - Livestreams playlist sorted.
 2023-03-31 18:09:14+0000 [INFO] - 1 new video(s) added.
 2023-03-31 18:09:14+0000 [INFO] - Process ended.
+2023-03-31 20:04:46+0000 [INFO] - Process started.
+2023-03-31 20:04:46+0000 [INFO] - API credentials refreshed.
+2023-03-31 20:04:46+0000 [INFO] - YouTube service created successfully.
+2023-03-31 20:05:56+0000 [INFO] - 1 livestream(s) removed.
+2023-03-31 20:05:58+0000 [INFO] - Livestreams playlist sorted.
+2023-03-31 20:06:23+0000 [INFO] - 1 new video(s) added.
+2023-03-31 20:06:23+0000 [INFO] - Process ended.
