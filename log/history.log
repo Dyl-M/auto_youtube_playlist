@@ -4573,3 +4573,10 @@
 2023-04-28 12:11:45+0000 [INFO] - 6 new video(s) added.
 2023-04-28 12:11:45+0000 [INFO] - 3 video(s) removed.
 2023-04-28 12:11:45+0000 [INFO] - Process ended.
+2023-04-28 14:03:42+0000 [INFO] - Process started.
+2023-04-28 14:03:42+0000 [INFO] - API credentials refreshed.
+2023-04-28 14:03:42+0000 [INFO] - YouTube service created successfully.
+2023-04-28 14:04:45+0000 [INFO] - No livestream added or removed.
+2023-04-28 14:04:47+0000 [INFO] - Livestreams playlist sorted.
+2023-04-28 14:05:09+0000 [INFO] - 1 video(s) removed.
+2023-04-28 14:05:09+0000 [INFO] - Process ended.
