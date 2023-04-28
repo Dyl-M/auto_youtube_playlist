@@ -1,7 +1,8 @@
-2023-04-28 20:04:38+0000 [INFO] - Process started.
-2023-04-28 20:04:39+0000 [INFO] - API credentials refreshed.
-2023-04-28 20:04:39+0000 [INFO] - YouTube service created successfully.
-2023-04-28 20:05:44+0000 [INFO] - 2 livestream(s) removed.
-2023-04-28 20:05:48+0000 [INFO] - Livestreams playlist sorted.
-2023-04-28 20:06:12+0000 [INFO] - 2 video(s) removed.
-2023-04-28 20:06:12+0000 [INFO] - Process ended.
+2023-04-28 22:03:26+0000 [INFO] - Process started.
+2023-04-28 22:03:27+0000 [INFO] - API credentials refreshed.
+2023-04-28 22:03:27+0000 [INFO] - YouTube service created successfully.
+2023-04-28 22:04:28+0000 [INFO] - No livestream added or removed.
+2023-04-28 22:04:29+0000 [INFO] - Livestreams playlist sorted.
+2023-04-28 22:04:52+0000 [INFO] - 3 new video(s) added.
+2023-04-28 22:04:52+0000 [INFO] - 1 video(s) removed.
+2023-04-28 22:04:52+0000 [INFO] - Process ended.
