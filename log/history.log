@@ -5352,3 +5352,10 @@
 2023-05-15 18:23:33+0000 [INFO] - Livestreams playlist sorted.
 2023-05-15 18:23:58+0000 [INFO] - 1 video(s) removed.
 2023-05-15 18:23:58+0000 [INFO] - Process ended.
+2023-05-15 20:18:23+0000 [INFO] - Process started.
+2023-05-15 20:18:23+0000 [INFO] - API credentials refreshed.
+2023-05-15 20:18:23+0000 [INFO] - YouTube service created successfully.
+2023-05-15 20:19:20+0000 [INFO] - No livestream added or removed.
+2023-05-15 20:19:22+0000 [INFO] - Livestreams playlist sorted.
+2023-05-15 20:19:42+0000 [INFO] - No video added or removed.
+2023-05-15 20:19:42+0000 [INFO] - Process ended.
