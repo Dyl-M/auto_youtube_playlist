@@ -6030,3 +6030,10 @@
 2023-05-31 20:18:17+0000 [INFO] - Livestreams playlist sorted.
 2023-05-31 20:18:41+0000 [INFO] - 1 video(s) removed.
 2023-05-31 20:18:41+0000 [INFO] - Process ended.
+2023-05-31 22:15:16+0000 [INFO] - Process started.
+2023-05-31 22:15:16+0000 [INFO] - API credentials refreshed.
+2023-05-31 22:15:16+0000 [INFO] - YouTube service created successfully.
+2023-05-31 22:16:30+0000 [INFO] - 1 livestream(s) removed.
+2023-05-31 22:16:32+0000 [INFO] - Livestreams playlist sorted.
+2023-05-31 22:16:58+0000 [INFO] - No video added or removed.
+2023-05-31 22:16:58+0000 [INFO] - Process ended.
