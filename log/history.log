@@ -6479,3 +6479,11 @@
 2023-06-10 22:12:33+0000 [INFO] - Livestreams playlist sorted.
 2023-06-10 22:12:58+0000 [INFO] - No video added or removed.
 2023-06-10 22:12:58+0000 [INFO] - Process ended.
+2023-06-11 00:36:56+0000 [INFO] - Process started.
+2023-06-11 00:36:56+0000 [INFO] - API credentials refreshed.
+2023-06-11 00:36:56+0000 [INFO] - YouTube service created successfully.
+2023-06-11 00:37:34+0000 [WARNING] - ConnectionError with this channel: UCU3ba7mBFprROpg1hJK7e_g
+2023-06-11 00:38:02+0000 [INFO] - No livestream added or removed.
+2023-06-11 00:38:06+0000 [INFO] - Livestreams playlist sorted.
+2023-06-11 00:38:25+0000 [INFO] - No video added or removed.
+2023-06-11 00:38:25+0000 [INFO] - Process ended.
