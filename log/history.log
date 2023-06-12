@@ -6518,3 +6518,10 @@
 2023-06-12 15:14:05+0000 [INFO] - 1 new video(s) added.
 2023-06-12 15:14:06+0000 [INFO] - 3 video(s) removed.
 2023-06-12 15:14:06+0000 [INFO] - Process ended.
+2023-06-12 18:15:10+0000 [INFO] - Process started.
+2023-06-12 18:15:10+0000 [INFO] - API credentials refreshed.
+2023-06-12 18:15:10+0000 [INFO] - YouTube service created successfully.
+2023-06-12 18:16:26+0000 [INFO] - No livestream added or removed.
+2023-06-12 18:16:28+0000 [INFO] - Livestreams playlist sorted.
+2023-06-12 18:16:54+0000 [INFO] - 3 new video(s) added.
+2023-06-12 18:16:54+0000 [INFO] - Process ended.
