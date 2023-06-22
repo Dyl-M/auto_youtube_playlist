@@ -6881,3 +6881,11 @@
 2023-06-22 14:08:50+0000 [INFO] - 1 new video(s) added.
 2023-06-22 14:08:50+0000 [INFO] - 3 video(s) removed.
 2023-06-22 14:08:50+0000 [INFO] - Process ended.
+2023-06-22 16:09:29+0000 [INFO] - Process started.
+2023-06-22 16:09:30+0000 [INFO] - API credentials refreshed.
+2023-06-22 16:09:30+0000 [INFO] - YouTube service created successfully.
+2023-06-22 16:10:34+0000 [INFO] - No livestream added or removed.
+2023-06-22 16:10:36+0000 [INFO] - Livestreams playlist sorted.
+2023-06-22 16:10:57+0000 [INFO] - 4 new video(s) added.
+2023-06-22 16:10:58+0000 [INFO] - 4 video(s) removed.
+2023-06-22 16:10:58+0000 [INFO] - Process ended.
