@@ -1,9 +1,8 @@
-2023-07-19 00:59:05+0000 [INFO] - Process started.
-2023-07-19 00:59:05+0000 [INFO] - API credentials refreshed.
-2023-07-19 00:59:05+0000 [INFO] - YouTube service created successfully.
-2023-07-19 01:00:07+0000 [INFO] - No livestream added or removed.
-2023-07-19 01:00:10+0000 [WARNING] - (QmFPtgfwsuM) - [{'domain': 'youtube.CoreErrorDomain', 'reason': 'SERVICE_UNAVAILABLE'}]
-2023-07-19 01:00:11+0000 [INFO] - Livestreams playlist sorted.
-2023-07-19 01:00:32+0000 [INFO] - 1 new video(s) added.
-2023-07-19 01:00:32+0000 [INFO] - 1 video(s) removed.
-2023-07-19 01:00:32+0000 [INFO] - Process ended.
+2023-07-19 12:10:36+0000 [INFO] - Process started.
+2023-07-19 12:10:36+0000 [INFO] - API credentials refreshed.
+2023-07-19 12:10:36+0000 [INFO] - YouTube service created successfully.
+2023-07-19 12:11:43+0000 [INFO] - No livestream added or removed.
+2023-07-19 12:11:48+0000 [INFO] - Livestreams playlist sorted.
+2023-07-19 12:12:14+0000 [INFO] - 2 new video(s) added.
+2023-07-19 12:12:15+0000 [INFO] - 3 video(s) removed.
+2023-07-19 12:12:15+0000 [INFO] - Process ended.
