@@ -8096,3 +8096,11 @@
 2023-07-21 18:10:06+0000 [INFO] - Livestreams playlist sorted.
 2023-07-21 18:10:29+0000 [INFO] - No video added or removed.
 2023-07-21 18:10:29+0000 [INFO] - Process ended.
+2023-07-21 20:04:35+0000 [INFO] - Process started.
+2023-07-21 20:04:35+0000 [INFO] - API credentials refreshed.
+2023-07-21 20:04:35+0000 [INFO] - YouTube service created successfully.
+2023-07-21 20:05:42+0000 [INFO] - 1 livestream(s) removed.
+2023-07-21 20:05:46+0000 [INFO] - Livestreams playlist sorted.
+2023-07-21 20:06:09+0000 [INFO] - 1 new video(s) added.
+2023-07-21 20:06:09+0000 [INFO] - 2 video(s) removed.
+2023-07-21 20:06:09+0000 [INFO] - Process ended.
