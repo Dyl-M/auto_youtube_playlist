@@ -8290,3 +8290,10 @@
 2023-07-26 16:08:46+0000 [INFO] - 2 new video(s) added.
 2023-07-26 16:08:46+0000 [INFO] - 4 video(s) removed.
 2023-07-26 16:08:46+0000 [INFO] - Process ended.
+2023-07-26 18:07:49+0000 [INFO] - Process started.
+2023-07-26 18:07:49+0000 [INFO] - API credentials refreshed.
+2023-07-26 18:07:49+0000 [INFO] - YouTube service created successfully.
+2023-07-26 18:09:00+0000 [INFO] - No livestream added or removed.
+2023-07-26 18:09:03+0000 [INFO] - Livestreams playlist sorted.
+2023-07-26 18:09:29+0000 [INFO] - 1 video(s) removed.
+2023-07-26 18:09:29+0000 [INFO] - Process ended.
