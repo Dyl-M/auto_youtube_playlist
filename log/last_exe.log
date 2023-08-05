@@ -1,7 +1,8 @@
-2023-08-05 20:14:12+0000 [INFO] - Process started.
-2023-08-05 20:14:12+0000 [INFO] - API credentials refreshed.
-2023-08-05 20:14:12+0000 [INFO] - YouTube service created successfully.
-2023-08-05 20:15:25+0000 [INFO] - No livestream added or removed.
-2023-08-05 20:15:28+0000 [INFO] - Livestreams playlist sorted.
-2023-08-05 20:15:53+0000 [INFO] - No video added or removed.
-2023-08-05 20:15:53+0000 [INFO] - Process ended.
+2023-08-05 22:12:35+0000 [INFO] - Process started.
+2023-08-05 22:12:35+0000 [INFO] - API credentials refreshed.
+2023-08-05 22:12:35+0000 [INFO] - YouTube service created successfully.
+2023-08-05 22:13:48+0000 [INFO] - No livestream added or removed.
+2023-08-05 22:14:18+0000 [WARNING] - (JOXRElW1LCA) - [{'message': 'The service is currently unavailable.', 'domain': 'global', 'reason': 'backendError'}]
+2023-08-05 22:14:20+0000 [INFO] - Livestreams playlist sorted.
+2023-08-05 22:14:45+0000 [INFO] - No video added or removed.
+2023-08-05 22:14:45+0000 [INFO] - Process ended.
