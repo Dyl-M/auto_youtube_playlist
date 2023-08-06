@@ -25,6 +25,7 @@ To test things / backup functions.
 
 
 def generate_secrets(n):
+    """Generate a fake secret for test"""
     if n <= 0:
         return ""
     characters = string.ascii_letters + string.digits + string.punctuation
@@ -44,7 +45,7 @@ def update_repo_secrets(secret_name: str, new_value: str):
         repo.create_secret(secret_name, new_value)
         print(f"Secret {secret_name} updated successfully.")
 
-    except Exception as e:
+    except Exception as e:  # skipcq: PYL-W0703 - No error found so far
         print(f"Failed to update secret {secret_name}. Error: {e}")
 
 
