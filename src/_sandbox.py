@@ -27,10 +27,9 @@ To test things / backup functions.
 def generate_secrets(n):
     if n <= 0:
         return ""
-    else:
-        characters = string.ascii_letters + string.digits + string.punctuation
-        random_string = ''.join(random.choice(characters) for _ in range(n))
-        return random_string
+    characters = string.ascii_letters + string.digits + string.punctuation
+    random_string = ''.join(random.choice(characters) for _ in range(n))
+    return random_string
 
 
 def update_repo_secrets(secret_name: str, new_value: str):
