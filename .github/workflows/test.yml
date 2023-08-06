@@ -49,5 +49,5 @@ jobs:
                 name: _sandbox.py execution
                 run: |
                     cd src
-                    python _sandbox
+                    python _sandbox.py
                     cd ../
