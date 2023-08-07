@@ -164,6 +164,7 @@ def create_service_workflow():
         value = ast.literal_eval(v_str)  # Eval
         return value
 
+    creds_b64 = None  # Initialisation of Base64 version of Credentials object
     creds_dict = import_env_var(var_name='CREDS_B64')  # Import pre-registered credentials
     creds = Credentials.from_authorized_user_info(creds_dict)  # Conversion to suitable object
     instance_fail_message = 'Failed to create service instance for YouTube'
@@ -186,7 +187,7 @@ def create_service_workflow():
     try:
         service = googleapiclient.discovery.build('youtube', 'v3', credentials=creds)  # Build service.
         history.info('YouTube service created successfully.')
-        return service
+        return service, creds_b64
 
     except Exception as error:  # skipcq: PYL-W0703 - No known errors at the moment.
         history.critical('(%s) %s', error, instance_fail_message)

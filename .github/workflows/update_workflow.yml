@@ -8,18 +8,19 @@ on:
                 required: true
                 default: 'warning'
 
-    schedule:
-        -   cron: "0 0,12,18 * * 0"
-        -   cron: "0 0,12,15,18,21 * * 1"
-        -   cron: "0 0,12,16,20 * * 2"
-        -   cron: "0 0,12,14,16,18,20,22 * * 3"
-        -   cron: "0 0,12,14,16,18,20,22 * * 4"
-        -   cron: "0 0,12,14,16,18,20,22 * * 5"
-        -   cron: "0 0,12,14,16,18,20,22 * * 6"
+
+#    schedule:  ## Temporary interruption of scheduled runs.
+#        -   cron: "0 0,12,18 * * 0"
+#        -   cron: "0 0,12,15,18,21 * * 1"
+#        -   cron: "0 0,12,16,20 * * 2"
+#        -   cron: "0 0,12,14,16,18,20,22 * * 3"
+#        -   cron: "0 0,12,14,16,18,20,22 * * 4"
+#        -   cron: "0 0,12,14,16,18,20,22 * * 5"
+#        -   cron: "0 0,12,14,16,18,20,22 * * 6"
 
 jobs:
     build-linux:
-        name: youtube_automation
+        name: youtube-automation
         runs-on: ubuntu-latest
 
         permissions:
@@ -28,6 +29,8 @@ jobs:
 
         env:
             CREDS_B64: '${{ secrets.CREDS_B64 }}'
+            GITHUB_REPOSITORY: '${{ github.GITHUB_REPOSITORY }}'
+            PAT: '${{ secrets.PAT }}'
 
         steps:
             -   id: checkout
@@ -54,29 +57,29 @@ jobs:
                     flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
             -   id: main
-                name: main.py execution
+                name: Main process execution
                 run: |
                     cd src
                     python main.py 'action'
                     cd ../
 
-            -   id: update-secret
-                name: Repository Secret update.
-                uses: gliech/create-github-secret-action@v1
-                with:
-                    name: 'CREDS_B64'
-                    value: '${{ env.CREDS_B64 }}'
-                    pa_token: '${{ secrets.PAT }}'
+            #            -   id: update-secret
+            #                name: Repository Secret update.
+            #                uses: gliech/create-github-secret-action@v1
+            #                with:
+            #                    name: 'CREDS_B64'
+            #                    value: '${{ env.CREDS_B64 }}'
+            #                    pa_token: '${{ secrets.PAT }}'
 
             -   id: commit
-                name: Commit changes
+                name: Commit changes (Log and historical data)
                 run: |
                     git config --local user.email "action@github.com"
                     git config --local user.name "github-actions"
                     git commit -m "chore(r/data, r/log): Latest execution changes." -a
 
             -   id: push
-                name: Push logging changes
+                name: Push changes
                 uses: ad-m/github-push-action@master
                 with:
                     github_token: ${{ secrets.GITHUB_TOKEN }}
