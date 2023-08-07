@@ -8807,3 +8807,8 @@
 2023-08-07 15:36:13+0000 [INFO] - Process started.
 2023-08-07 15:36:13+0000 [INFO] - YouTube service created successfully.
 2023-08-07 15:36:13+0000 [ERROR] - Failed to update Repository Secret 'CREDS_B64' : None
+2023-08-07 16:56:10+0000 [INFO] - Process started.
+2023-08-07 16:56:10+0000 [INFO] - API credentials refreshed.
+2023-08-07 16:56:10+0000 [INFO] - YouTube service created successfully.
+2023-08-07 16:56:11+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2023-08-07 16:56:11+0000 [INFO] - Process ended.
