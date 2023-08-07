@@ -8,8 +8,8 @@ on:
                 required: true
                 default: 'warning'
 
-    schedule:
-        -   cron: '0 6 * * *' # Starting @ 06:00 AM everyday
+#    schedule:
+#        -   cron: '0 6 * * *' # Starting @ 06:00 AM everyday
 
 jobs:
     build-linux:
