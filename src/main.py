@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
+import github
 import json
 import logging
+import os
 import re
-import requests
+# import requests
 import sys
 
 import youtube_req
@@ -13,6 +15,18 @@ import youtube_req
 @author: Dylan "dyl-m" Monfret
 Main process (still in test phase).
 """
+
+"ENVIRONMENT"
+
+try:
+    github_repo = os.environ['GITHUB_REPOSITORY']
+    PAT = os.environ['PAT']
+
+except KeyError:
+    github_repo = 'Dyl-M/auto_youtube_playlist'
+
+    with open('../tokens/TMP_PAT.txt', 'r', encoding='utf-8') as PAT_FILE:
+        PAT = PAT_FILE.readlines()[0]
 
 "SYSTEM"
 
@@ -35,6 +49,28 @@ def copy_last_exe_log():
 
     with open('../log/last_exe.log', 'w', encoding='utf8') as last_exe_file:
         last_exe_file.write(last_exe_log)
+
+
+def update_repo_secrets(secret_name: str, new_value: str, logger: logging.Logger = None):
+    """Update a GitHub repository Secret value
+    :param secret_name: GH repository Secret name
+    :param new_value: new value for selected Secret
+    :param logger: object for logging
+    """
+    repo = github.Github(PAT).get_repo(github_repo)
+    try:
+        repo.create_secret(secret_name, new_value)
+        if logger:
+            logger.info(f"Repository Secret '{secret_name}' updated successfully.")
+        else:
+            print(f"Repository Secret '{secret_name}' updated successfully.")
+
+    except Exception as error:  # skipcq: PYL-W0703 - No error found so far
+        if logger:
+            logger.error(f"Failed to update Repository Secret '{secret_name}' : {error}")
+        else:
+            print(f"Failed to update secret {secret_name}. Error: {error}")
+        sys.exit()
 
 
 if __name__ == '__main__':
@@ -67,28 +103,33 @@ if __name__ == '__main__':
     history_main.info('Process started.')
 
     if exe_mode == 'local':  # YouTube service creation
-        YOUTUBE_OAUTH = youtube_req.create_service_local()  # YouTube service in local mode
+        YOUTUBE_OAUTH, CREDS_B64 = youtube_req.create_service_local(), None  # YouTube service in local mode
         PROG_BAR = True  # Display progress bar
 
     else:
-        YOUTUBE_OAUTH = youtube_req.create_service_workflow()  # YouTube service with GitHub workflow
+        # YouTube service with GitHub workflow + Credentials
+        YOUTUBE_OAUTH, CREDS_B64 = youtube_req.create_service_workflow()
         PROG_BAR = False  # Do not display progress bar
 
-    try:  # Try to update & sort livestreams playlist
-        current_live = youtube_req.iter_livestreams(music_channels, prog_bar=PROG_BAR)
-        youtube_req.update_playlist(YOUTUBE_OAUTH, playlists_lives, current_live, is_live=True, prog_bar=PROG_BAR)
-        youtube_req.sort_livestreams(YOUTUBE_OAUTH, playlists_lives, prog_bar=PROG_BAR)
+    # TODO: Main program interrupted for testing on Issue #68
+    # try:  # Try to update & sort livestreams playlist
+    #     current_live = youtube_req.iter_livestreams(music_channels, prog_bar=PROG_BAR)
+    #     youtube_req.update_playlist(YOUTUBE_OAUTH, playlists_lives, current_live, is_live=True, prog_bar=PROG_BAR)
+    #     youtube_req.sort_livestreams(YOUTUBE_OAUTH, playlists_lives, prog_bar=PROG_BAR)
+    #
+    # except requests.exceptions.ReadTimeout as timeout_error:
+    #     history_main.warning('TIMEOUT ERROR: Livestreams playlist update cancelled.')
+    #
+    # # Update mixes playlist
+    # to_add = youtube_req.iter_channels(YOUTUBE_OAUTH, music_channels, prog_bar=PROG_BAR)
+    # youtube_req.update_playlist(YOUTUBE_OAUTH, playlists_mixes, to_add, prog_bar=PROG_BAR)
 
-    except requests.exceptions.ReadTimeout as timeout_error:
-        history_main.warning('TIMEOUT ERROR: Livestreams playlist update cancelled.')
+    if exe_mode == 'local':  # Credentials in base64 update - Local option
+        youtube_req.encode_key(json_path='../tokens/credentials.json')
+        youtube_req.encode_key(json_path='../tokens/oauth.json')
 
-    # Update mixes playlist
-    to_add = youtube_req.iter_channels(YOUTUBE_OAUTH, music_channels, prog_bar=PROG_BAR)
-    youtube_req.update_playlist(YOUTUBE_OAUTH, playlists_mixes, to_add, prog_bar=PROG_BAR)
+    else:  # Credentials in base64 update - Remote option
+        update_repo_secrets(secret_name='CREDS_B64', new_value=CREDS_B64, logger=history_main)
 
     history_main.info('Process ended.')  # End
     copy_last_exe_log()  # Copy what happened during process execution to the associated file.
-
-    if exe_mode == 'local':  # Optional end: credentials in base64 update
-        youtube_req.encode_key(json_path='../tokens/credentials.json')
-        youtube_req.encode_key(json_path='../tokens/oauth.json')
