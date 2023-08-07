@@ -22,4 +22,4 @@ jobs:
 
             -   uses: FantasticFiasco/action-update-license-year@v3
                 with:
-                    token: ${{ secrets.GITHUB_TOKEN }}
+                    token: ${{ secrets.PAT }}
