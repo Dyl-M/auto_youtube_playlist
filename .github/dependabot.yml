@@ -7,4 +7,11 @@ updates:
             day: "sunday"
             time: "12:00"
 
+    -   package-ecosystem: "github-actions"
+        directory: "/"
+        schedule:
+            interval: "weekly"
+            day: "sunday"
+            time: "12:00"
+
 # Docs: https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
