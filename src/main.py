@@ -5,7 +5,7 @@ import json
 import logging
 import os
 import re
-# import requests
+import requests
 import sys
 
 import youtube_req
@@ -13,7 +13,7 @@ import youtube_req
 """File Information
 @file_name: main.py
 @author: Dylan "dyl-m" Monfret
-Main process (still in test phase).
+Main process.
 """
 
 "ENVIRONMENT"
@@ -111,18 +111,17 @@ if __name__ == '__main__':
         YOUTUBE_OAUTH, CREDS_B64 = youtube_req.create_service_workflow()
         PROG_BAR = False  # Do not display progress bar
 
-    # TODO: Main program interrupted for testing on Issue #68
-    # try:  # Try to update & sort livestreams playlist
-    #     current_live = youtube_req.iter_livestreams(music_channels, prog_bar=PROG_BAR)
-    #     youtube_req.update_playlist(YOUTUBE_OAUTH, playlists_lives, current_live, is_live=True, prog_bar=PROG_BAR)
-    #     youtube_req.sort_livestreams(YOUTUBE_OAUTH, playlists_lives, prog_bar=PROG_BAR)
-    #
-    # except requests.exceptions.ReadTimeout as timeout_error:
-    #     history_main.warning('TIMEOUT ERROR: Livestreams playlist update cancelled.')
-    #
-    # # Update mixes playlist
-    # to_add = youtube_req.iter_channels(YOUTUBE_OAUTH, music_channels, prog_bar=PROG_BAR)
-    # youtube_req.update_playlist(YOUTUBE_OAUTH, playlists_mixes, to_add, prog_bar=PROG_BAR)
+    try:  # Try to update & sort livestreams playlist
+        current_live = youtube_req.iter_livestreams(music_channels, prog_bar=PROG_BAR)
+        youtube_req.update_playlist(YOUTUBE_OAUTH, playlists_lives, current_live, is_live=True, prog_bar=PROG_BAR)
+        youtube_req.sort_livestreams(YOUTUBE_OAUTH, playlists_lives, prog_bar=PROG_BAR)
+
+    except requests.exceptions.ReadTimeout as timeout_error:
+        history_main.warning('TIMEOUT ERROR: Livestreams playlist update cancelled.')
+
+    # Update mixes playlist
+    to_add = youtube_req.iter_channels(YOUTUBE_OAUTH, music_channels, prog_bar=PROG_BAR)
+    youtube_req.update_playlist(YOUTUBE_OAUTH, playlists_mixes, to_add, prog_bar=PROG_BAR)
 
     if exe_mode == 'local':  # Credentials in base64 update - Local option
         youtube_req.encode_key(json_path='../tokens/credentials.json')

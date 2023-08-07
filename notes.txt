@@ -10,3 +10,6 @@ if __name__ == '__main__':
     my_service = youtube_req.create_service_local(log=False)
     youtube_req.sort_db(service=my_service)
 ```
+
+# Finally getting rid of gliech's action lmao
+# Maybe his lazy ass will make the transition to Node 16 when a ton of project will be broken because of him 😂

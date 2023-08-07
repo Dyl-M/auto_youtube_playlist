@@ -63,14 +63,6 @@ jobs:
                     python main.py 'action'
                     cd ../
 
-            #            -   id: update-secret
-            #                name: Repository Secret update.
-            #                uses: gliech/create-github-secret-action@v1
-            #                with:
-            #                    name: 'CREDS_B64'
-            #                    value: '${{ env.CREDS_B64 }}'
-            #                    pa_token: '${{ secrets.PAT }}'
-
             -   id: commit
                 name: Commit changes (Log and historical data)
                 run: |

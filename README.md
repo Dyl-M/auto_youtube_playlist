@@ -23,10 +23,11 @@ Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy pu
 │   ├── ISSUE_TEMPLATE
 │   │   ├── feature_request.yml
 │   │   └── issue_report.yml
-│   └── workflows
-│       ├── cron_workflow.yml
-│       ├── licence_workflow.yml
-│       └── update_workflow.yml
+│   ├── workflows
+│   │   ├── cron_workflow.yml
+│   │   ├── licence_workflow.yml
+│   │   └── update_workflow.yml
+│   └── dependabot.yml
 │
 ├── archive (IGNORED)
 │   └── 2022
