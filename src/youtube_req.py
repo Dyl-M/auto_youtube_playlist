@@ -164,7 +164,7 @@ def create_service_workflow():
         value = ast.literal_eval(v_str)  # Eval
         return value
 
-    creds_b64 = None  # Initialisation of Base64 version of Credentials object
+    creds_b64 = os.environ.get('CREDS_B64')  # Initialisation of Base64 version of Credentials object
     creds_dict = import_env_var(var_name='CREDS_B64')  # Import pre-registered credentials
     creds = Credentials.from_authorized_user_info(creds_dict)  # Conversion to suitable object
     instance_fail_message = 'Failed to create service instance for YouTube'
