@@ -10670,3 +10670,9 @@
 2023-09-13 14:05:13+0000 [INFO] - 3 video(s) removed.
 2023-09-13 14:05:13+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2023-09-13 14:05:13+0000 [INFO] - Process ended.
+2023-09-13 16:06:42+0000 [INFO] - Process started.
+2023-09-13 16:06:42+0000 [INFO] - API credentials refreshed.
+2023-09-13 16:06:42+0000 [INFO] - YouTube service created successfully.
+2023-09-13 16:07:48+0000 [INFO] - No livestream added or removed.
+2023-09-13 16:07:49+0000 [INFO] - Livestreams playlist sorted.
+2023-09-13 16:08:08+0000 [ERROR] - [UUxZElbCNUCxM9aORoDI6E4g] Unknown error: SERVICE_UNAVAILABLE
