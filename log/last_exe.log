@@ -1,9 +1,10 @@
-2023-10-06 16:16:00+0000 [INFO] - Process started.
-2023-10-06 16:16:01+0000 [INFO] - API credentials refreshed.
-2023-10-06 16:16:01+0000 [INFO] - YouTube service created successfully.
-2023-10-06 16:17:14+0000 [INFO] - 1 new livestream(s) added.
-2023-10-06 16:17:16+0000 [INFO] - Livestreams playlist sorted.
-2023-10-06 16:18:00+0000 [INFO] - 1 new video(s) added.
-2023-10-06 16:18:00+0000 [INFO] - 3 video(s) removed.
-2023-10-06 16:18:01+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2023-10-06 16:18:01+0000 [INFO] - Process ended.
+2023-10-06 18:15:59+0000 [INFO] - Process started.
+2023-10-06 18:15:59+0000 [INFO] - API credentials refreshed.
+2023-10-06 18:15:59+0000 [INFO] - YouTube service created successfully.
+2023-10-06 18:17:03+0000 [INFO] - 1 new livestream(s) added.
+2023-10-06 18:17:03+0000 [INFO] - 1 livestream(s) removed.
+2023-10-06 18:17:08+0000 [INFO] - Livestreams playlist sorted.
+2023-10-06 18:17:41+0000 [INFO] - 1 new video(s) added.
+2023-10-06 18:17:42+0000 [INFO] - 2 video(s) removed.
+2023-10-06 18:17:43+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2023-10-06 18:17:43+0000 [INFO] - Process ended.
