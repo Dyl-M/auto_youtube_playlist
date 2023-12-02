@@ -1,10 +1,8 @@
-2023-12-02 18:13:33+0000 [INFO] - Process started.
-2023-12-02 18:13:33+0000 [INFO] - API credentials refreshed.
-2023-12-02 18:13:33+0000 [INFO] - YouTube service created successfully.
-2023-12-02 18:13:46+0000 [WARNING] - ConnectionError with this channel: UC32W3Kpoh6T6pG5PrWm0LTQ
-2023-12-02 18:14:35+0000 [INFO] - 1 new livestream(s) added.
-2023-12-02 18:14:41+0000 [INFO] - Livestreams playlist sorted.
-2023-12-02 18:15:21+0000 [INFO] - 1 new video(s) added.
-2023-12-02 18:15:22+0000 [INFO] - 2 video(s) removed.
-2023-12-02 18:15:23+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2023-12-02 18:15:23+0000 [INFO] - Process ended.
+2023-12-02 20:11:35+0000 [INFO] - Process started.
+2023-12-02 20:11:35+0000 [INFO] - API credentials refreshed.
+2023-12-02 20:11:35+0000 [INFO] - YouTube service created successfully.
+2023-12-02 20:12:33+0000 [INFO] - 1 livestream(s) removed.
+2023-12-02 20:12:37+0000 [INFO] - Livestreams playlist sorted.
+2023-12-02 20:13:18+0000 [INFO] - No video added or removed.
+2023-12-02 20:13:20+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2023-12-02 20:13:20+0000 [INFO] - Process ended.
