@@ -19,6 +19,7 @@ import sys
 import tqdm
 import tzlocal
 
+from google.auth.exceptions import RefreshError
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -126,7 +127,13 @@ def create_service_local(log: bool = True):
 
     if not cred or not cred.valid:  # Cover outdated credentials
         if cred and cred.expired and cred.refresh_token:
-            cred.refresh(Request())
+            try:
+                cred.refresh(Request())
+
+            except RefreshError:
+                history.info('Credentials can not be refreshed. New credentials needed.')
+                flow = InstalledAppFlow.from_client_secrets_file(oauth_file, scopes)  # Create a Flow from 'oauth_file'
+                cred = flow.run_local_server()  # Run authentication process
 
         else:
             flow = InstalledAppFlow.from_client_secrets_file(oauth_file, scopes)  # Create a Flow from 'oauth_file'
