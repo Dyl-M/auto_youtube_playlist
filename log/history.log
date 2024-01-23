@@ -17104,3 +17104,10 @@
 2024-01-23 12:34:17+0000 [INFO] - 1 new video(s) added.
 2024-01-23 12:34:18+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2024-01-23 12:34:18+0000 [INFO] - Process ended.
+2024-01-23 16:22:43+0000 [INFO] - Process started.
+2024-01-23 16:22:43+0000 [INFO] - API credentials refreshed.
+2024-01-23 16:22:43+0000 [INFO] - YouTube service created successfully.
+2024-01-23 16:23:42+0000 [INFO] - No livestream added or removed.
+2024-01-23 16:24:26+0000 [INFO] - 5 video(s) removed.
+2024-01-23 16:24:27+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2024-01-23 16:24:27+0000 [INFO] - Process ended.
