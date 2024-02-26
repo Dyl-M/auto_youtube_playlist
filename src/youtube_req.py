@@ -329,18 +329,22 @@ def find_livestreams(channel_id: str):
         # Extract content from page tabs
         tab = sections_as_dict['contents']['twoColumnBrowseResultsRenderer']['tabs'][0]['tabRenderer']['content']
 
-        # Extract content from channel page items
-        section = tab['sectionListRenderer']['contents'][0]['itemSectionRenderer']['contents'][0]
+        try:
+            # Extract content from channel page items
+            section = tab['sectionListRenderer']['contents'][0]['itemSectionRenderer']['contents'][0]
 
-        if 'channelFeaturedContentRenderer' in section.keys():  # If at least one livestream is running
-            # Extract each livestream item
-            featured = section['channelFeaturedContentRenderer']['items']
-            # Extract livestream IDs channel_id
-            livestream_ids = [{'channel_id': channel_id, 'video_id': item['videoRenderer']['videoId']} for item in
-                              featured]
-            return livestream_ids
+            if 'channelFeaturedContentRenderer' in section.keys():  # If at least one livestream is running
+                # Extract each livestream item
+                featured = section['channelFeaturedContentRenderer']['items']
+                # Extract livestream IDs channel_id
+                livestream_ids = [{'channel_id': channel_id, 'video_id': item['videoRenderer']['videoId']}
+                                  for item in featured]
+                return livestream_ids
 
-    except requests.exceptions.ConnectionError:
+        except KeyError:  # No content on the channel
+            return []
+
+    except (requests.exceptions.ConnectionError, requests.exceptions.ConnectionError):
         history.warning('ConnectionError with this channel: %s', channel_id)
 
     return []  # Return if no livestream at the moment or in case of ConnectionError
