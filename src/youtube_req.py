@@ -344,7 +344,7 @@ def find_livestreams(channel_id: str):
         except KeyError:  # No content on the channel
             return []
 
-    except (requests.exceptions.ConnectionError, requests.exceptions.ConnectionError):
+    except requests.exceptions.ConnectionError:
         history.warning('ConnectionError with this channel: %s', channel_id)
 
     return []  # Return if no livestream at the moment or in case of ConnectionError
