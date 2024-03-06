@@ -18921,3 +18921,9 @@
 2024-03-05 18:19:16+0000 [INFO] - No livestream added or removed.
 2024-03-05 18:19:19+0000 [INFO] - Livestreams playlist sorted.
 2024-03-05 18:19:43+0000 [ERROR] - [UUX9fOfRkHANZM8iFWhMSpNg] Unknown error: rateLimitExceeded
+2024-03-06 00:45:00+0000 [INFO] - Process started.
+2024-03-06 00:45:00+0000 [INFO] - API credentials refreshed.
+2024-03-06 00:45:00+0000 [INFO] - YouTube service created successfully.
+2024-03-06 00:45:54+0000 [INFO] - No livestream added or removed.
+2024-03-06 00:45:56+0000 [INFO] - Livestreams playlist sorted.
+2024-03-06 00:46:30+0000 [ERROR] - [UUZDbwxi1owenInykTi6Y8Bw] Unknown error: SERVICE_UNAVAILABLE
