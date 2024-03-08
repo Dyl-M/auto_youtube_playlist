@@ -19084,3 +19084,13 @@
 2024-03-08 18:17:25+0000 [INFO] - 1 video(s) removed.
 2024-03-08 18:17:26+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2024-03-08 18:17:26+0000 [INFO] - Process ended.
+2024-03-08 20:11:43+0000 [INFO] - Process started.
+2024-03-08 20:11:44+0000 [INFO] - API credentials refreshed.
+2024-03-08 20:11:44+0000 [INFO] - YouTube service created successfully.
+2024-03-08 20:12:36+0000 [INFO] - 1 new livestream(s) added.
+2024-03-08 20:12:36+0000 [INFO] - 1 livestream(s) removed.
+2024-03-08 20:12:48+0000 [WARNING] - (jJeoqdqknIY) - [{'domain': 'youtube.CoreErrorDomain', 'reason': 'SERVICE_UNAVAILABLE'}]
+2024-03-08 20:12:48+0000 [INFO] - Livestreams playlist sorted.
+2024-03-08 20:13:23+0000 [INFO] - No video added or removed.
+2024-03-08 20:13:24+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2024-03-08 20:13:24+0000 [INFO] - Process ended.
