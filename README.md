@@ -30,9 +30,12 @@ Elements followed by `(IGNORED)` are kept ignored / hidden by git for privacy pu
 │   └── dependabot.yml
 │
 ├── archive (IGNORED)
-│   └── 2022
-│       ├── history_2022.log
-│       └── mix_history_2022.csv
+│   ├── 2022
+│   │   ├── history_2022.log
+│   │   └── mix_history_2022.csv
+│   └── 2023
+│       ├── history_20223.log
+│       └── mix_history_2023.csv
 │
 ├── cmd (IGNORED)
 │
