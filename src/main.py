@@ -24,9 +24,7 @@ try:
 
 except KeyError:
     github_repo = 'Dyl-M/auto_youtube_playlist'
-
-    with open('../tokens/TMP_PAT.txt', 'r', encoding='utf-8') as PAT_FILE:
-        PAT = PAT_FILE.readlines()[0]
+    PAT = ''
 
 "SYSTEM"
 
