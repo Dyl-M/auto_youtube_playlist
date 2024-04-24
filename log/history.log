@@ -5521,3 +5521,11 @@
 2024-04-24 20:20:33+0000 [INFO] - 4 new video(s) added.
 2024-04-24 20:20:34+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2024-04-24 20:20:34+0000 [INFO] - Process ended.
+2024-04-24 22:19:26+0000 [INFO] - Process started.
+2024-04-24 22:19:27+0000 [INFO] - API credentials refreshed.
+2024-04-24 22:19:27+0000 [INFO] - YouTube service created successfully.
+2024-04-24 22:20:16+0000 [INFO] - 1 livestream(s) removed.
+2024-04-24 22:20:18+0000 [INFO] - Livestreams playlist sorted.
+2024-04-24 22:20:42+0000 [INFO] - 1 new video(s) added.
+2024-04-24 22:20:43+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2024-04-24 22:20:43+0000 [INFO] - Process ended.
