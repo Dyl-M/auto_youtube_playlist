@@ -5554,3 +5554,13 @@
 2024-04-25 14:14:48+0000 [INFO] - 3 video(s) removed.
 2024-04-25 14:14:48+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2024-04-25 14:14:48+0000 [INFO] - Process ended.
+2024-04-25 16:20:35+0000 [INFO] - Process started.
+2024-04-25 16:20:35+0000 [INFO] - API credentials refreshed.
+2024-04-25 16:20:35+0000 [INFO] - YouTube service created successfully.
+2024-04-25 16:21:27+0000 [INFO] - 1 new livestream(s) added.
+2024-04-25 16:21:28+0000 [INFO] - 1 livestream(s) removed.
+2024-04-25 16:21:33+0000 [INFO] - Livestreams playlist sorted.
+2024-04-25 16:22:14+0000 [INFO] - 3 new video(s) added.
+2024-04-25 16:22:15+0000 [INFO] - 5 video(s) removed.
+2024-04-25 16:22:16+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2024-04-25 16:22:16+0000 [INFO] - Process ended.
