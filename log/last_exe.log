@@ -1,9 +1,14 @@
-2024-05-23 20:18:33+0000 [INFO] - Process started.
-2024-05-23 20:18:33+0000 [INFO] - API credentials refreshed.
-2024-05-23 20:18:33+0000 [INFO] - YouTube service created successfully.
-2024-05-23 20:19:24+0000 [INFO] - 1 livestream(s) removed.
-2024-05-23 20:19:28+0000 [INFO] - Livestreams playlist sorted.
-2024-05-23 20:19:55+0000 [INFO] - 3 new video(s) added.
-2024-05-23 20:19:55+0000 [INFO] - 1 video(s) removed.
-2024-05-23 20:19:56+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2024-05-23 20:19:56+0000 [INFO] - Process ended.
+2024-05-23 22:16:31+0000 [INFO] - Process started.
+2024-05-23 22:16:31+0000 [INFO] - API credentials refreshed.
+2024-05-23 22:16:31+0000 [INFO] - YouTube service created successfully.
+2024-05-23 22:17:21+0000 [INFO] - No livestream added or removed.
+2024-05-23 22:17:22+0000 [WARNING] - (yGlB3GKfNBI) - [{'message': 'Request contains an invalid argument.', 'domain': 'global', 'reason': 'badRequest'}]
+2024-05-23 22:17:22+0000 [WARNING] - (0T1FPUV2wRQ) - [{'message': 'Request contains an invalid argument.', 'domain': 'global', 'reason': 'badRequest'}]
+2024-05-23 22:17:22+0000 [WARNING] - (NGsjwNsXE0w) - [{'message': 'Request contains an invalid argument.', 'domain': 'global', 'reason': 'badRequest'}]
+2024-05-23 22:17:22+0000 [WARNING] - (D4MdHQOILdw) - [{'message': 'Request contains an invalid argument.', 'domain': 'global', 'reason': 'badRequest'}]
+2024-05-23 22:17:22+0000 [WARNING] - (5yx6BWlEVcY) - [{'message': 'Request contains an invalid argument.', 'domain': 'global', 'reason': 'badRequest'}]
+2024-05-23 22:17:22+0000 [WARNING] - (S_MOd40zlYU) - [{'message': 'Request contains an invalid argument.', 'domain': 'global', 'reason': 'badRequest'}]
+2024-05-23 22:17:22+0000 [INFO] - Livestreams playlist sorted.
+2024-05-23 22:17:59+0000 [INFO] - 1 new video(s) added.
+2024-05-23 22:18:00+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2024-05-23 22:18:00+0000 [INFO] - Process ended.
