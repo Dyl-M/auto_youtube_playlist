@@ -7,6 +7,6 @@ isodate~=0.6
 jupyter~=1.0
 pandas~=2.2
 plotly~=5.22
-requests~=2.31
+requests~=2.32
 tqdm~=4.66
 tzlocal~=5.2
