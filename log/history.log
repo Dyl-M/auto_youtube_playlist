@@ -7187,3 +7187,16 @@
 2024-05-26 12:21:56+0000 [INFO] - 1 video(s) removed.
 2024-05-26 12:21:57+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2024-05-26 12:21:57+0000 [INFO] - Process ended.
+2024-05-26 18:14:32+0000 [INFO] - Process started.
+2024-05-26 18:14:32+0000 [INFO] - API credentials refreshed.
+2024-05-26 18:14:32+0000 [INFO] - YouTube service created successfully.
+2024-05-26 18:15:20+0000 [INFO] - No livestream added or removed.
+2024-05-26 18:15:21+0000 [WARNING] - (jgvWFbgJ5fY) - [{'message': 'Request contains an invalid argument.', 'domain': 'global', 'reason': 'badRequest'}]
+2024-05-26 18:15:21+0000 [WARNING] - (7tNtU5XFwrU) - [{'message': 'Request contains an invalid argument.', 'domain': 'global', 'reason': 'badRequest'}]
+2024-05-26 18:15:21+0000 [WARNING] - (D4MdHQOILdw) - [{'message': 'Request contains an invalid argument.', 'domain': 'global', 'reason': 'badRequest'}]
+2024-05-26 18:15:21+0000 [WARNING] - (5yx6BWlEVcY) - [{'message': 'Request contains an invalid argument.', 'domain': 'global', 'reason': 'badRequest'}]
+2024-05-26 18:15:21+0000 [WARNING] - (S_MOd40zlYU) - [{'message': 'Request contains an invalid argument.', 'domain': 'global', 'reason': 'badRequest'}]
+2024-05-26 18:15:21+0000 [INFO] - Livestreams playlist sorted.
+2024-05-26 18:15:56+0000 [INFO] - No video added or removed.
+2024-05-26 18:15:57+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2024-05-26 18:15:57+0000 [INFO] - Process ended.
