@@ -112,7 +112,8 @@ if __name__ == '__main__':
     try:  # Try to update & sort livestreams playlist
         current_live = youtube_req.iter_livestreams(music_channels, prog_bar=PROG_BAR)
         youtube_req.update_playlist(YOUTUBE_OAUTH, playlists_lives, current_live, is_live=True, prog_bar=PROG_BAR)
-        youtube_req.sort_livestreams(YOUTUBE_OAUTH, playlists_lives, prog_bar=PROG_BAR)
+        # Livestream sorting currently disabled
+        # youtube_req.sort_livestreams(YOUTUBE_OAUTH, playlists_lives, prog_bar=PROG_BAR)
 
     except requests.exceptions.ReadTimeout as timeout_error:
         history_main.warning('TIMEOUT ERROR: Livestreams playlist update cancelled.')
