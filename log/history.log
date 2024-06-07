@@ -8131,3 +8131,11 @@
 2024-06-07 18:14:38+0000 [INFO] - 1 new video(s) added.
 2024-06-07 18:14:39+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2024-06-07 18:14:39+0000 [INFO] - Process ended.
+2024-06-07 20:09:46+0000 [INFO] - Process started.
+2024-06-07 20:09:46+0000 [INFO] - API credentials refreshed.
+2024-06-07 20:09:46+0000 [INFO] - YouTube service created successfully.
+2024-06-07 20:10:35+0000 [INFO] - 1 new livestream(s) added.
+2024-06-07 20:10:35+0000 [INFO] - 1 livestream(s) removed.
+2024-06-07 20:11:14+0000 [INFO] - 4 video(s) removed.
+2024-06-07 20:11:15+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2024-06-07 20:11:15+0000 [INFO] - Process ended.
