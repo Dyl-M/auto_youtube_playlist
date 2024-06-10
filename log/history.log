@@ -8207,3 +8207,10 @@
 2024-06-10 12:20:03+0000 [INFO] - 2 video(s) removed.
 2024-06-10 12:20:04+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2024-06-10 12:20:04+0000 [INFO] - Process ended.
+2024-06-10 15:11:26+0000 [INFO] - Process started.
+2024-06-10 15:11:26+0000 [INFO] - API credentials refreshed.
+2024-06-10 15:11:26+0000 [INFO] - YouTube service created successfully.
+2024-06-10 15:12:23+0000 [INFO] - No livestream added or removed.
+2024-06-10 15:13:11+0000 [INFO] - 1 video(s) removed.
+2024-06-10 15:13:12+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2024-06-10 15:13:12+0000 [INFO] - Process ended.
