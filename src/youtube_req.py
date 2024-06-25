@@ -402,7 +402,7 @@ def get_stats(service: googleapiclient.discovery, videos_list: list):
                        'views': item['statistics'].get('viewCount', 0),
                        'likes': item['statistics'].get('likeCount', 0),
                        'comments': item['statistics'].get('commentCount', 0),
-                       'duration': isodate.parse_duration(item['contentDetails'].get('duration', 0)).seconds,
+                       'duration': isodate.parse_duration(item['contentDetails'].get('duration', 'PT0S')).seconds,
                        'live_status': item['snippet'].get('liveBroadcastContent')} for item in request['items']]
 
         except googleapiclient.errors.HttpError as http_error:
