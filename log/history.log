@@ -9514,3 +9514,10 @@
 2024-07-12 18:12:58+0000 [INFO] - No video added or removed.
 2024-07-12 18:12:59+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2024-07-12 18:12:59+0000 [INFO] - Process ended.
+2024-07-12 20:10:12+0000 [INFO] - Process started.
+2024-07-12 20:10:13+0000 [INFO] - API credentials refreshed.
+2024-07-12 20:10:13+0000 [INFO] - YouTube service created successfully.
+2024-07-12 20:11:07+0000 [INFO] - 1 livestream(s) removed.
+2024-07-12 20:11:46+0000 [INFO] - 5 video(s) removed.
+2024-07-12 20:11:47+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2024-07-12 20:11:47+0000 [INFO] - Process ended.
