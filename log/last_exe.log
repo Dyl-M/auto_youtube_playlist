@@ -1,8 +1,7 @@
-2024-08-01 22:17:25+0000 [INFO] - Process started.
-2024-08-01 22:17:25+0000 [INFO] - API credentials refreshed.
-2024-08-01 22:17:25+0000 [INFO] - YouTube service created successfully.
-2024-08-01 22:17:42+0000 [WARNING] - ConnectionError with this channel: UCPgH1KIGI1Zrp0mqy99kgkg
-2024-08-01 22:18:21+0000 [INFO] - No livestream added or removed.
-2024-08-01 22:18:57+0000 [INFO] - 1 new video(s) added.
-2024-08-01 22:18:58+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2024-08-01 22:18:58+0000 [INFO] - Process ended.
+2024-08-02 00:42:30+0000 [INFO] - Process started.
+2024-08-02 00:42:30+0000 [INFO] - API credentials refreshed.
+2024-08-02 00:42:30+0000 [INFO] - YouTube service created successfully.
+2024-08-02 00:43:25+0000 [INFO] - No livestream added or removed.
+2024-08-02 00:44:04+0000 [INFO] - No video added or removed.
+2024-08-02 00:44:05+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2024-08-02 00:44:05+0000 [INFO] - Process ended.
