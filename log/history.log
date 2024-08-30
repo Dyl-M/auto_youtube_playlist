@@ -11457,3 +11457,8 @@
 2024-08-29 22:19:18+0000 [INFO] - 1 new video(s) added.
 2024-08-29 22:19:19+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2024-08-29 22:19:19+0000 [INFO] - Process ended.
+2024-08-30 00:44:55+0000 [INFO] - Process started.
+2024-08-30 00:44:55+0000 [INFO] - API credentials refreshed.
+2024-08-30 00:44:55+0000 [INFO] - YouTube service created successfully.
+2024-08-30 00:46:04+0000 [INFO] - 2 livestream(s) removed.
+2024-08-30 00:46:25+0000 [ERROR] - [UUuCFbUOszL3QkYVUWZzKH8Q] Unknown error: SERVICE_UNAVAILABLE
