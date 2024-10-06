@@ -174,6 +174,7 @@
     "UCyC_4jvPzLiSkJkLIkA7B8g",
     "UCSXm6c-n6lsjtyjvdD0bFVw",
     "UCmUfuDanQfUEVTK6qfXTq_g",
+    "UC6QRHEnq71zL5NboNm5n5Ag",
     "UCSJ4gkVC6NrvII8umztf0Ow",
     "UC029oCuh2jKkEEZcWdGG5xA",
     "UCuw1VDsmOWOldKGLYq6AkVg",
@@ -311,6 +312,8 @@
     "nameph_2021_open": true,
     "nameproduct_hunt_2019": true,
     "namerewiews_popup": true,
+    "names24": true,
+    "names24_open": true,
     "names_2022": true,
     "names_2022_open": true,
     "namesep23": true,
@@ -349,6 +352,7 @@
         "from": 1095
       }
     ],
+    "chh": true,
     "file_id": "1ujWtKGw9Q7iLuwVi-llli2iRIUW0Oa8gtzYfzoWIEiV6ujwTXQ",
     "filters_feed": "{\"off\":[],\"on\":[\"APPRENTISSAGE\",\"DIVERTISSEMENT\",\"GAMING\"],\"video_types\":[\"live\",\"uploads\"]}",
     "fixed_sync": true,
