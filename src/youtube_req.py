@@ -609,17 +609,20 @@ def sort_livestreams(service: googleapiclient.discovery, playlist_id: str, prog_
                                 maxResults=50).execute()
 
     stats = [{'video_id': item['id'],
+              'start_time': item['liveStreamingDetails'].get('actualStartTime'),
               'viewers': int(item['liveStreamingDetails'].get('concurrentViewers', 0)),
               'total_view': int(item['statistics'].get('viewCount', 0))} for item in req.get('items', [])]
 
-    stats_df = pd.DataFrame(stats).sort_values(['viewers', 'total_view'], ascending=False, axis=0, ignore_index=True)
+    stats_df = pd.DataFrame(stats).sort_values(['viewers', 'total_view', 'start_time'],
+                                               ascending=False, axis=0, ignore_index=True)
     stats_df['new_position'] = stats_df.index
 
     # Merge then sort by concurrent viewers
-    df_ordered = livestreams_df.merge(stats_df).sort_values(['viewers', 'total_view', 'new_position'],
-                                                            ascending=True, axis=0, ignore_index=True)
+    df_ordered = livestreams_df.merge(stats_df)
+    df_ordered = df_ordered.loc[df_ordered['new_position'] != df_ordered['position']]. \
+        sort_values('new_position', ascending=True, axis=0, ignore_index=True)
 
-    to_change = df_ordered.loc[df_ordered.position != df_ordered.new_position].to_dict('records')
+    to_change = df_ordered.to_dict('records')
 
     if to_change:  # If an update is needed, change position in the playlist
         if prog_bar:
@@ -634,7 +637,7 @@ def sort_livestreams(service: googleapiclient.discovery, playlist_id: str, prog_
                                   'resourceId': {'kind': 'youtube#video', 'videoId': change['video_id']},
                                   'position': change['new_position']}}
             try:
-                service.playlistItems().update(part='snippet', body=r_body).execute()
+                service.playlistItems().update(part=['snippet', 'id'], body=r_body).execute()
 
             except googleapiclient.errors.HttpError as http_error:  # skipcq: PYL-W0703
                 history.warning('(%s) - %s', change['video_id'], http_error.error_details)
