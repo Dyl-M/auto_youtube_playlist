@@ -13294,3 +13294,8 @@
 2024-10-15 16:26:26+0000 [INFO] - 1 video(s) removed.
 2024-10-15 16:26:27+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2024-10-15 16:26:27+0000 [INFO] - Process ended.
+2024-10-15 20:20:52+0000 [INFO] - Process started.
+2024-10-15 20:20:52+0000 [INFO] - API credentials refreshed.
+2024-10-15 20:20:52+0000 [INFO] - YouTube service created successfully.
+2024-10-15 20:21:46+0000 [INFO] - No livestream added or removed.
+2024-10-15 20:21:46+0000 [ERROR] - [UUvNjdDE6xRuvYVhUGAl2BIQ] Unknown error: quotaExceeded
