@@ -13299,3 +13299,7 @@
 2024-10-15 20:20:52+0000 [INFO] - YouTube service created successfully.
 2024-10-15 20:21:46+0000 [INFO] - No livestream added or removed.
 2024-10-15 20:21:46+0000 [ERROR] - [UUvNjdDE6xRuvYVhUGAl2BIQ] Unknown error: quotaExceeded
+2024-10-16 01:13:12+0000 [INFO] - Process started.
+2024-10-16 01:13:12+0000 [INFO] - API credentials refreshed.
+2024-10-16 01:13:12+0000 [INFO] - YouTube service created successfully.
+2024-10-16 01:14:05+0000 [ERROR] - [PLOMUdQFdS-XNaPVSol9qCUJvQvN5hO4hJ] Unknown error: quotaExceeded
