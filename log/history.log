@@ -13402,3 +13402,11 @@
 2024-10-17 18:27:54+0000 [INFO] - 2 video(s) removed.
 2024-10-17 18:27:55+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2024-10-17 18:27:55+0000 [INFO] - Process ended.
+2024-10-17 20:21:46+0000 [INFO] - Process started.
+2024-10-17 20:21:46+0000 [INFO] - API credentials refreshed.
+2024-10-17 20:21:46+0000 [INFO] - YouTube service created successfully.
+2024-10-17 20:22:05+0000 [WARNING] - TIMEOUT ERROR: Livestreams playlist update cancelled.
+2024-10-17 20:22:53+0000 [INFO] - 3 new video(s) added.
+2024-10-17 20:22:54+0000 [INFO] - 2 video(s) removed.
+2024-10-17 20:22:55+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2024-10-17 20:22:55+0000 [INFO] - Process ended.
