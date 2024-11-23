@@ -15237,3 +15237,12 @@
 2024-11-23 00:58:21+0000 [INFO] - No livestream added or removed.
 2024-11-23 00:58:25+0000 [INFO] - Livestreams playlist sorted.
 2024-11-23 00:58:29+0000 [ERROR] - [UUDCCLsZ0OBG8Dt-3JMc3hkA] Unknown error: quotaExceeded
+2024-11-23 12:21:20+0000 [INFO] - Process started.
+2024-11-23 12:21:20+0000 [INFO] - API credentials refreshed.
+2024-11-23 12:21:20+0000 [INFO] - YouTube service created successfully.
+2024-11-23 12:22:14+0000 [INFO] - No livestream added or removed.
+2024-11-23 12:22:20+0000 [INFO] - Livestreams playlist sorted.
+2024-11-23 12:22:57+0000 [INFO] - 5 new video(s) added.
+2024-11-23 12:22:57+0000 [INFO] - 1 video(s) removed.
+2024-11-23 12:22:58+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2024-11-23 12:22:58+0000 [INFO] - Process ended.
