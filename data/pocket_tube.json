@@ -170,6 +170,7 @@
     "UCZyINKAa5O4FH15Zbw3L32w",
     "UC4YCVy0ggUoFd2NVU2z04WA",
     "UCBYg9_11ErMsFFNR66TRuLA",
+    "UCgt4LLJrIx633gecCwAFd1Q",
     "UC1vdi4J54ucetZoFAfQenMg",
     "UCyC_4jvPzLiSkJkLIkA7B8g",
     "UCSXm6c-n6lsjtyjvdD0bFVw",
@@ -327,6 +328,13 @@
     "nameupdate_jan_2020": true
   },
   "ysc_settings": {
+    "install_date": 1570293612515,
+    "position": 2,
+    "referral": "",
+    "source": "",
+    "uid": "9580917569275893d17",
+    "lang": "en-US",
+    "subscribe_hide": false,
     "channel_settings": [
       {
         "color": "#4CAF50",
@@ -357,15 +365,10 @@
     "filters_feed": "{\"off\":[],\"on\":[\"APPRENTISSAGE\",\"DIVERTISSEMENT\",\"GAMING\"],\"video_types\":[\"live\",\"uploads\"]}",
     "fixed_sync": true,
     "hide_main_page": true,
-    "install_date": 1570293612515,
-    "lang": "fr-FR",
-    "position": 2,
     "remove_filters": true,
     "sort_type": "az",
-    "subscribe_hide": false,
     "subscribe_mouseover": false,
     "sync_enable": true,
-    "uid": "9580917569275893d17",
     "vpr": 6
   }
 }
