@@ -15398,3 +15398,13 @@
 2024-11-26 21:18:50+0000 [INFO] - 2 new video(s) added.
 2024-11-26 21:18:51+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2024-11-26 21:18:51+0000 [INFO] - Process ended.
+2024-11-27 01:18:24+0000 [INFO] - Process started.
+2024-11-27 01:18:24+0000 [INFO] - API credentials refreshed.
+2024-11-27 01:18:24+0000 [INFO] - YouTube service created successfully.
+2024-11-27 01:18:51+0000 [WARNING] - ConnectionError with this channel: UCSJ4gkVC6NrvII8umztf0Ow
+2024-11-27 01:19:23+0000 [WARNING] - ConnectionError with this channel: UC8eXqFK48M3bBSmMO1FRgIA
+2024-11-27 01:19:31+0000 [INFO] - No livestream added or removed.
+2024-11-27 01:19:34+0000 [INFO] - Livestreams playlist sorted.
+2024-11-27 01:20:23+0000 [INFO] - No video added or removed.
+2024-11-27 01:20:24+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2024-11-27 01:20:24+0000 [INFO] - Process ended.
