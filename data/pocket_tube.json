@@ -63,6 +63,7 @@
     "UC3r9tKfDLDAlQXZzuEH3dfQ",
     "UCgQhTx7Dlpl6xKwHtbsowgQ",
     "UCPgqonWzGADVVV6gGVGDdPA",
+    "UCq0Y4LdNruQ2UQaVSWWWhTg",
     "UCU23CAa9oKtxRVvBMkgIanQ",
     "UCsk9XguwTfgbenCZ4AlIcYQ",
     "UC8Q0SLrZLiTj5s4qc9aad-w",
@@ -113,7 +114,6 @@
     "UC3XZCxTQ55JkT35W27Jtbyg",
     "UCwIgPuUJXuf2nY-nKsEvLOg",
     "UCtjqUbiFV_-fmcttR30CU_A",
-    "UC9EzN5XNxhxqHZevM9kSuaw",
     "UCmd8Hi7qSoQvAwW3B3tUsig",
     "UCGZXYc32ri4D0gSLPf2pZXQ",
     "UCu5jfQcpRLm9xhmlSd5S8xw",
@@ -325,7 +325,9 @@
     "nametutorial_2019": true,
     "nameukr": true,
     "nameukr_open": true,
-    "nameupdate_jan_2020": true
+    "nameupdate_jan_2020": true,
+    "nameblackfriday24": true,
+    "namecm24": true
   },
   "ysc_settings": {
     "install_date": 1570293612515,
