@@ -452,3 +452,12 @@
 2025-01-10 00:52:43+0000 [WARNING] - (xf9Ejt4OmWQ) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
 2025-01-10 00:52:43+0000 [INFO] - Livestreams playlist sorted.
 2025-01-10 00:52:43+0000 [ERROR] - [UUvNjdDE6xRuvYVhUGAl2BIQ] Unknown error: quotaExceeded
+2025-01-10 12:19:55+0000 [INFO] - Process started.
+2025-01-10 12:19:55+0000 [INFO] - API credentials refreshed.
+2025-01-10 12:19:55+0000 [INFO] - YouTube service created successfully.
+2025-01-10 12:20:51+0000 [INFO] - No livestream added or removed.
+2025-01-10 12:20:59+0000 [INFO] - Livestreams playlist sorted.
+2025-01-10 12:21:53+0000 [INFO] - 2 new video(s) added.
+2025-01-10 12:21:55+0000 [INFO] - 6 video(s) removed.
+2025-01-10 12:21:56+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2025-01-10 12:21:56+0000 [INFO] - Process ended.
