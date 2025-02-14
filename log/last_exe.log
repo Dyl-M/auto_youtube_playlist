@@ -1,9 +1,8 @@
-2025-02-14 16:12:48+0000 [INFO] - Process started.
-2025-02-14 16:12:48+0000 [INFO] - API credentials refreshed.
-2025-02-14 16:12:48+0000 [INFO] - YouTube service created successfully.
-2025-02-14 16:13:46+0000 [INFO] - No livestream added or removed.
-2025-02-14 16:13:50+0000 [INFO] - Livestreams playlist sorted.
-2025-02-14 16:14:31+0000 [INFO] - 3 new video(s) added.
-2025-02-14 16:14:31+0000 [INFO] - 2 video(s) removed.
-2025-02-14 16:14:32+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2025-02-14 16:14:32+0000 [INFO] - Process ended.
+2025-02-14 18:13:58+0000 [INFO] - Process started.
+2025-02-14 18:13:58+0000 [INFO] - API credentials refreshed.
+2025-02-14 18:13:58+0000 [INFO] - YouTube service created successfully.
+2025-02-14 18:14:50+0000 [INFO] - 1 new livestream(s) added.
+2025-02-14 18:14:53+0000 [INFO] - Livestreams playlist sorted.
+2025-02-14 18:15:32+0000 [INFO] - 2 new video(s) added.
+2025-02-14 18:15:32+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2025-02-14 18:15:32+0000 [INFO] - Process ended.
