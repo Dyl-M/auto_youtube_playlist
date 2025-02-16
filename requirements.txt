@@ -9,4 +9,4 @@ pandas~=2.2
 plotly~=6.0
 requests~=2.32
 tqdm~=4.67
-tzlocal~=5.2
+tzlocal~=5.3
