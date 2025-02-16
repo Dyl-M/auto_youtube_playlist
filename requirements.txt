@@ -1,5 +1,5 @@
 beautifulsoup4~=4.13
-pygithub~=2.5
+pygithub~=2.6
 google-api-python-client~=2.161
 google-auth~=2.38
 google-auth-oauthlib~=1.2
