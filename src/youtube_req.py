@@ -344,6 +344,11 @@ def find_livestreams(channel_id: str):
         except KeyError:  # No content on the channel
             return []
 
+    except IndexError:
+        # No content found (due to channel termination by YouTube by mistake, most of the time)
+        history.warning('Can not found content for the following channel: %s', channel_id)
+        return []
+
     except requests.exceptions.ConnectionError:
         history.warning('ConnectionError with this channel: %s', channel_id)
 
