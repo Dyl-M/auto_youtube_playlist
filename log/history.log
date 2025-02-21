@@ -2115,3 +2115,27 @@
 2025-02-21 16:14:22+0000 [INFO] - 4 video(s) removed.
 2025-02-21 16:14:23+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2025-02-21 16:14:23+0000 [INFO] - Process ended.
+2025-02-21 18:14:05+0000 [INFO] - Process started.
+2025-02-21 18:14:05+0000 [INFO] - API credentials refreshed.
+2025-02-21 18:14:05+0000 [INFO] - YouTube service created successfully.
+2025-02-21 18:14:24+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2025-02-21 18:14:57+0000 [INFO] - 2 new livestream(s) added.
+2025-02-21 18:14:59+0000 [WARNING] - (TtkFsfOP9QI) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2025-02-21 18:14:59+0000 [WARNING] - (1oDrJba2PSs) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2025-02-21 18:14:59+0000 [WARNING] - (h2GQcwQRoWg) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2025-02-21 18:14:59+0000 [WARNING] - (d8Oc90QevaI) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2025-02-21 18:14:59+0000 [WARNING] - (S_MOd40zlYU) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2025-02-21 18:14:59+0000 [WARNING] - (D4MdHQOILdw) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2025-02-21 18:14:59+0000 [WARNING] - (mF3m7Jza2uc) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2025-02-21 18:14:59+0000 [WARNING] - (-OekvEFm1lo) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2025-02-21 18:14:59+0000 [WARNING] - (IvuwTft-0cM) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2025-02-21 18:14:59+0000 [WARNING] - (Cwq3AFyV044) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2025-02-21 18:14:59+0000 [WARNING] - (7tNtU5XFwrU) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2025-02-21 18:14:59+0000 [WARNING] - (xf9Ejt4OmWQ) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2025-02-21 18:15:00+0000 [WARNING] - (0T1FPUV2wRQ) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2025-02-21 18:15:00+0000 [WARNING] - (yGlB3GKfNBI) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2025-02-21 18:15:00+0000 [WARNING] - (6eFqAKnTTOc) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2025-02-21 18:15:00+0000 [WARNING] - (UL0PoqHnKOE) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2025-02-21 18:15:00+0000 [WARNING] - (ATkRj9XudOA) - [{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]
+2025-02-21 18:15:00+0000 [INFO] - Livestreams playlist sorted.
+2025-02-21 18:15:00+0000 [ERROR] - [UUvNjdDE6xRuvYVhUGAl2BIQ] Unknown error: quotaExceeded
