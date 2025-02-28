@@ -267,6 +267,10 @@ def get_playlist_items(service: googleapiclient.discovery, playlist_id: str, day
         except googleapiclient.errors.HttpError as http_error:
             error_reason = http_error.error_details[0]['reason']
 
+            if error_reason == 'quotaExceeded':
+                history.warning('Quota exceeded for YouTube projects.')
+                sys.exit()
+
             if error_reason == 'playlistNotFound':
                 if f'UC{playlist_id[2:]}' not in ADD_ON['playlistNotFoundPass']:
                     history.warning('Playlist not found: %s', playlist_id)
@@ -375,6 +379,12 @@ def check_if_live(service: googleapiclient.discovery, videos_list: list):
                        'live_status': item['snippet']['liveBroadcastContent']} for item in request['items']]
 
         except googleapiclient.errors.HttpError as http_error:
+            error_reason = http_error.error_details[0]['reason']
+
+            if error_reason == 'quotaExceeded':
+                history.warning('Quota exceeded for YouTube projects.')
+                sys.exit()
+
             history.error(http_error.error_details)
             sys.exit()
 
@@ -411,6 +421,12 @@ def get_stats(service: googleapiclient.discovery, videos_list: list):
                        'live_status': item['snippet'].get('liveBroadcastContent')} for item in request['items']]
 
         except googleapiclient.errors.HttpError as http_error:
+            error_reason = http_error.error_details[0]['reason']
+
+            if error_reason == 'quotaExceeded':
+                history.warning('Quota exceeded for YouTube projects.')
+                sys.exit()
+
             history.error(http_error.error_details)
             sys.exit()
 
@@ -573,6 +589,12 @@ def add_to_playlist(service: googleapiclient.discovery, playlist_id: str, videos
             request.execute()
 
         except googleapiclient.errors.HttpError as http_error:  # skipcq: PYL-W0703
+            error_reason = http_error.error_details[0]['reason']
+
+            if error_reason == 'quotaExceeded':
+                history.warning('Quota exceeded for YouTube projects.')
+                sys.exit()
+
             history.warning('(%s) - %s', video_id, http_error.error_details)
 
 
@@ -596,6 +618,12 @@ def del_from_playlist(service: googleapiclient.discovery, playlist_id: str, item
             request.execute()
 
         except googleapiclient.errors.HttpError as http_error:  # skipcq: PYL-W0703
+            error_reason = http_error.error_details[0]['reason']
+
+            if error_reason == 'quotaExceeded':
+                history.warning('Quota exceeded for YouTube projects.')
+                sys.exit()
+
             history.warning('(%s) - %s', item['video_id'], http_error.error_details)
 
 
@@ -645,6 +673,12 @@ def sort_livestreams(service: googleapiclient.discovery, playlist_id: str, prog_
                 service.playlistItems().update(part=['snippet', 'id'], body=r_body).execute()
 
             except googleapiclient.errors.HttpError as http_error:  # skipcq: PYL-W0703
+                error_reason = http_error.error_details[0]['reason']
+
+                if error_reason == 'quotaExceeded':
+                    history.warning('Quota exceeded for YouTube projects.')
+                    sys.exit()
+
                 history.warning('(%s) - %s', change['video_id'], http_error.error_details)
 
         history.info('Livestreams playlist sorted.')
