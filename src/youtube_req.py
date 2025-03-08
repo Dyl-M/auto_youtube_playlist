@@ -651,7 +651,7 @@ def sort_livestreams(service: googleapiclient.discovery, playlist_id: str, prog_
             history.warning('Quota exceeded for YouTube projects.')
             sys.exit()
 
-        history.warning('(%s) - %s', http_error.error_details)
+        history.warning('%s', http_error.error_details)
 
     stats = [{'video_id': item['id'],
               'start_time': item['liveStreamingDetails'].get('actualStartTime'),
