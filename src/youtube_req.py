@@ -140,6 +140,7 @@ def create_service_local(log: bool = True):
             cred = flow.run_local_server()  # Run authentication process
 
         with open('../tokens/credentials.json', 'w') as cred_file:  # Save credentials as a JSON file
+            # noinspection PyTypeChecker
             json.dump(ast.literal_eval(cred.to_json()), cred_file, ensure_ascii=False, indent=4)
 
     try:
@@ -636,10 +637,21 @@ def sort_livestreams(service: googleapiclient.discovery, playlist_id: str, prog_
     livestreams = get_playlist_items(service=service, playlist_id=playlist_id)  # Retrieve livestreams
     livestreams_df = pd.DataFrame(livestreams).loc[:, ['video_id', 'item_id']]
     livestreams_df['position'] = livestreams_df.index
+    req = {}
 
-    req = service.videos().list(part=['statistics', 'liveStreamingDetails'],  # Then statistics
-                                id=','.join(livestreams_df.video_id.tolist()),
-                                maxResults=50).execute()
+    try:
+        req = service.videos().list(part=['statistics', 'liveStreamingDetails'],  # Then statistics
+                                    id=','.join(livestreams_df.video_id.tolist()),
+                                    maxResults=50).execute()
+
+    except googleapiclient.errors.HttpError as http_error:  # skipcq: PYL-W0703
+        error_reason = http_error.error_details[0]['reason']
+
+        if error_reason == 'quotaExceeded':
+            history.warning('Quota exceeded for YouTube projects.')
+            sys.exit()
+
+        history.warning('(%s) - %s', http_error.error_details)
 
     stats = [{'video_id': item['id'],
               'start_time': item['liveStreamingDetails'].get('actualStartTime'),
@@ -730,4 +742,5 @@ def sort_db(service):
         channels_db[category] = db_sorted[category]
 
     with open('../data/pocket_tube.json', 'w', encoding='utf-8') as pt_save:  # Export as JSON file
+        # noinspection PyTypeChecker
         json.dump(channels_db, pt_save, indent=2, ensure_ascii=False)
