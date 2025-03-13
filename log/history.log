@@ -3038,3 +3038,12 @@
 2025-03-12 22:23:23+0000 [INFO] - 1 video(s) removed.
 2025-03-12 22:23:24+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2025-03-12 22:23:24+0000 [INFO] - Process ended.
+2025-03-13 01:43:42+0000 [INFO] - Process started.
+2025-03-13 01:43:42+0000 [INFO] - API credentials refreshed.
+2025-03-13 01:43:42+0000 [INFO] - YouTube service created successfully.
+2025-03-13 01:44:03+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2025-03-13 01:44:39+0000 [INFO] - 1 livestream(s) removed.
+2025-03-13 01:44:43+0000 [INFO] - Livestreams playlist sorted.
+2025-03-13 01:45:15+0000 [INFO] - 1 video(s) removed.
+2025-03-13 01:45:16+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2025-03-13 01:45:16+0000 [INFO] - Process ended.
