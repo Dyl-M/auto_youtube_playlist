@@ -3442,3 +3442,10 @@
 2025-03-20 22:21:23+0000 [INFO] - 2 video(s) removed.
 2025-03-20 22:21:24+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2025-03-20 22:21:24+0000 [INFO] - Process ended.
+2025-03-21 00:53:34+0000 [INFO] - Process started.
+2025-03-21 00:53:34+0000 [INFO] - API credentials refreshed.
+2025-03-21 00:53:34+0000 [INFO] - YouTube service created successfully.
+2025-03-21 00:53:55+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2025-03-21 00:54:34+0000 [INFO] - 1 livestream(s) removed.
+2025-03-21 00:54:42+0000 [INFO] - Livestreams playlist sorted.
+2025-03-21 00:54:42+0000 [WARNING] - Quota exceeded for YouTube projects.
