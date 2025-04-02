@@ -1,9 +1,10 @@
-2025-04-02 15:13:29+0000 [INFO] - Process started.
-2025-04-02 15:13:29+0000 [INFO] - API credentials refreshed.
-2025-04-02 15:13:29+0000 [INFO] - YouTube service created successfully.
-2025-04-02 15:13:47+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
-2025-04-02 15:14:22+0000 [INFO] - No livestream added or removed.
-2025-04-02 15:14:28+0000 [INFO] - Livestreams playlist sorted.
-2025-04-02 15:15:03+0000 [INFO] - 1 video(s) removed.
-2025-04-02 15:15:05+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2025-04-02 15:15:05+0000 [INFO] - Process ended.
+2025-04-02 18:16:59+0000 [INFO] - Process started.
+2025-04-02 18:16:59+0000 [INFO] - API credentials refreshed.
+2025-04-02 18:16:59+0000 [INFO] - YouTube service created successfully.
+2025-04-02 18:17:17+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2025-04-02 18:17:52+0000 [INFO] - No livestream added or removed.
+2025-04-02 18:17:53+0000 [INFO] - Livestreams playlist sorted.
+2025-04-02 18:18:28+0000 [INFO] - 1 new video(s) added.
+2025-04-02 18:18:29+0000 [INFO] - 2 video(s) removed.
+2025-04-02 18:18:30+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2025-04-02 18:18:30+0000 [INFO] - Process ended.
