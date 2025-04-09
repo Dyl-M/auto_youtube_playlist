@@ -113,6 +113,7 @@
   "MUSIQUE": [
     "UCvNjdDE6xRuvYVhUGAl2BIQ",
     "UC3XZCxTQ55JkT35W27Jtbyg",
+    "UCCL4ZCB2BLK7mwqG8M53WNA",
     "UCwIgPuUJXuf2nY-nKsEvLOg",
     "UCmd8Hi7qSoQvAwW3B3tUsig",
     "UCGZXYc32ri4D0gSLPf2pZXQ",
@@ -315,7 +316,9 @@
     "nameukr_open": true,
     "nameupdate_jan_2020": true,
     "nameblackfriday24": true,
-    "namecm24": true
+    "namecm24": true,
+    "namem25": true,
+    "namem25_open": true
   },
   "ysc_settings": {
     "install_date": 1570293612515,
