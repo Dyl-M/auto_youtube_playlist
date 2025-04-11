@@ -4470,3 +4470,12 @@
 2025-04-11 12:23:24+0000 [INFO] - 4 video(s) removed.
 2025-04-11 12:23:25+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2025-04-11 12:23:25+0000 [INFO] - Process ended.
+2025-04-11 14:11:50+0000 [INFO] - Process started.
+2025-04-11 14:11:50+0000 [INFO] - API credentials refreshed.
+2025-04-11 14:11:50+0000 [INFO] - YouTube service created successfully.
+2025-04-11 14:12:13+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2025-04-11 14:12:52+0000 [INFO] - No livestream added or removed.
+2025-04-11 14:12:57+0000 [INFO] - Livestreams playlist sorted.
+2025-04-11 14:13:51+0000 [INFO] - 1 video(s) removed.
+2025-04-11 14:13:53+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2025-04-11 14:13:53+0000 [INFO] - Process ended.
