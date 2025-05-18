@@ -23,6 +23,7 @@
     "UCYnvxJ-PKiGXo_tYXpWAC-w",
     "UCqA8H22FwgBVcF3GJpp0MQw",
     "UCP46_MXP_WG_auH88FnfS1A",
+    "UCGtVx6kynsJRHynh8tqFE9w",
     "UClsagI94IabwMKv9LN3kgNA",
     "UCxfusAsd_n5AMFheiipyaCw",
     "UC7KbIaEOuY7H2j-cvhJ3mYA",
@@ -32,6 +33,10 @@
     "UCAiy7bY8nTQCWrkSRh6Wu9w",
     "UCynBu7PDfJsCXeCSqT1QUQw",
     "UCIJZA6SJ3JjvuOZgYPYOHnA"
+  ],
+  "ASMR": [
+    "UC_n9r4yRVXusIa6Cabl4wDw",
+    "UCvqzioHYJNDMclUJBVXV-7g"
   ],
   "DIVERTISSEMENT": [
     "UC6UBbvEA8uh6Ulc6ax1Zs0g",
@@ -105,6 +110,7 @@
     "UC8kCtPyCPg50n3XjmjRraGw",
     "UCn9tXkXDxeHdZ6RZpYB2ELg",
     "UChpTvE2oxatdcl0zqFTUkyw",
+    "UCGtVx6kynsJRHynh8tqFE9w",
     "UCl69AEx4MdqMZH7Jtsm7Tig",
     "UCCGnx-MAkE8BsFskbybAPMg",
     "UCYGjxo5ifuhnmvhPvCc3DJQ",
@@ -132,6 +138,7 @@
     "UCA7GRAPzJxIpH2nf7zxZifw",
     "UCsCWA3Y3JppL6feQiMRgm6Q",
     "UCbAEthmNnJk8JVZP8FWXqZg",
+    "UCouEBciGjQjW_6zVkmhWNRQ",
     "UC32W3Kpoh6T6pG5PrWm0LTQ",
     "UCrUT57KGEzrCrmLb4PRgluw",
     "UCz7HeKNi11EdK6_B0bCUK_Q",
@@ -163,6 +170,7 @@
     "UCw49uOTAJjGUdoAeUcp7tOg",
     "UCTc3vxWltlHLaxZc3e56IJg",
     "UCj_Y-xJ2DRDGP4ilfzplCOQ",
+    "UCGCYRSJbcQhcD5cUMiM5F_A",
     "UC_OtnV-9QZmBj6oWBelMoZw",
     "UC1WKD9pJt5Sa4DCVaoJSAGw",
     "UCZyINKAa5O4FH15Zbw3L32w",
@@ -211,7 +219,6 @@
     "UC3TWxgFn6UfUIK3DkF9OTIw",
     "UCjvIVmYKXtpGZDKVS5GlhMQ",
     "UCPZUQqtVDmcjm4NY5FkzqLA",
-    "UCXGB0P-AhyZ4qYHWooiQzLA",
     "UCXLrdG_ZVt4US1iV40ytiQQ",
     "UChAhCmcGr2sDO27t_t6ndbA",
     "UCNwFuUbJXKQpP1ot1ZEE6Yg",
@@ -239,6 +246,7 @@
   ],
   "ysc_collection": {
     "APPRENTISSAGE": "APPRENTISSAGE",
+    "ASMR": "ASMR",
     "DIVERTISSEMENT": "DIVERTISSEMENT",
     "GAMING": "GAMING",
     "MUSIQUE": "MUSIQUE"
@@ -251,6 +259,9 @@
   "ysc_meta": {
     "APPRENTISSAGE": {
       "img": "chrome-extension://kdmnjgijlmjgmimahnillepgcgeemffb/icon/new_pack/_12.png"
+    },
+    "ASMR": {
+      "img": "https://cdn4.iconfinder.com/data/icons/emoji-18/61/24-64.png"
     },
     "DIVERTISSEMENT": {
       "img": "chrome-extension://kdmnjgijlmjgmimahnillepgcgeemffb/icon/new_pack/_16.png"
