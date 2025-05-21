@@ -6491,3 +6491,20 @@
 2025-05-21 16:30:36+0000 [INFO] - 1 video(s) removed.
 2025-05-21 16:30:37+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2025-05-21 16:30:37+0000 [INFO] - Process ended.
+2025-05-21 20:24:32+0000 [INFO] - Process started.
+2025-05-21 20:24:32+0000 [INFO] - API credentials refreshed.
+2025-05-21 20:24:32+0000 [INFO] - YouTube service created successfully.
+2025-05-21 20:24:51+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2025-05-21 20:25:26+0000 [WARNING] - (PK8qChAXgOc) - [{'message': 'Internal error encountered.', 'domain': 'global', 'reason': 'backendError'}]
+2025-05-21 20:25:26+0000 [INFO] - 1 new livestream(s) added.
+2025-05-21 20:25:31+0000 [INFO] - Livestreams playlist sorted.
+2025-05-21 20:26:08+0000 [WARNING] - (xCvaCI5GN1g) - [{'message': 'Internal error encountered.', 'domain': 'global', 'reason': 'backendError'}]
+2025-05-21 20:26:08+0000 [WARNING] - (FvtjyRHN-hk) - [{'message': 'Internal error encountered.', 'domain': 'global', 'reason': 'backendError'}]
+2025-05-21 20:26:09+0000 [WARNING] - (sRyjDviI3Ig) - [{'message': 'Internal error encountered.', 'domain': 'global', 'reason': 'backendError'}]
+2025-05-21 20:26:09+0000 [WARNING] - (Msr-L81BF2s) - [{'message': 'Internal error encountered.', 'domain': 'global', 'reason': 'backendError'}]
+2025-05-21 20:26:09+0000 [WARNING] - (pme0_g_0aPs) - [{'message': 'Internal error encountered.', 'domain': 'global', 'reason': 'backendError'}]
+2025-05-21 20:26:09+0000 [WARNING] - (eEyH1CgnC0s) - [{'message': 'Internal error encountered.', 'domain': 'global', 'reason': 'backendError'}]
+2025-05-21 20:26:09+0000 [INFO] - 6 new video(s) added.
+2025-05-21 20:26:10+0000 [INFO] - 3 video(s) removed.
+2025-05-21 20:26:11+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2025-05-21 20:26:11+0000 [INFO] - Process ended.
