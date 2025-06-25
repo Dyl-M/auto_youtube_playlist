@@ -8206,3 +8206,10 @@
 2025-06-25 20:21:25+0000 [INFO] - 1 video(s) removed.
 2025-06-25 20:21:26+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2025-06-25 20:21:26+0000 [INFO] - Process ended.
+2025-06-25 22:16:32+0000 [INFO] - Process started.
+2025-06-25 22:16:32+0000 [INFO] - API credentials refreshed.
+2025-06-25 22:16:32+0000 [INFO] - YouTube service created successfully.
+2025-06-25 22:16:56+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2025-06-25 22:17:41+0000 [INFO] - 2 livestream(s) removed.
+2025-06-25 22:17:44+0000 [WARNING] - (vGf99FwLtxw) - [{'message': 'Invalid specified snippet.', 'domain': 'youtube.playlistItem', 'reason': 'invalidSnippet'}]
+2025-06-25 22:17:45+0000 [WARNING] - Quota exceeded for YouTube projects.
