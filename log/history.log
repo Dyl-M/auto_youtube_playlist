@@ -8258,3 +8258,15 @@
 2025-06-26 18:20:29+0000 [INFO] - 2 video(s) removed.
 2025-06-26 18:20:30+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2025-06-26 18:20:30+0000 [INFO] - Process ended.
+2025-06-26 20:14:44+0000 [INFO] - Process started.
+2025-06-26 20:14:45+0000 [INFO] - API credentials refreshed.
+2025-06-26 20:14:45+0000 [INFO] - YouTube service created successfully.
+2025-06-26 20:15:10+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2025-06-26 20:15:56+0000 [INFO] - 1 livestream(s) removed.
+2025-06-26 20:16:00+0000 [WARNING] - (oZSo65LM70g) - [{'message': 'Invalid specified snippet.', 'domain': 'youtube.playlistItem', 'reason': 'invalidSnippet'}]
+2025-06-26 20:16:01+0000 [WARNING] - (UL0PoqHnKOE) - [{'message': 'Invalid playlist item position.', 'domain': 'youtube.playlistItem', 'reason': 'invalidPlaylistItemPosition'}]
+2025-06-26 20:16:01+0000 [INFO] - Livestreams playlist sorted.
+2025-06-26 20:16:49+0000 [INFO] - 1 new video(s) added.
+2025-06-26 20:16:50+0000 [INFO] - 3 video(s) removed.
+2025-06-26 20:16:51+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2025-06-26 20:16:51+0000 [INFO] - Process ended.
