@@ -8213,3 +8213,9 @@
 2025-06-25 22:17:41+0000 [INFO] - 2 livestream(s) removed.
 2025-06-25 22:17:44+0000 [WARNING] - (vGf99FwLtxw) - [{'message': 'Invalid specified snippet.', 'domain': 'youtube.playlistItem', 'reason': 'invalidSnippet'}]
 2025-06-25 22:17:45+0000 [WARNING] - Quota exceeded for YouTube projects.
+2025-06-26 01:04:16+0000 [INFO] - Process started.
+2025-06-26 01:04:16+0000 [INFO] - API credentials refreshed.
+2025-06-26 01:04:16+0000 [INFO] - YouTube service created successfully.
+2025-06-26 01:04:38+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2025-06-26 01:05:16+0000 [INFO] - No livestream added or removed.
+2025-06-26 01:05:17+0000 [WARNING] - Quota exceeded for YouTube projects.
