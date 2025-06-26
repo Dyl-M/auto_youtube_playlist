@@ -8219,3 +8219,13 @@
 2025-06-26 01:04:38+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
 2025-06-26 01:05:16+0000 [INFO] - No livestream added or removed.
 2025-06-26 01:05:17+0000 [WARNING] - Quota exceeded for YouTube projects.
+2025-06-26 12:26:54+0000 [INFO] - Process started.
+2025-06-26 12:26:55+0000 [INFO] - API credentials refreshed.
+2025-06-26 12:26:55+0000 [INFO] - YouTube service created successfully.
+2025-06-26 12:27:15+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2025-06-26 12:27:54+0000 [INFO] - No livestream added or removed.
+2025-06-26 12:28:00+0000 [INFO] - Livestreams playlist sorted.
+2025-06-26 12:28:54+0000 [INFO] - 3 new video(s) added.
+2025-06-26 12:28:54+0000 [INFO] - 1 video(s) removed.
+2025-06-26 12:28:55+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2025-06-26 12:28:55+0000 [INFO] - Process ended.
