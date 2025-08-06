@@ -10099,3 +10099,9 @@
 2025-08-05 20:19:00+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
 2025-08-05 20:19:57+0000 [INFO] - No livestream added or removed.
 2025-08-05 20:19:59+0000 [WARNING] - Quota exceeded for YouTube projects.
+2025-08-06 02:22:30+0000 [INFO] - Process started.
+2025-08-06 02:22:30+0000 [INFO] - API credentials refreshed.
+2025-08-06 02:22:30+0000 [INFO] - YouTube service created successfully.
+2025-08-06 02:23:02+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2025-08-06 02:24:01+0000 [INFO] - No livestream added or removed.
+2025-08-06 02:24:02+0000 [WARNING] - Quota exceeded for YouTube projects.
