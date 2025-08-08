@@ -10212,3 +10212,9 @@
 2025-08-07 22:19:26+0000 [WARNING] - ConnectionError with this channel: UCFMjkrMT7Gvg84v0av-DIwA
 2025-08-07 22:19:39+0000 [INFO] - No livestream added or removed.
 2025-08-07 22:19:39+0000 [WARNING] - Quota exceeded for YouTube projects.
+2025-08-08 01:04:23+0000 [INFO] - Process started.
+2025-08-08 01:04:23+0000 [INFO] - API credentials refreshed.
+2025-08-08 01:04:23+0000 [INFO] - YouTube service created successfully.
+2025-08-08 01:04:48+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2025-08-08 01:05:30+0000 [INFO] - No livestream added or removed.
+2025-08-08 01:05:30+0000 [WARNING] - Quota exceeded for YouTube projects.
