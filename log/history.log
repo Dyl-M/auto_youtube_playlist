@@ -11503,3 +11503,11 @@
 2025-09-02 18:19:47+0000 [INFO] - 1 video(s) removed.
 2025-09-02 18:19:48+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2025-09-02 18:19:48+0000 [INFO] - Process ended.
+2025-09-02 20:13:51+0000 [INFO] - Process started.
+2025-09-02 20:13:51+0000 [INFO] - API credentials refreshed.
+2025-09-02 20:13:51+0000 [INFO] - YouTube service created successfully.
+2025-09-02 20:14:24+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2025-09-02 20:14:57+0000 [WARNING] - ConnectionError with this channel: UCjPLSfHW5YMkvwSCeP8NCTQ
+2025-09-02 20:15:19+0000 [INFO] - No livestream added or removed.
+2025-09-02 20:15:32+0000 [INFO] - Livestreams playlist sorted.
+2025-09-02 20:16:53+0000 [ERROR] - [UUPfyre-gaEZkTl5oCoxtkSQ] Unknown error: backendError
