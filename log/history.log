@@ -12016,3 +12016,9 @@
 2025-09-12 20:13:46+0000 [WARNING] - (h2PtKeomBEE) - [{'message': 'Invalid playlist item position.', 'domain': 'youtube.playlistItem', 'reason': 'invalidPlaylistItemPosition'}]
 2025-09-12 20:13:46+0000 [INFO] - Livestreams playlist sorted.
 2025-09-12 20:14:46+0000 [WARNING] - Quota exceeded for YouTube projects.
+2025-09-12 22:10:04+0000 [INFO] - Process started.
+2025-09-12 22:10:04+0000 [INFO] - API credentials refreshed.
+2025-09-12 22:10:04+0000 [INFO] - YouTube service created successfully.
+2025-09-12 22:10:29+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2025-09-12 22:11:13+0000 [INFO] - No livestream added or removed.
+2025-09-12 22:11:13+0000 [WARNING] - Quota exceeded for YouTube projects.
