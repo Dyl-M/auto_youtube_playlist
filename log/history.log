@@ -13023,3 +13023,13 @@
 2025-10-03 18:18:29+0000 [INFO] - 1 video(s) removed.
 2025-10-03 18:18:30+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2025-10-03 18:18:30+0000 [INFO] - Process ended.
+2025-10-03 20:12:07+0000 [INFO] - Process started.
+2025-10-03 20:12:07+0000 [INFO] - API credentials refreshed.
+2025-10-03 20:12:07+0000 [INFO] - YouTube service created successfully.
+2025-10-03 20:12:39+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2025-10-03 20:13:38+0000 [INFO] - 1 livestream(s) removed.
+2025-10-03 20:13:43+0000 [WARNING] - (9m9ehW86LU4) - [{'message': 'Invalid specified snippet.', 'domain': 'youtube.playlistItem', 'reason': 'invalidSnippet'}]
+2025-10-03 20:13:43+0000 [INFO] - Livestreams playlist sorted.
+2025-10-03 20:14:41+0000 [INFO] - 2 video(s) removed.
+2025-10-03 20:14:42+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2025-10-03 20:14:42+0000 [INFO] - Process ended.
