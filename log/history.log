@@ -14310,3 +14310,14 @@
 2025-11-01 01:54:11+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
 2025-11-01 01:54:30+0000 [WARNING] - Can not found content for the following channel: UCFUMI05jgO_O88Px8qfCQeQ
 2025-11-01 01:54:56+0000 [WARNING] - Quota exceeded for YouTube projects.
+2025-11-01 12:42:21+0000 [INFO] - Process started.
+2025-11-01 12:42:21+0000 [INFO] - API credentials refreshed.
+2025-11-01 12:42:21+0000 [INFO] - YouTube service created successfully.
+2025-11-01 12:42:46+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2025-11-01 12:43:29+0000 [INFO] - No livestream added or removed.
+2025-11-01 12:44:05+0000 [WARNING] - (E_XmwjgRLz8) - [{'domain': 'youtube.CoreErrorDomain', 'reason': 'SERVICE_UNAVAILABLE'}]
+2025-11-01 12:44:05+0000 [INFO] - Livestreams playlist sorted.
+2025-11-01 12:45:00+0000 [INFO] - 5 new video(s) added.
+2025-11-01 12:45:01+0000 [INFO] - 1 video(s) removed.
+2025-11-01 12:45:02+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2025-11-01 12:45:02+0000 [INFO] - Process ended.
