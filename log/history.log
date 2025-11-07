@@ -14633,3 +14633,8 @@
 2025-11-07 20:14:20+0000 [INFO] - YouTube service created successfully.
 2025-11-07 20:14:50+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
 2025-11-07 20:15:44+0000 [WARNING] - Quota exceeded for YouTube projects.
+2025-11-07 22:12:57+0000 [INFO] - Process started.
+2025-11-07 22:12:57+0000 [INFO] - API credentials refreshed.
+2025-11-07 22:12:57+0000 [INFO] - YouTube service created successfully.
+2025-11-07 22:13:22+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2025-11-07 22:14:05+0000 [WARNING] - Quota exceeded for YouTube projects.
