@@ -15567,3 +15567,8 @@
 2025-11-27 18:24:48+0000 [INFO] - 1 new livestream(s) added.
 2025-11-27 18:24:48+0000 [INFO] - 1 livestream(s) removed.
 2025-11-27 18:24:52+0000 [WARNING] - Quota exceeded for YouTube projects.
+2025-11-27 20:17:00+0000 [INFO] - Process started.
+2025-11-27 20:17:00+0000 [INFO] - API credentials refreshed.
+2025-11-27 20:17:00+0000 [INFO] - YouTube service created successfully.
+2025-11-27 20:17:30+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2025-11-27 20:18:20+0000 [WARNING] - Quota exceeded for YouTube projects.
