@@ -54,6 +54,7 @@
     "UCFeqAfEuKm7lIg2ddQzh61A",
     "UCPgH1KIGI1Zrp0mqy99kgkg",
     "UCQVaKQcp4OxSg1eC6SF3NTw",
+    "UCAoUBng0Mfu0qn4lPimS6MA",
     "UC3DVTbnJNVFbDq1gVLVFdvw",
     "UCCGnx-MAkE8BsFskbybAPMg",
     "UC3Lmytq3AlvcJ-34If_jDyw",
@@ -136,7 +137,6 @@
     "UCCvVpbYRgYjMN7mG7qQN0Pg",
     "UCp6bpinXPzdx7d7-gekWzZQ",
     "UCIDA4NNU3jL8zqfs5huy0zA",
-    "UCkcAiB3o5qlsuBN-KooLt0g",
     "UCDAaatJidv4z_5aE71bV6yg",
     "UCOxqgCwgOqC2lMqC5PYz_Dg",
     "UCuQvsnvJcFQEtX_C_X7AtOw",
@@ -211,6 +211,7 @@
     "UC5nc_ZtjKW1htCVZVRxlQAQ",
     "UCuCFbUOszL3QkYVUWZzKH8Q",
     "UCiJnBO_XuDsi1SSRAmt4n5g",
+    "UCe55Gy-hFDvLZp8C8BZhBnw",
     "UC_aEa8K-EOJ3D6gOs7HcyNg",
     "UC6Y2P2X4d2cRLoxkH3BhQ9Q",
     "UCanckzLzf4nz_BdCvv6HNmQ",
@@ -218,6 +219,7 @@
     "UC-EVnno6x6-aAG6g1ZVoN3A",
     "UCMva6YAy108CPpj5kNqvXSQ",
     "UCa_m5CglAW-Z6-CGFAZ9uUg",
+    "UCnIVKmDbzDP7CPNQyfhcufg",
     "UCKKKYE55BVswHgKihx5YXew",
     "UCCYyPjBATsUOdwpqrvr8z-Q",
     "UC3ifTl5zKiCAhHIBQYcaTeg",
@@ -340,7 +342,10 @@
     "namecm24": true,
     "namem25": true,
     "namem25_open": true,
-    "namesur25": true
+    "namesur25": true,
+    "namebf25": true,
+    "nameblackfriday25": true,
+    "namecm25": true
   },
   "ysc_settings": {
     "install_date": 1570293612515,
