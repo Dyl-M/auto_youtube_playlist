@@ -16033,3 +16033,9 @@
 2025-12-06 21:09:48+0000 [INFO] - No livestream added or removed.
 2025-12-06 21:09:56+0000 [INFO] - Livestreams playlist sorted.
 2025-12-06 21:10:53+0000 [WARNING] - Quota exceeded for YouTube projects.
+2025-12-07 01:06:37+0000 [INFO] - Process started.
+2025-12-07 01:06:37+0000 [INFO] - API credentials refreshed.
+2025-12-07 01:06:37+0000 [INFO] - YouTube service created successfully.
+2025-12-07 01:07:09+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2025-12-07 01:08:05+0000 [INFO] - No livestream added or removed.
+2025-12-07 01:08:06+0000 [WARNING] - Quota exceeded for YouTube projects.
