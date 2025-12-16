@@ -16435,3 +16435,9 @@
 2025-12-15 21:27:13+0000 [INFO] - 1 new video(s) added.
 2025-12-15 21:27:15+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2025-12-15 21:27:15+0000 [INFO] - Process ended.
+2025-12-16 01:42:33+0000 [INFO] - Process started.
+2025-12-16 01:42:33+0000 [INFO] - API credentials refreshed.
+2025-12-16 01:42:33+0000 [INFO] - YouTube service created successfully.
+2025-12-16 01:43:03+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2025-12-16 01:44:00+0000 [INFO] - No livestream added or removed.
+2025-12-16 01:44:07+0000 [WARNING] - Quota exceeded for YouTube projects.
