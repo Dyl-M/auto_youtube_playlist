@@ -17240,3 +17240,10 @@
 2026-01-02 18:37:21+0000 [INFO] - 1 new livestream(s) added.
 2026-01-02 18:37:30+0000 [INFO] - Livestreams playlist sorted.
 2026-01-02 18:37:37+0000 [WARNING] - Quota exceeded for YouTube projects.
+2026-01-02 20:28:19+0000 [INFO] - Process started.
+2026-01-02 20:28:19+0000 [INFO] - API credentials refreshed.
+2026-01-02 20:28:19+0000 [INFO] - YouTube service created successfully.
+2026-01-02 20:28:49+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2026-01-02 20:29:44+0000 [INFO] - 2 new livestream(s) added.
+2026-01-02 20:29:45+0000 [INFO] - 1 livestream(s) removed.
+2026-01-02 20:29:46+0000 [WARNING] - Quota exceeded for YouTube projects.
