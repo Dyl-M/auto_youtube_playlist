@@ -17252,3 +17252,8 @@
 2026-01-02 22:25:31+0000 [INFO] - YouTube service created successfully.
 2026-01-02 22:25:56+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
 2026-01-02 22:26:41+0000 [WARNING] - Quota exceeded for YouTube projects.
+2026-01-03 01:11:55+0000 [INFO] - Process started.
+2026-01-03 01:11:56+0000 [INFO] - API credentials refreshed.
+2026-01-03 01:11:56+0000 [INFO] - YouTube service created successfully.
+2026-01-03 01:12:27+0000 [WARNING] - Can not found content for the following channel: UCuw1VDsmOWOldKGLYq6AkVg
+2026-01-03 01:13:23+0000 [WARNING] - Quota exceeded for YouTube projects.
