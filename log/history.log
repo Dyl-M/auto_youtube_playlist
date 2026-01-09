@@ -17499,3 +17499,7 @@
 2026-01-09 18:40:36+0000 [INFO] - 1 new livestream(s) added.
 2026-01-09 18:40:41+0000 [INFO] - Livestreams playlist sorted.
 2026-01-09 18:40:42+0000 [WARNING] - Quota exceeded for YouTube projects.
+2026-01-09 20:30:32+0000 [INFO] - Process started.
+2026-01-09 20:30:32+0000 [INFO] - API credentials refreshed.
+2026-01-09 20:30:32+0000 [INFO] - YouTube service created successfully.
+2026-01-09 20:31:53+0000 [WARNING] - Quota exceeded for YouTube projects.
