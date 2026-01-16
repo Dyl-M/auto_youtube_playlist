@@ -17748,3 +17748,8 @@
 2026-01-16 20:04:23+0000 [INFO] - 1 new video(s) added.
 2026-01-16 20:04:24+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2026-01-16 20:04:24+0000 [INFO] - Process ended.
+2026-01-16 22:01:51+0000 [INFO] - Process started.
+2026-01-16 22:01:51+0000 [INFO] - API credentials refreshed.
+2026-01-16 22:01:51+0000 [INFO] - YouTube service created successfully.
+2026-01-16 22:03:18+0000 [INFO] - 1 livestream(s) removed.
+2026-01-16 22:03:23+0000 [WARNING] - Quota exceeded for YouTube projects.
