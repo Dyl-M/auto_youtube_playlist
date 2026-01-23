@@ -18000,3 +18000,7 @@
 2026-01-23 20:21:08+0000 [INFO] - 1 new livestream(s) added.
 2026-01-23 20:21:08+0000 [INFO] - 1 livestream(s) removed.
 2026-01-23 20:21:17+0000 [WARNING] - Quota exceeded for YouTube projects.
+2026-01-23 22:14:19+0000 [INFO] - Process started.
+2026-01-23 22:14:19+0000 [INFO] - API credentials refreshed.
+2026-01-23 22:14:19+0000 [INFO] - YouTube service created successfully.
+2026-01-23 22:15:29+0000 [WARNING] - Quota exceeded for YouTube projects.
