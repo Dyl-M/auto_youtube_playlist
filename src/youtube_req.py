@@ -538,7 +538,10 @@ def update_playlist(service: googleapiclient.discovery, playlist_id: str, videos
 
         else:  # Get videos stats
             video_stats = pd.DataFrame(get_stats(service=service, videos_list=in_playlist.video_id))
-            channel_stats = pd.DataFrame(get_subs(service=service, channel_list=in_playlist.channel_id.tolist()))
+            channel_stats = pd.DataFrame(get_subs(
+                service=service,  # Filter empty values + ensure string format
+                channel_list=in_playlist.channel_id.dropna().astype(str).tolist().tolist())
+            )
             in_playlist = in_playlist \
                 .merge(channel_stats, how='outer') \
                 .merge(video_stats, how='outer') \
