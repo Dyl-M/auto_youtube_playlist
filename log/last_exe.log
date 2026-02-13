@@ -1,8 +1,8 @@
-2026-02-13 14:46:58+0000 [INFO] - Process started.
-2026-02-13 14:46:58+0000 [INFO] - API credentials refreshed.
-2026-02-13 14:46:58+0000 [INFO] - YouTube service created successfully.
-2026-02-13 14:48:32+0000 [INFO] - No livestream added or removed.
-2026-02-13 14:48:42+0000 [INFO] - Livestreams playlist sorted.
-2026-02-13 14:49:41+0000 [INFO] - 1 video(s) removed.
-2026-02-13 14:49:43+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2026-02-13 14:49:43+0000 [INFO] - Process ended.
+2026-02-13 16:55:17+0000 [INFO] - Process started.
+2026-02-13 16:55:17+0000 [INFO] - API credentials refreshed.
+2026-02-13 16:55:17+0000 [INFO] - YouTube service created successfully.
+2026-02-13 16:55:45+0000 [WARNING] - TIMEOUT ERROR: Livestreams playlist update cancelled.
+2026-02-13 16:56:30+0000 [INFO] - 5 new video(s) added.
+2026-02-13 16:56:31+0000 [INFO] - 1 video(s) removed.
+2026-02-13 16:56:32+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-02-13 16:56:32+0000 [INFO] - Process ended.
