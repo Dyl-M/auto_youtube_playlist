@@ -19037,3 +19037,9 @@
 2026-02-20 18:58:27+0000 [INFO] - 1 video(s) removed.
 2026-02-20 18:58:28+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2026-02-20 18:58:28+0000 [INFO] - Process ended.
+2026-02-20 20:39:04+0000 [INFO] - Process started.
+2026-02-20 20:39:04+0000 [INFO] - API credentials refreshed.
+2026-02-20 20:39:05+0000 [INFO] - YouTube service created successfully.
+2026-02-20 20:40:14+0000 [INFO] - 1 livestream(s) removed.
+2026-02-20 20:40:23+0000 [WARNING] - (Zgs25Q_kgbg) - [{'message': 'Invalid specified snippet.', 'domain': 'youtube.playlistItem', 'reason': 'invalidSnippet'}]
+2026-02-20 20:40:23+0000 [WARNING] - Quota exceeded for YouTube projects.
