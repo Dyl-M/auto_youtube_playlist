@@ -19287,3 +19287,7 @@
 2026-02-26 20:40:58+0000 [WARNING] - (325m8PqVH74) - [{'message': 'Invalid playlist item position.', 'domain': 'youtube.playlistItem', 'reason': 'invalidPlaylistItemPosition'}]
 2026-02-26 20:40:58+0000 [INFO] - Livestreams playlist sorted.
 2026-02-26 20:41:00+0000 [WARNING] - Quota exceeded for YouTube projects.
+2026-02-26 22:35:02+0000 [INFO] - Process started.
+2026-02-26 22:35:02+0000 [INFO] - API credentials refreshed.
+2026-02-26 22:35:02+0000 [INFO] - YouTube service created successfully.
+2026-02-26 22:36:30+0000 [WARNING] - Quota exceeded for YouTube projects.
