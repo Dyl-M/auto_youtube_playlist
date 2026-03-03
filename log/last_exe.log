@@ -1,8 +1,9 @@
-2026-03-03 20:32:55+0000 [INFO] - Process started.
-2026-03-03 20:32:56+0000 [INFO] - API credentials refreshed.
-2026-03-03 20:32:56+0000 [INFO] - YouTube service created successfully.
-2026-03-03 20:34:13+0000 [INFO] - No livestream added or removed.
-2026-03-03 20:34:16+0000 [INFO] - Livestreams playlist sorted.
-2026-03-03 20:34:57+0000 [INFO] - No video added or removed.
-2026-03-03 20:34:58+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2026-03-03 20:34:58+0000 [INFO] - Process ended.
+2026-03-03 22:29:14+0000 [INFO] - Process started.
+2026-03-03 22:29:14+0000 [INFO] - API credentials refreshed.
+2026-03-03 22:29:14+0000 [INFO] - YouTube service created successfully.
+2026-03-03 22:30:02+0000 [WARNING] - ConnectionError with this channel: UCCYyPjBATsUOdwpqrvr8z-Q
+2026-03-03 22:30:46+0000 [INFO] - No livestream added or removed.
+2026-03-03 22:30:55+0000 [INFO] - Livestreams playlist sorted.
+2026-03-03 22:31:43+0000 [INFO] - 1 new video(s) added.
+2026-03-03 22:31:45+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-03-03 22:31:45+0000 [INFO] - Process ended.
