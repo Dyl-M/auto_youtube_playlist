@@ -19725,3 +19725,12 @@
 2026-03-10 14:55:35+0000 [INFO] - No video added or removed.
 2026-03-10 14:55:36+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2026-03-10 14:55:36+0000 [INFO] - Process ended.
+2026-03-10 16:58:36+0000 [INFO] - Process started.
+2026-03-10 16:58:36+0000 [INFO] - API credentials refreshed.
+2026-03-10 16:58:36+0000 [INFO] - YouTube service created successfully.
+2026-03-10 16:59:51+0000 [INFO] - 1 livestream(s) removed.
+2026-03-10 17:00:01+0000 [WARNING] - (Mq-3Sjg41n4) - [{'message': 'Invalid specified snippet.', 'domain': 'youtube.playlistItem', 'reason': 'invalidSnippet'}]
+2026-03-10 17:00:01+0000 [INFO] - Livestreams playlist sorted.
+2026-03-10 17:00:54+0000 [INFO] - 1 new video(s) added.
+2026-03-10 17:00:55+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-03-10 17:00:55+0000 [INFO] - Process ended.
