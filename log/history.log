@@ -20427,3 +20427,7 @@
 2026-03-27 18:52:17+0000 [WARNING] - Can not found content for the following channel: UCJ6td3C9QlPO9O_J5dF4ZzA
 2026-03-27 18:53:08+0000 [INFO] - 2 new livestream(s) added.
 2026-03-27 18:53:14+0000 [WARNING] - Quota exceeded for YouTube projects.
+2026-03-27 20:35:12+0000 [INFO] - Process started.
+2026-03-27 20:35:12+0000 [INFO] - API credentials refreshed.
+2026-03-27 20:35:12+0000 [INFO] - YouTube service created successfully.
+2026-03-27 20:36:34+0000 [WARNING] - Quota exceeded for YouTube projects.
