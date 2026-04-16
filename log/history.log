@@ -21244,3 +21244,11 @@
 2026-04-15 22:00:32+0000 [INFO] - No video added or removed.
 2026-04-15 22:00:33+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2026-04-15 22:00:33+0000 [INFO] - Process ended.
+2026-04-16 02:43:44+0000 [INFO] - Process started.
+2026-04-16 02:43:44+0000 [INFO] - API credentials refreshed.
+2026-04-16 02:43:44+0000 [INFO] - YouTube service created successfully.
+2026-04-16 02:44:58+0000 [INFO] - 1 livestream(s) removed.
+2026-04-16 02:45:07+0000 [WARNING] - (lRHs0V5KnKk) - [{'message': 'Invalid specified snippet.', 'domain': 'youtube.playlistItem', 'reason': 'invalidSnippet'}]
+2026-04-16 02:45:09+0000 [WARNING] - (D4MdHQOILdw) - [{'message': 'Invalid playlist item position.', 'domain': 'youtube.playlistItem', 'reason': 'invalidPlaylistItemPosition'}]
+2026-04-16 02:45:09+0000 [INFO] - Livestreams playlist sorted.
+2026-04-16 02:45:11+0000 [WARNING] - Quota exceeded for YouTube projects.
