@@ -21330,3 +21330,12 @@
 2026-04-17 16:55:02+0000 [INFO] - 1 video(s) removed.
 2026-04-17 16:55:03+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2026-04-17 16:55:03+0000 [INFO] - Process ended.
+2026-04-17 18:55:19+0000 [INFO] - Process started.
+2026-04-17 18:55:19+0000 [INFO] - API credentials refreshed.
+2026-04-17 18:55:19+0000 [INFO] - YouTube service created successfully.
+2026-04-17 18:56:34+0000 [INFO] - 1 new livestream(s) added.
+2026-04-17 18:56:34+0000 [INFO] - 1 livestream(s) removed.
+2026-04-17 18:56:43+0000 [WARNING] - (EpeWQE4sbQE) - [{'message': 'Invalid specified snippet.', 'domain': 'youtube.playlistItem', 'reason': 'invalidSnippet'}]
+2026-04-17 18:56:45+0000 [WARNING] - (D4MdHQOILdw) - [{'message': 'Invalid playlist item position.', 'domain': 'youtube.playlistItem', 'reason': 'invalidPlaylistItemPosition'}]
+2026-04-17 18:56:45+0000 [INFO] - Livestreams playlist sorted.
+2026-04-17 18:56:50+0000 [WARNING] - Quota exceeded for YouTube projects.
