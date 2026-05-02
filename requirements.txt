@@ -1,12 +1,12 @@
 beautifulsoup4~=4.14
 pygithub~=2.9
-google-api-python-client~=2.193
-google-auth~=2.49
+google-api-python-client~=2.195
+google-auth~=2.50
 google-auth-oauthlib~=1.3
 isodate~=0.7
 jupyter~=1.1
 pandas~=3.0
-plotly~=6.6
+plotly~=6.7
 requests~=2.33
 tqdm~=4.67
 tzlocal~=5.3
