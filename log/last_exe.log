@@ -1,8 +1,44 @@
-2026-05-30 21:00:42+0000 [INFO] - Process started.
-2026-05-30 21:00:43+0000 [INFO] - API credentials refreshed.
-2026-05-30 21:00:43+0000 [INFO] - YouTube service created successfully.
-2026-05-30 21:02:10+0000 [INFO] - No livestream added or removed.
-2026-05-30 21:02:16+0000 [INFO] - Livestreams playlist sorted.
-2026-05-30 21:03:18+0000 [INFO] - 4 video(s) removed.
-2026-05-30 21:03:19+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2026-05-30 21:03:19+0000 [INFO] - Process ended.
+2026-05-31 04:09:18+0000 [INFO] - Process started.
+2026-05-31 04:09:18+0000 [INFO] - API credentials refreshed.
+2026-05-31 04:09:18+0000 [INFO] - YouTube service created successfully.
+2026-05-31 04:11:31+0000 [INFO] - No livestream added or removed.
+2026-05-31 04:12:23+0000 [INFO] - Livestreams playlist sorted.
+2026-05-31 04:12:40+0000 [WARNING] - Playlist not found: UUuQvsnvJcFQEtX_C_X7AtOw
+2026-05-31 04:12:42+0000 [WARNING] - Playlist not found: UUA7GRAPzJxIpH2nf7zxZifw
+2026-05-31 04:12:47+0000 [WARNING] - Playlist not found: UUouEBciGjQjW_6zVkmhWNRQ
+2026-05-31 04:12:55+0000 [WARNING] - Playlist not found: UUdbFjONDWTsdy8pgCsgvlxg
+2026-05-31 04:12:57+0000 [WARNING] - Playlist not found: UUfqkZ3YEpMV92fTJs28jy9A
+2026-05-31 04:13:03+0000 [WARNING] - Playlist not found: UUljsGZjRVayVZHgSAxeSafg
+2026-05-31 04:13:07+0000 [WARNING] - Playlist not found: UUPfyre-gaEZkTl5oCoxtkSQ
+2026-05-31 04:13:11+0000 [WARNING] - Playlist not found: UUxGKfJ-Xf8lgdX9PC00YMrA
+2026-05-31 04:13:13+0000 [WARNING] - Playlist not found: UULLVQloTOSNkIF9uSdh_lWQ
+2026-05-31 04:13:16+0000 [WARNING] - Playlist not found: UUWp8Rc0qh08RZKlWxNfQ6PQ
+2026-05-31 04:13:19+0000 [WARNING] - Playlist not found: UUGCYRSJbcQhcD5cUMiM5F_A
+2026-05-31 04:13:27+0000 [WARNING] - Playlist not found: UUSfNQtA4Qd3NLMBAPp3FP5A
+2026-05-31 04:13:29+0000 [WARNING] - Playlist not found: UU6QRHEnq71zL5NboNm5n5Ag
+2026-05-31 04:13:36+0000 [WARNING] - Playlist not found: UUu3JMz2OnEaMQYzeUiqJR5g
+2026-05-31 04:13:38+0000 [WARNING] - Playlist not found: UUnkK2kjOYIPIEf0Q2fxR83w
+2026-05-31 04:13:43+0000 [WARNING] - Playlist not found: UUo3k9omEUs5QuZn63ajcyPg
+2026-05-31 04:13:49+0000 [WARNING] - Playlist not found: UU88SrIqCvlYTxXtts3hQMlA
+2026-05-31 04:13:54+0000 [WARNING] - Playlist not found: UUTjKczoz-Jja-MC-EI5b77w
+2026-05-31 04:13:56+0000 [WARNING] - Playlist not found: UUMva6YAy108CPpj5kNqvXSQ
+2026-05-31 04:14:00+0000 [WARNING] - Playlist not found: UU_DRS3lamW6T1_iheYLhEkQ
+2026-05-31 04:14:05+0000 [WARNING] - Playlist not found: UU3TWxgFn6UfUIK3DkF9OTIw
+2026-05-31 04:14:09+0000 [WARNING] - Playlist not found: UUhAhCmcGr2sDO27t_t6ndbA
+2026-05-31 04:14:14+0000 [WARNING] - Playlist not found: UUNwFuUbJXKQpP1ot1ZEE6Yg
+2026-05-31 04:14:18+0000 [WARNING] - Playlist not found: UUVkwPo62gvyjGC0145Jllmg
+2026-05-31 04:14:28+0000 [WARNING] - Playlist not found: UUknLLeI2Vo85P4QetbaIlbg
+2026-05-31 04:14:37+0000 [WARNING] - Playlist not found: UU_GPMS6hGLIKyafmNUsjY7g
+2026-05-31 04:14:39+0000 [WARNING] - Playlist not found: UU2ZsqkwvxEpw-aYAIJHTRDg
+2026-05-31 04:14:43+0000 [WARNING] - Playlist not found: UUd61k-5ykv_4RIbQg-Mpvrg
+2026-05-31 04:14:48+0000 [WARNING] - Playlist not found: UUtZZIenge-VfCE1eAXgLd4g
+2026-05-31 04:15:01+0000 [WARNING] - Playlist not found: UUulBShlQjLBSwC9bbJqAdVw
+2026-05-31 04:15:11+0000 [WARNING] - Playlist not found: UURD5h8GEUzygdTL_sdU9_DQ
+2026-05-31 04:15:14+0000 [WARNING] - Playlist not found: UUmUfuDanQfUEVTK6qfXTq_g
+2026-05-31 04:15:22+0000 [WARNING] - Playlist not found: UUpdr4TWolW4jw0dgBlMQgaw
+2026-05-31 04:15:26+0000 [WARNING] - Playlist not found: UUXGB0P-AhyZ4qYHWooiQzLA
+2026-05-31 04:15:28+0000 [WARNING] - Playlist not found: UUkcAiB3o5qlsuBN-KooLt0g
+2026-05-31 04:15:31+0000 [WARNING] - Playlist not found: UUiiN5Ld9pGMwcYrLUJfYlCQ
+2026-05-31 04:15:38+0000 [INFO] - 4 video(s) removed.
+2026-05-31 04:15:39+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-05-31 04:15:39+0000 [INFO] - Process ended.
