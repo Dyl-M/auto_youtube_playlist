@@ -23203,3 +23203,13 @@
 2026-06-04 04:07:08+0000 [INFO] - No video added or removed.
 2026-06-04 04:07:09+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2026-06-04 04:07:09+0000 [INFO] - Process ended.
+2026-06-04 15:16:25+0000 [INFO] - Process started.
+2026-06-04 15:16:25+0000 [INFO] - API credentials refreshed.
+2026-06-04 15:16:25+0000 [INFO] - YouTube service created successfully.
+2026-06-04 15:18:01+0000 [INFO] - 3 livestream(s) removed.
+2026-06-04 15:18:13+0000 [WARNING] - (EWrX250Zhko) - [{'message': 'Invalid specified snippet.', 'domain': 'youtube.playlistItem', 'reason': 'invalidSnippet'}]
+2026-06-04 15:18:13+0000 [INFO] - Livestreams playlist sorted.
+2026-06-04 15:19:22+0000 [INFO] - 1 new video(s) added.
+2026-06-04 15:19:23+0000 [INFO] - 4 video(s) removed.
+2026-06-04 15:19:24+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-06-04 15:19:24+0000 [INFO] - Process ended.
