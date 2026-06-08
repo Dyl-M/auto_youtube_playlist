@@ -23388,3 +23388,12 @@
 2026-06-08 17:28:46+0000 [INFO] - 7 video(s) removed.
 2026-06-08 17:28:47+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2026-06-08 17:28:47+0000 [INFO] - Process ended.
+2026-06-08 20:25:21+0000 [INFO] - Process started.
+2026-06-08 20:25:21+0000 [INFO] - API credentials refreshed.
+2026-06-08 20:25:21+0000 [INFO] - YouTube service created successfully.
+2026-06-08 20:26:46+0000 [WARNING] - ConnectionError with this channel: UC3hV4vnwzTUPSb7CAx4mXvg
+2026-06-08 20:27:08+0000 [INFO] - No livestream added or removed.
+2026-06-08 20:27:16+0000 [INFO] - Livestreams playlist sorted.
+2026-06-08 20:28:18+0000 [INFO] - 1 video(s) removed.
+2026-06-08 20:28:19+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-06-08 20:28:19+0000 [INFO] - Process ended.
