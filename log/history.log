@@ -23527,3 +23527,11 @@
 2026-06-11 23:24:36+0000 [INFO] - 1 video(s) removed.
 2026-06-11 23:24:37+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2026-06-11 23:24:37+0000 [INFO] - Process ended.
+2026-06-12 03:32:56+0000 [INFO] - Process started.
+2026-06-12 03:32:56+0000 [INFO] - API credentials refreshed.
+2026-06-12 03:32:56+0000 [INFO] - YouTube service created successfully.
+2026-06-12 03:34:38+0000 [INFO] - No livestream added or removed.
+2026-06-12 03:34:52+0000 [INFO] - Livestreams playlist sorted.
+2026-06-12 03:35:51+0000 [INFO] - 1 video(s) removed.
+2026-06-12 03:35:52+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-06-12 03:35:52+0000 [INFO] - Process ended.
