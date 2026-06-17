@@ -1,8 +1,9 @@
-2026-06-16 23:22:51+0000 [INFO] - Process started.
-2026-06-16 23:22:51+0000 [INFO] - API credentials refreshed.
-2026-06-16 23:22:51+0000 [INFO] - YouTube service created successfully.
-2026-06-16 23:24:23+0000 [INFO] - No livestream added or removed.
-2026-06-16 23:24:30+0000 [INFO] - Livestreams playlist sorted.
-2026-06-16 23:25:25+0000 [INFO] - No video added or removed.
-2026-06-16 23:25:26+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2026-06-16 23:25:26+0000 [INFO] - Process ended.
+2026-06-17 02:46:10+0000 [INFO] - Process started.
+2026-06-17 02:46:10+0000 [INFO] - API credentials refreshed.
+2026-06-17 02:46:10+0000 [INFO] - YouTube service created successfully.
+2026-06-17 02:47:55+0000 [WARNING] - Can not found content for the following channel: UCjSSFUN_mDG44DejMFPmhdA
+2026-06-17 02:48:00+0000 [INFO] - No livestream added or removed.
+2026-06-17 02:48:12+0000 [INFO] - Livestreams playlist sorted.
+2026-06-17 02:49:14+0000 [INFO] - No video added or removed.
+2026-06-17 02:49:15+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-06-17 02:49:15+0000 [INFO] - Process ended.
