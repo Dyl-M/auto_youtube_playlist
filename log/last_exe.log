@@ -1,13 +1,9 @@
-2026-07-02 14:01:15+0000 [INFO] - Process started.
-2026-07-02 14:01:15+0000 [INFO] - API credentials refreshed.
-2026-07-02 14:01:15+0000 [INFO] - YouTube service created successfully.
-2026-07-02 14:02:57+0000 [INFO] - 4 livestream(s) removed.
-2026-07-02 14:03:12+0000 [WARNING] - (zncgZUs8yjI) - [{'message': 'Invalid specified snippet.', 'domain': 'youtube.playlistItem', 'reason': 'invalidSnippet'}]
-2026-07-02 14:03:12+0000 [WARNING] - (kYIWcWBD9YU) - [{'message': 'Invalid specified snippet.', 'domain': 'youtube.playlistItem', 'reason': 'invalidSnippet'}]
-2026-07-02 14:03:13+0000 [WARNING] - (IvuwTft-0cM) - [{'message': 'Invalid playlist item position.', 'domain': 'youtube.playlistItem', 'reason': 'invalidPlaylistItemPosition'}]
-2026-07-02 14:03:14+0000 [WARNING] - (D4MdHQOILdw) - [{'message': 'Invalid playlist item position.', 'domain': 'youtube.playlistItem', 'reason': 'invalidPlaylistItemPosition'}]
-2026-07-02 14:03:14+0000 [INFO] - Livestreams playlist sorted.
-2026-07-02 14:04:10+0000 [INFO] - 1 new video(s) added.
-2026-07-02 14:04:10+0000 [INFO] - 1 video(s) removed.
-2026-07-02 14:04:11+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2026-07-02 14:04:11+0000 [INFO] - Process ended.
+2026-07-02 17:48:28+0000 [INFO] - Process started.
+2026-07-02 17:48:28+0000 [INFO] - API credentials refreshed.
+2026-07-02 17:48:28+0000 [INFO] - YouTube service created successfully.
+2026-07-02 17:50:01+0000 [INFO] - No livestream added or removed.
+2026-07-02 17:50:10+0000 [INFO] - Livestreams playlist sorted.
+2026-07-02 17:51:11+0000 [INFO] - 5 new video(s) added.
+2026-07-02 17:51:13+0000 [INFO] - 8 video(s) removed.
+2026-07-02 17:51:14+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-07-02 17:51:14+0000 [INFO] - Process ended.
