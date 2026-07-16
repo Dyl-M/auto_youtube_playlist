@@ -24982,3 +24982,36 @@
 2026-07-16 17:18:47+0000 [INFO] - 2 video(s) removed.
 2026-07-16 17:18:48+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2026-07-16 17:18:48+0000 [INFO] - Process ended.
+2026-07-16 19:11:20+0000 [INFO] - Process started.
+2026-07-16 19:11:20+0000 [INFO] - API credentials refreshed.
+2026-07-16 19:11:20+0000 [INFO] - YouTube service created successfully.
+2026-07-16 19:11:24+0000 [WARNING] - ConnectionError with this channel: UCu5jfQcpRLm9xhmlSd5S8xw
+2026-07-16 19:11:26+0000 [WARNING] - ConnectionError with this channel: UCp6bpinXPzdx7d7-gekWzZQ
+2026-07-16 19:11:31+0000 [WARNING] - ConnectionError with this channel: UCrUT57KGEzrCrmLb4PRgluw
+2026-07-16 19:11:37+0000 [WARNING] - ConnectionError with this channel: UCdbFjONDWTsdy8pgCsgvlxg
+2026-07-16 19:11:40+0000 [WARNING] - ConnectionError with this channel: UClAxKFEVmERwGhcUhpCzlWw
+2026-07-16 19:11:46+0000 [WARNING] - ConnectionError with this channel: UCwZfDJtxmSWP50o9QHmf-hw
+2026-07-16 19:11:51+0000 [WARNING] - ConnectionError with this channel: UCSfNQtA4Qd3NLMBAPp3FP5A
+2026-07-16 19:11:52+0000 [WARNING] - ConnectionError with this channel: UCSJ4gkVC6NrvII8umztf0Ow
+2026-07-16 19:11:52+0000 [WARNING] - ConnectionError with this channel: UC029oCuh2jKkEEZcWdGG5xA
+2026-07-16 19:11:56+0000 [WARNING] - ConnectionError with this channel: UCMRrge2ToIanH-mU-2sYWFw
+2026-07-16 19:11:57+0000 [WARNING] - ConnectionError with this channel: UC88SrIqCvlYTxXtts3hQMlA
+2026-07-16 19:11:59+0000 [WARNING] - ConnectionError with this channel: UC5nc_ZtjKW1htCVZVRxlQAQ
+2026-07-16 19:12:00+0000 [WARNING] - ConnectionError with this channel: UC_aEa8K-EOJ3D6gOs7HcyNg
+2026-07-16 19:12:07+0000 [WARNING] - ConnectionError with this channel: UCPZUQqtVDmcjm4NY5FkzqLA
+2026-07-16 19:12:10+0000 [WARNING] - ConnectionError with this channel: UCVkwPo62gvyjGC0145Jllmg
+2026-07-16 19:12:13+0000 [WARNING] - ConnectionError with this channel: UC0n9yiP-AD2DpuuYCDwlNxQ
+2026-07-16 19:12:13+0000 [WARNING] - ConnectionError with this channel: UCCAwb5g_P59JrABdzYLUDlg
+2026-07-16 19:12:19+0000 [WARNING] - ConnectionError with this channel: UCMOgdURr7d8pOVlc-alkfRg
+2026-07-16 19:12:21+0000 [WARNING] - ConnectionError with this channel: UCC1qRH2kSGu7AzBwqEPVnjg
+2026-07-16 19:12:25+0000 [WARNING] - ConnectionError with this channel: UC4N1snt2b0d83vOkvaWP6mg
+2026-07-16 19:12:27+0000 [WARNING] - ConnectionError with this channel: UC1l7wYrva1qCH-wgqcHaaRg
+2026-07-16 19:12:28+0000 [WARNING] - ConnectionError with this channel: UCMcWPM9eOz9Dsn7YwAlpOoQ
+2026-07-16 19:12:29+0000 [WARNING] - ConnectionError with this channel: UCLxqd1S685Mpyk9wy8jkVJQ
+2026-07-16 19:12:33+0000 [WARNING] - ConnectionError with this channel: UCO6Rq8SSY5ui4ptyMkLirIQ
+2026-07-16 19:12:43+0000 [WARNING] - ConnectionError with this channel: UCJEKlziKdxoos1qbptjGgLg
+2026-07-16 19:12:48+0000 [INFO] - No livestream added or removed.
+2026-07-16 19:12:52+0000 [INFO] - Livestreams playlist sorted.
+2026-07-16 19:13:51+0000 [INFO] - 4 video(s) removed.
+2026-07-16 19:13:52+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-07-16 19:13:52+0000 [INFO] - Process ended.
