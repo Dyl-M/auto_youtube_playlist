@@ -25693,3 +25693,18 @@
 2026-07-31 22:59:13+0000 [INFO] - 1 new video(s) added.
 2026-07-31 22:59:14+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2026-07-31 22:59:14+0000 [INFO] - Process ended.
+2026-08-01 02:50:23+0000 [INFO] - Process started.
+2026-08-01 02:50:23+0000 [INFO] - API credentials refreshed.
+2026-08-01 02:50:23+0000 [INFO] - YouTube service created successfully.
+2026-08-01 02:50:33+0000 [WARNING] - ConnectionError with this channel: UCbAEthmNnJk8JVZP8FWXqZg
+2026-08-01 02:50:49+0000 [WARNING] - ConnectionError with this channel: UCw49uOTAJjGUdoAeUcp7tOg
+2026-08-01 02:51:02+0000 [WARNING] - ConnectionError with this channel: UCJ6td3C9QlPO9O_J5dF4ZzA
+2026-08-01 02:51:20+0000 [WARNING] - ConnectionError with this channel: UCCAwb5g_P59JrABdzYLUDlg
+2026-08-01 02:51:20+0000 [WARNING] - ConnectionError with this channel: UCknLLeI2Vo85P4QetbaIlbg
+2026-08-01 02:51:20+0000 [WARNING] - ConnectionError with this channel: UCa10nxShhzNrCE1o2ZOPztg
+2026-08-01 02:51:33+0000 [WARNING] - ConnectionError with this channel: UCtZZIenge-VfCE1eAXgLd4g
+2026-08-01 02:51:49+0000 [WARNING] - ConnectionError with this channel: UCalCDSmZAYD73tqVZ4l8yJg
+2026-08-01 02:51:55+0000 [WARNING] - ConnectionError with this channel: UCbcqnfcUqICWo2dnkqGu_Vg
+2026-08-01 02:51:58+0000 [INFO] - No livestream added or removed.
+2026-08-01 02:52:05+0000 [INFO] - Livestreams playlist sorted.
+2026-08-01 02:52:05+0000 [WARNING] - Quota exceeded for YouTube projects.
