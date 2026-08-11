@@ -1,9 +1,8 @@
-2026-08-11 01:46:05+0000 [INFO] - Process started.
-2026-08-11 01:46:05+0000 [INFO] - API credentials refreshed.
-2026-08-11 01:46:05+0000 [INFO] - YouTube service created successfully.
-2026-08-11 01:47:25+0000 [WARNING] - Can not found content for the following channel: UC8eXqFK48M3bBSmMO1FRgIA
-2026-08-11 01:47:54+0000 [INFO] - No livestream added or removed.
-2026-08-11 01:48:02+0000 [INFO] - Livestreams playlist sorted.
-2026-08-11 01:48:59+0000 [INFO] - No video added or removed.
-2026-08-11 01:49:01+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2026-08-11 01:49:01+0000 [INFO] - Process ended.
+2026-08-11 13:05:29+0000 [INFO] - Process started.
+2026-08-11 13:05:29+0000 [INFO] - API credentials refreshed.
+2026-08-11 13:05:29+0000 [INFO] - YouTube service created successfully.
+2026-08-11 13:07:12+0000 [INFO] - No livestream added or removed.
+2026-08-11 13:07:23+0000 [INFO] - Livestreams playlist sorted.
+2026-08-11 13:08:19+0000 [INFO] - No video added or removed.
+2026-08-11 13:08:21+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-08-11 13:08:21+0000 [INFO] - Process ended.
