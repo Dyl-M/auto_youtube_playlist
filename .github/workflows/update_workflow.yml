@@ -26,6 +26,7 @@ jobs:
         permissions:
             contents: write
             id-token: write
+            issues: write
 
         env:
             CREDS_B64: '${{ secrets.CREDS_B64 }}'
@@ -76,3 +77,18 @@ jobs:
                 with:
                     github_token: ${{ secrets.GITHUB_TOKEN }}
                     force: true
+
+            -   id: notify-failure
+                name: Create issue on workflow failure
+                if: failure()
+                uses: actions/github-script@v9
+                with:
+                    script: |
+                        const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+                        github.rest.issues.create({
+                          owner: context.repo.owner,
+                          repo: context.repo.repo,
+                          title: `Workflow failed: ${context.workflow}`,
+                          body: `The workflow **${context.workflow}** has failed.\n\n**Run details:** ${runUrl}\n\n**Triggered by:** ${context.eventName}\n**Date:** ${new Date().toISOString()}`,
+                          labels: ['bug', 'workflow']
+                        });

@@ -115,8 +115,10 @@ if __name__ == '__main__':
         # Livestream sorting
         youtube_req.sort_livestreams(YOUTUBE_OAUTH, playlists_lives, prog_bar=PROG_BAR)
 
-    except requests.exceptions.ReadTimeout as timeout_error:
-        history_main.warning('TIMEOUT ERROR: Livestreams playlist update cancelled.')
+    except (requests.exceptions.RequestException, json.JSONDecodeError, KeyError, IndexError) as lives_error:
+        # Never let the livestreams step block the mixes update below.
+        history_main.warning('LIVESTREAMS ERROR (%s: %s): Livestreams playlist update cancelled.',
+                             type(lives_error).__name__, lives_error)
 
     # Update mixes playlist
     to_add = youtube_req.iter_channels(YOUTUBE_OAUTH, music_channels, prog_bar=PROG_BAR)
