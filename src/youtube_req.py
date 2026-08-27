@@ -349,15 +349,21 @@ def find_livestreams(channel_id: str):
         except KeyError:  # No content on the channel
             return []
 
-    except IndexError:
+    except (IndexError, KeyError):
         # No content found (due to channel termination by YouTube by mistake, most of the time)
         history.warning('Can not found content for the following channel: %s', channel_id)
         return []
 
-    except requests.exceptions.ConnectionError:
-        history.warning('ConnectionError with this channel: %s', channel_id)
+    except json.JSONDecodeError as decode_error:
+        # YouTube served a page variant whose ytInitialData blob is not plain JSON (seen from GitHub runners since
+        # 2026-08-26): skip this channel instead of aborting the whole run.
+        history.warning('Unparseable page data for channel %s: %s', channel_id, decode_error)
+        return []
 
-    return []  # Return if no livestream at the moment or in case of ConnectionError
+    except requests.exceptions.RequestException as request_error:
+        history.warning('Request error with this channel %s: %s', channel_id, request_error)
+
+    return []  # Return if no livestream at the moment or in case of request error
 
 
 def check_if_live(service: googleapiclient.discovery, videos_list: list):
