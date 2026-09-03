@@ -27044,3 +27044,17 @@
 2026-09-03 03:17:48+0000 [INFO] - No video added or removed.
 2026-09-03 03:17:50+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2026-09-03 03:17:50+0000 [INFO] - Process ended.
+2026-09-03 15:54:36+0000 [INFO] - Process started.
+2026-09-03 15:54:36+0000 [INFO] - API credentials refreshed.
+2026-09-03 15:54:36+0000 [INFO] - YouTube service created successfully.
+2026-09-03 15:54:44+0000 [WARNING] - Request error with this channel UCmd8Hi7qSoQvAwW3B3tUsig: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out.
+2026-09-03 15:54:58+0000 [WARNING] - Unparseable page data for channel UCOwp0yt9MI-w7jiwctWa8_w: Expecting ',' delimiter: line 1 column 1223108 (char 1223107)
+2026-09-03 15:56:21+0000 [WARNING] - Unparseable page data for channel UCpdr4TWolW4jw0dgBlMQgaw: Expecting ',' delimiter: line 1 column 593813 (char 593812)
+2026-09-03 15:56:29+0000 [INFO] - 1 livestream(s) removed.
+2026-09-03 15:56:44+0000 [WARNING] - (Yk7tuXE4PDs) - [{'message': 'Invalid specified snippet.', 'domain': 'youtube.playlistItem', 'reason': 'invalidSnippet'}]
+2026-09-03 15:56:45+0000 [WARNING] - (IvuwTft-0cM) - [{'message': 'Invalid playlist item position.', 'domain': 'youtube.playlistItem', 'reason': 'invalidPlaylistItemPosition'}]
+2026-09-03 15:56:45+0000 [INFO] - Livestreams playlist sorted.
+2026-09-03 15:57:53+0000 [INFO] - 3 new video(s) added.
+2026-09-03 15:57:53+0000 [INFO] - 1 video(s) removed.
+2026-09-03 15:57:54+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-09-03 15:57:54+0000 [INFO] - Process ended.
