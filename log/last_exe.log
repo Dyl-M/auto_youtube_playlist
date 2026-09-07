@@ -1,9 +1,11 @@
-2026-09-06 20:13:27+0000 [INFO] - Process started.
-2026-09-06 20:13:27+0000 [INFO] - API credentials refreshed.
-2026-09-06 20:13:27+0000 [INFO] - YouTube service created successfully.
-2026-09-06 20:13:27+0000 [WARNING] - Unparseable page data for channel UCvNjdDE6xRuvYVhUGAl2BIQ: Expecting ',' delimiter: line 1 column 259330 (char 259329)
-2026-09-06 20:14:56+0000 [INFO] - No livestream added or removed.
-2026-09-06 20:15:03+0000 [INFO] - Livestreams playlist sorted.
-2026-09-06 20:15:56+0000 [INFO] - 1 video(s) removed.
-2026-09-06 20:15:57+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2026-09-06 20:15:57+0000 [INFO] - Process ended.
+2026-09-07 03:18:45+0000 [INFO] - Process started.
+2026-09-07 03:18:45+0000 [INFO] - API credentials refreshed.
+2026-09-07 03:18:45+0000 [INFO] - YouTube service created successfully.
+2026-09-07 03:19:41+0000 [WARNING] - Unparseable page data for channel UCNwFuUbJXKQpP1ot1ZEE6Yg: Expecting ',' delimiter: line 1 column 416801 (char 416800)
+2026-09-07 03:20:11+0000 [WARNING] - Unparseable page data for channel UCtwSCDjbQKShJU0kIzBgTdA: Expecting ',' delimiter: line 1 column 490242 (char 490241)
+2026-09-07 03:20:24+0000 [WARNING] - Unparseable page data for channel UCkcAiB3o5qlsuBN-KooLt0g: Expecting ',' delimiter: line 1 column 1003161 (char 1003160)
+2026-09-07 03:20:26+0000 [INFO] - No livestream added or removed.
+2026-09-07 03:20:35+0000 [INFO] - Livestreams playlist sorted.
+2026-09-07 03:21:32+0000 [INFO] - No video added or removed.
+2026-09-07 03:21:33+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-09-07 03:21:33+0000 [INFO] - Process ended.
