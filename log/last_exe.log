@@ -1,16 +1,9 @@
-2026-09-09 17:24:12+0000 [INFO] - Process started.
-2026-09-09 17:24:12+0000 [INFO] - API credentials refreshed.
-2026-09-09 17:24:12+0000 [INFO] - YouTube service created successfully.
-2026-09-09 17:24:19+0000 [WARNING] - Request error with this channel UCMCi-kprJRZbvhfxlpalGvQ: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
-2026-09-09 17:24:54+0000 [WARNING] - Unparseable page data for channel UCSfNQtA4Qd3NLMBAPp3FP5A: Expecting ',' delimiter: line 1 column 500879 (char 500878)
-2026-09-09 17:24:59+0000 [WARNING] - Request error with this channel UCyC_4jvPzLiSkJkLIkA7B8g: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
-2026-09-09 17:25:15+0000 [WARNING] - Request error with this channel UCJ6td3C9QlPO9O_J5dF4ZzA: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
-2026-09-09 17:25:33+0000 [WARNING] - Request error with this channel UCtxKzA7OSpRh3OX9aJRShUg: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
-2026-09-09 17:25:59+0000 [WARNING] - Request error with this channel UC8eXqFK48M3bBSmMO1FRgIA: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
-2026-09-09 17:26:18+0000 [WARNING] - Request error with this channel UCRD5h8GEUzygdTL_sdU9_DQ: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
-2026-09-09 17:26:34+0000 [INFO] - 3 livestream(s) removed.
-2026-09-09 17:27:01+0000 [INFO] - Livestreams playlist sorted.
-2026-09-09 17:28:07+0000 [INFO] - 3 new video(s) added.
-2026-09-09 17:28:11+0000 [INFO] - 7 video(s) removed.
-2026-09-09 17:28:12+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2026-09-09 17:28:12+0000 [INFO] - Process ended.
+2026-09-09 20:08:46+0000 [INFO] - Process started.
+2026-09-09 20:08:46+0000 [INFO] - API credentials refreshed.
+2026-09-09 20:08:46+0000 [INFO] - YouTube service created successfully.
+2026-09-09 20:10:04+0000 [WARNING] - Unparseable page data for channel UCbDgBFAketcO26wz-pR6OKA: Expecting ',' delimiter: line 1 column 1732745 (char 1732744)
+2026-09-09 20:10:37+0000 [INFO] - No livestream added or removed.
+2026-09-09 20:10:47+0000 [INFO] - Livestreams playlist sorted.
+2026-09-09 20:11:51+0000 [INFO] - 3 new video(s) added.
+2026-09-09 20:11:52+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-09-09 20:11:52+0000 [INFO] - Process ended.
