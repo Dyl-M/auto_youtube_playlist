@@ -1,8 +1,12 @@
-2026-09-21 23:58:03+0000 [INFO] - Process started.
-2026-09-21 23:58:04+0000 [INFO] - API credentials refreshed.
-2026-09-21 23:58:04+0000 [INFO] - YouTube service created successfully.
-2026-09-21 23:59:41+0000 [INFO] - No livestream added or removed.
-2026-09-21 23:59:55+0000 [INFO] - Livestreams playlist sorted.
-2026-09-22 00:01:10+0000 [INFO] - No video added or removed.
-2026-09-22 00:01:12+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2026-09-22 00:01:12+0000 [INFO] - Process ended.
+2026-09-22 02:02:02+0000 [INFO] - Process started.
+2026-09-22 02:02:02+0000 [INFO] - API credentials refreshed.
+2026-09-22 02:02:02+0000 [INFO] - YouTube service created successfully.
+2026-09-22 02:02:12+0000 [WARNING] - Unparseable page data for channel UCuQvsnvJcFQEtX_C_X7AtOw: Expecting ',' delimiter: line 1 column 386062 (char 386061)
+2026-09-22 02:02:18+0000 [WARNING] - Unparseable page data for channel UCOwp0yt9MI-w7jiwctWa8_w: Expecting ',' delimiter: line 1 column 1199293 (char 1199292)
+2026-09-22 02:02:55+0000 [WARNING] - Request error with this channel UCnIVKmDbzDP7CPNQyfhcufg: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out.
+2026-09-22 02:03:08+0000 [WARNING] - Unparseable page data for channel UCCAwb5g_P59JrABdzYLUDlg: Expecting ',' delimiter: line 1 column 664925 (char 664924)
+2026-09-22 02:03:49+0000 [INFO] - No livestream added or removed.
+2026-09-22 02:03:56+0000 [INFO] - Livestreams playlist sorted.
+2026-09-22 02:05:03+0000 [INFO] - No video added or removed.
+2026-09-22 02:05:05+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-09-22 02:05:05+0000 [INFO] - Process ended.
