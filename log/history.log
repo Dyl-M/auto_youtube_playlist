@@ -27891,3 +27891,15 @@
 2026-09-26 04:23:25+0000 [INFO] - No video added or removed.
 2026-09-26 04:23:27+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2026-09-26 04:23:27+0000 [INFO] - Process ended.
+2026-09-26 16:06:12+0000 [INFO] - Process started.
+2026-09-26 16:06:12+0000 [INFO] - API credentials refreshed.
+2026-09-26 16:06:12+0000 [INFO] - YouTube service created successfully.
+2026-09-26 16:06:28+0000 [WARNING] - Unparseable page data for channel UCZRiXu9UWkOnavBTc8DHq4g: Expecting ',' delimiter: line 1 column 487767 (char 487766)
+2026-09-26 16:06:32+0000 [WARNING] - Unparseable page data for channel UCKpOFjnfAxjwdt9B7F71GqA: Expecting ',' delimiter: line 1 column 693510 (char 693509)
+2026-09-26 16:06:58+0000 [WARNING] - Unparseable page data for channel UCo3k9omEUs5QuZn63ajcyPg: Expecting ',' delimiter: line 1 column 1487292 (char 1487291)
+2026-09-26 16:08:04+0000 [INFO] - No livestream added or removed.
+2026-09-26 16:08:15+0000 [INFO] - Livestreams playlist sorted.
+2026-09-26 16:09:13+0000 [INFO] - 3 new video(s) added.
+2026-09-26 16:09:13+0000 [INFO] - 3 video(s) removed.
+2026-09-26 16:09:14+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-09-26 16:09:14+0000 [INFO] - Process ended.
