@@ -27961,3 +27961,11 @@
 2026-09-28 02:52:15+0000 [INFO] - No video added or removed.
 2026-09-28 02:52:16+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2026-09-28 02:52:16+0000 [INFO] - Process ended.
+2026-09-28 21:00:15+0000 [INFO] - Process started.
+2026-09-28 21:00:15+0000 [INFO] - API credentials refreshed.
+2026-09-28 21:00:15+0000 [INFO] - YouTube service created successfully.
+2026-09-28 21:00:37+0000 [WARNING] - Unparseable page data for channel UCPgH1KIGI1Zrp0mqy99kgkg: Expecting ',' delimiter: line 1 column 529430 (char 529429)
+2026-09-28 21:00:49+0000 [WARNING] - Unparseable page data for channel UCBYg9_11ErMsFFNR66TRuLA: Expecting ',' delimiter: line 1 column 349190 (char 349189)
+2026-09-28 21:02:00+0000 [INFO] - 1 livestream(s) removed.
+2026-09-28 21:02:12+0000 [INFO] - Livestreams playlist sorted.
+2026-09-28 21:03:01+0000 [ERROR] - [UUwZfDJtxmSWP50o9QHmf-hw] Unknown error: backendError
