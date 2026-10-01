@@ -1,11 +1,12 @@
-2026-09-30 22:06:49+0000 [INFO] - Process started.
-2026-09-30 22:06:49+0000 [INFO] - API credentials refreshed.
-2026-09-30 22:06:49+0000 [INFO] - YouTube service created successfully.
-2026-09-30 22:07:13+0000 [WARNING] - Unparseable page data for channel UC6CRaOH3VjJRDT2xqCRmOvA: Expecting ',' delimiter: line 1 column 149467 (char 149466)
-2026-09-30 22:07:39+0000 [WARNING] - Unparseable page data for channel UCXLrdG_ZVt4US1iV40ytiQQ: Expecting ',' delimiter: line 1 column 702959 (char 702958)
-2026-09-30 22:08:24+0000 [INFO] - No livestream added or removed.
-2026-09-30 22:08:33+0000 [INFO] - Livestreams playlist sorted.
-2026-09-30 22:09:27+0000 [INFO] - 3 new video(s) added.
-2026-09-30 22:09:27+0000 [INFO] - 1 video(s) removed.
-2026-09-30 22:09:28+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2026-09-30 22:09:28+0000 [INFO] - Process ended.
+2026-10-01 04:30:56+0000 [INFO] - Process started.
+2026-10-01 04:30:56+0000 [INFO] - API credentials refreshed.
+2026-10-01 04:30:56+0000 [INFO] - YouTube service created successfully.
+2026-10-01 04:31:14+0000 [WARNING] - Unparseable page data for channel UCXvSeBDvzmPO05k-0RyB34w: Expecting ',' delimiter: line 1 column 1369863 (char 1369862)
+2026-10-01 04:31:15+0000 [WARNING] - Unparseable page data for channel UCljsGZjRVayVZHgSAxeSafg: Expecting ',' delimiter: line 1 column 1002515 (char 1002514)
+2026-10-01 04:32:03+0000 [WARNING] - Unparseable page data for channel UCMcWPM9eOz9Dsn7YwAlpOoQ: Expecting ',' delimiter: line 1 column 1146701 (char 1146700)
+2026-10-01 04:32:19+0000 [WARNING] - Unparseable page data for channel UCkcAiB3o5qlsuBN-KooLt0g: Expecting ',' delimiter: line 1 column 980116 (char 980115)
+2026-10-01 04:32:21+0000 [INFO] - No livestream added or removed.
+2026-10-01 04:32:34+0000 [INFO] - Livestreams playlist sorted.
+2026-10-01 04:33:25+0000 [INFO] - No video added or removed.
+2026-10-01 04:33:26+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-10-01 04:33:26+0000 [INFO] - Process ended.
