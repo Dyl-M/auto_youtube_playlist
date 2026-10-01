@@ -28068,3 +28068,14 @@
 2026-10-01 18:10:33+0000 [INFO] - 8 video(s) removed.
 2026-10-01 18:10:34+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2026-10-01 18:10:34+0000 [INFO] - Process ended.
+2026-10-01 23:42:54+0000 [INFO] - Process started.
+2026-10-01 23:42:54+0000 [INFO] - API credentials refreshed.
+2026-10-01 23:42:54+0000 [INFO] - YouTube service created successfully.
+2026-10-01 23:43:05+0000 [WARNING] - Unparseable page data for channel UCsCWA3Y3JppL6feQiMRgm6Q: Expecting ',' delimiter: line 1 column 582386 (char 582385)
+2026-10-01 23:44:05+0000 [WARNING] - Request error with this channel UCknLLeI2Vo85P4QetbaIlbg: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out.
+2026-10-01 23:44:45+0000 [INFO] - No livestream added or removed.
+2026-10-01 23:44:55+0000 [INFO] - Livestreams playlist sorted.
+2026-10-01 23:45:57+0000 [INFO] - 2 new video(s) added.
+2026-10-01 23:45:58+0000 [INFO] - 2 video(s) removed.
+2026-10-01 23:45:59+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-10-01 23:45:59+0000 [INFO] - Process ended.
