@@ -28052,3 +28052,19 @@
 2026-10-01 04:33:25+0000 [INFO] - No video added or removed.
 2026-10-01 04:33:26+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2026-10-01 04:33:26+0000 [INFO] - Process ended.
+2026-10-01 18:07:27+0000 [INFO] - Process started.
+2026-10-01 18:07:27+0000 [INFO] - API credentials refreshed.
+2026-10-01 18:07:27+0000 [INFO] - YouTube service created successfully.
+2026-10-01 18:07:36+0000 [WARNING] - Unparseable page data for channel UCOxqgCwgOqC2lMqC5PYz_Dg: Expecting ',' delimiter: line 1 column 1127678 (char 1127677)
+2026-10-01 18:07:50+0000 [WARNING] - Unparseable page data for channel UCIKF1msqN7lW9gplsifOPkQ: Expecting ',' delimiter: line 1 column 681904 (char 681903)
+2026-10-01 18:08:18+0000 [WARNING] - Unparseable page data for channel UCjvIVmYKXtpGZDKVS5GlhMQ: Expecting ',' delimiter: line 1 column 398137 (char 398136)
+2026-10-01 18:09:05+0000 [INFO] - 2 livestream(s) removed.
+2026-10-01 18:09:16+0000 [WARNING] - (3GQY80jyysQ) - [{'message': 'Invalid specified snippet.', 'domain': 'youtube.playlistItem', 'reason': 'invalidSnippet'}]
+2026-10-01 18:09:16+0000 [WARNING] - (z0eLEccd7No) - [{'message': 'Invalid specified snippet.', 'domain': 'youtube.playlistItem', 'reason': 'invalidSnippet'}]
+2026-10-01 18:09:16+0000 [WARNING] - (0T1FPUV2wRQ) - [{'message': 'Invalid playlist item position.', 'domain': 'youtube.playlistItem', 'reason': 'invalidPlaylistItemPosition'}]
+2026-10-01 18:09:16+0000 [WARNING] - (IvuwTft-0cM) - [{'message': 'Invalid playlist item position.', 'domain': 'youtube.playlistItem', 'reason': 'invalidPlaylistItemPosition'}]
+2026-10-01 18:09:16+0000 [INFO] - Livestreams playlist sorted.
+2026-10-01 18:10:30+0000 [INFO] - 4 new video(s) added.
+2026-10-01 18:10:33+0000 [INFO] - 8 video(s) removed.
+2026-10-01 18:10:34+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-10-01 18:10:34+0000 [INFO] - Process ended.
