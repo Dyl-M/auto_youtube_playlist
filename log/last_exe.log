@@ -1,9 +1,13 @@
-2026-10-08 04:50:25+0000 [INFO] - Process started.
-2026-10-08 04:50:25+0000 [INFO] - API credentials refreshed.
-2026-10-08 04:50:25+0000 [INFO] - YouTube service created successfully.
-2026-10-08 04:52:03+0000 [WARNING] - Unparseable page data for channel UCXGB0P-AhyZ4qYHWooiQzLA: Expecting ',' delimiter: line 1 column 226024 (char 226023)
-2026-10-08 04:52:07+0000 [INFO] - No livestream added or removed.
-2026-10-08 04:52:20+0000 [INFO] - Livestreams playlist sorted.
-2026-10-08 04:53:26+0000 [INFO] - 1 new video(s) added.
-2026-10-08 04:53:27+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2026-10-08 04:53:27+0000 [INFO] - Process ended.
+2026-10-08 18:30:36+0000 [INFO] - Process started.
+2026-10-08 18:30:37+0000 [INFO] - API credentials refreshed.
+2026-10-08 18:30:37+0000 [INFO] - YouTube service created successfully.
+2026-10-08 18:30:58+0000 [WARNING] - Unparseable page data for channel UCGXkgynD9YyoEIVyqpaUElw: Expecting ',' delimiter: line 1 column 1560106 (char 1560105)
+2026-10-08 18:31:39+0000 [WARNING] - Unparseable page data for channel UC_TVqp_SyG6j5hG-xVRy95A: Expecting ',' delimiter: line 1 column 1803745 (char 1803744)
+2026-10-08 18:32:28+0000 [INFO] - 1 livestream(s) removed.
+2026-10-08 18:32:44+0000 [WARNING] - (wKbg-QUEUy8) - [{'message': 'Invalid specified snippet.', 'domain': 'youtube.playlistItem', 'reason': 'invalidSnippet'}]
+2026-10-08 18:32:45+0000 [WARNING] - (IvuwTft-0cM) - [{'message': 'Invalid playlist item position.', 'domain': 'youtube.playlistItem', 'reason': 'invalidPlaylistItemPosition'}]
+2026-10-08 18:32:45+0000 [INFO] - Livestreams playlist sorted.
+2026-10-08 18:34:01+0000 [INFO] - 9 new video(s) added.
+2026-10-08 18:34:04+0000 [INFO] - 5 video(s) removed.
+2026-10-08 18:34:05+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-10-08 18:34:05+0000 [INFO] - Process ended.
