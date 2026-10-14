@@ -1,11 +1,12 @@
-2026-10-14 03:09:12+0000 [INFO] - Process started.
-2026-10-14 03:09:12+0000 [INFO] - API credentials refreshed.
-2026-10-14 03:09:12+0000 [INFO] - YouTube service created successfully.
-2026-10-14 03:09:20+0000 [WARNING] - Unparseable page data for channel UCuQvsnvJcFQEtX_C_X7AtOw: Expecting ',' delimiter: line 1 column 457088 (char 457087)
-2026-10-14 03:09:30+0000 [WARNING] - Unparseable page data for channel UCfqkZ3YEpMV92fTJs28jy9A: Expecting ',' delimiter: line 1 column 1303693 (char 1303692)
-2026-10-14 03:10:14+0000 [WARNING] - Request error with this channel UCLTZddgA_La9H4Ngg99t_QQ: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out.
-2026-10-14 03:10:55+0000 [INFO] - No livestream added or removed.
-2026-10-14 03:11:03+0000 [INFO] - Livestreams playlist sorted.
-2026-10-14 03:12:00+0000 [INFO] - 1 new video(s) added.
-2026-10-14 03:12:01+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2026-10-14 03:12:01+0000 [INFO] - Process ended.
+2026-10-14 16:55:49+0000 [INFO] - Process started.
+2026-10-14 16:55:49+0000 [INFO] - API credentials refreshed.
+2026-10-14 16:55:49+0000 [INFO] - YouTube service created successfully.
+2026-10-14 16:55:52+0000 [WARNING] - Unparseable page data for channel UCMCi-kprJRZbvhfxlpalGvQ: Expecting ',' delimiter: line 1 column 1395583 (char 1395582)
+2026-10-14 16:56:54+0000 [WARNING] - Unparseable page data for channel UCCAwb5g_P59JrABdzYLUDlg: Expecting ',' delimiter: line 1 column 705186 (char 705185)
+2026-10-14 16:57:32+0000 [WARNING] - Unparseable page data for channel UCKpOFjnfAxjwdt9B7F71GqA: Expecting ',' delimiter: line 1 column 755223 (char 755222)
+2026-10-14 16:57:35+0000 [INFO] - No livestream added or removed.
+2026-10-14 16:57:52+0000 [INFO] - Livestreams playlist sorted.
+2026-10-14 16:58:57+0000 [INFO] - 1 new video(s) added.
+2026-10-14 16:58:59+0000 [INFO] - 3 video(s) removed.
+2026-10-14 16:59:00+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-10-14 16:59:00+0000 [INFO] - Process ended.
