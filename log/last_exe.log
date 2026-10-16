@@ -1,11 +1,13 @@
-2026-10-16 15:59:54+0000 [INFO] - Process started.
-2026-10-16 15:59:54+0000 [INFO] - API credentials refreshed.
-2026-10-16 15:59:55+0000 [INFO] - YouTube service created successfully.
-2026-10-16 16:00:49+0000 [WARNING] - Request error with this channel UCyC_4jvPzLiSkJkLIkA7B8g: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out.
-2026-10-16 16:00:58+0000 [WARNING] - Unparseable page data for channel UCMRrge2ToIanH-mU-2sYWFw: Expecting ',' delimiter: line 1 column 703225 (char 703224)
-2026-10-16 16:02:13+0000 [INFO] - 1 livestream(s) removed.
-2026-10-16 16:02:26+0000 [INFO] - Livestreams playlist sorted.
-2026-10-16 16:03:29+0000 [INFO] - 3 new video(s) added.
-2026-10-16 16:03:30+0000 [INFO] - 4 video(s) removed.
-2026-10-16 16:03:32+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2026-10-16 16:03:32+0000 [INFO] - Process ended.
+2026-10-16 19:30:20+0000 [INFO] - Process started.
+2026-10-16 19:30:21+0000 [INFO] - API credentials refreshed.
+2026-10-16 19:30:21+0000 [INFO] - YouTube service created successfully.
+2026-10-16 19:30:55+0000 [WARNING] - Unparseable page data for channel UCBYg9_11ErMsFFNR66TRuLA: Expecting ',' delimiter: line 1 column 396876 (char 396875)
+2026-10-16 19:31:09+0000 [WARNING] - Unparseable page data for channel UC_aEa8K-EOJ3D6gOs7HcyNg: Expecting ',' delimiter: line 1 column 1683934 (char 1683933)
+2026-10-16 19:31:21+0000 [WARNING] - Unparseable page data for channel UCVkwPo62gvyjGC0145Jllmg: Expecting ',' delimiter: line 1 column 1134580 (char 1134579)
+2026-10-16 19:32:07+0000 [INFO] - 1 livestream(s) removed.
+2026-10-16 19:32:14+0000 [WARNING] - (s1aAmPz1yvc) - [{'message': 'Invalid specified snippet.', 'domain': 'youtube.playlistItem', 'reason': 'invalidSnippet'}]
+2026-10-16 19:32:14+0000 [INFO] - Livestreams playlist sorted.
+2026-10-16 19:33:22+0000 [INFO] - 1 new video(s) added.
+2026-10-16 19:33:24+0000 [INFO] - 4 video(s) removed.
+2026-10-16 19:33:25+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-10-16 19:33:25+0000 [INFO] - Process ended.
