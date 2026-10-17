@@ -1,10 +1,13 @@
-2026-10-17 03:45:03+0000 [INFO] - Process started.
-2026-10-17 03:45:03+0000 [INFO] - API credentials refreshed.
-2026-10-17 03:45:03+0000 [INFO] - YouTube service created successfully.
-2026-10-17 03:45:05+0000 [WARNING] - Unparseable page data for channel UCwIgPuUJXuf2nY-nKsEvLOg: Expecting ',' delimiter: line 1 column 1664300 (char 1664299)
-2026-10-17 03:46:28+0000 [WARNING] - Unparseable page data for channel UCMcWPM9eOz9Dsn7YwAlpOoQ: Expecting ',' delimiter: line 1 column 1288760 (char 1288759)
-2026-10-17 03:46:50+0000 [INFO] - No livestream added or removed.
-2026-10-17 03:47:03+0000 [INFO] - Livestreams playlist sorted.
-2026-10-17 03:48:10+0000 [INFO] - No video added or removed.
-2026-10-17 03:48:12+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2026-10-17 03:48:12+0000 [INFO] - Process ended.
+2026-10-17 15:17:00+0000 [INFO] - Process started.
+2026-10-17 15:17:00+0000 [INFO] - API credentials refreshed.
+2026-10-17 15:17:00+0000 [INFO] - YouTube service created successfully.
+2026-10-17 15:17:05+0000 [WARNING] - Request error with this channel UCvNjdDE6xRuvYVhUGAl2BIQ: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out.
+2026-10-17 15:17:24+0000 [WARNING] - Unparseable page data for channel UCOwp0yt9MI-w7jiwctWa8_w: Expecting ',' delimiter: line 1 column 1353634 (char 1353633)
+2026-10-17 15:17:27+0000 [WARNING] - Unparseable page data for channel UCKpOFjnfAxjwdt9B7F71GqA: Expecting ',' delimiter: line 1 column 761879 (char 761878)
+2026-10-17 15:18:26+0000 [WARNING] - Unparseable page data for channel UCr8oc-LOaApCXWLjL7vdsgw: Expecting ',' delimiter: line 1 column 1701374 (char 1701373)
+2026-10-17 15:19:11+0000 [INFO] - 3 livestream(s) removed.
+2026-10-17 15:19:22+0000 [INFO] - Livestreams playlist sorted.
+2026-10-17 15:20:18+0000 [INFO] - 2 new video(s) added.
+2026-10-17 15:20:18+0000 [INFO] - 2 video(s) removed.
+2026-10-17 15:20:19+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-10-17 15:20:19+0000 [INFO] - Process ended.
