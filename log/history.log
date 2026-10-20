@@ -28698,3 +28698,29 @@
 2026-10-19 20:52:41+0000 [INFO] - 7 video(s) removed.
 2026-10-19 20:52:42+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2026-10-19 20:52:42+0000 [INFO] - Process ended.
+2026-10-20 04:26:21+0000 [INFO] - Process started.
+2026-10-20 04:26:21+0000 [INFO] - API credentials refreshed.
+2026-10-20 04:26:21+0000 [INFO] - YouTube service created successfully.
+2026-10-20 04:26:34+0000 [WARNING] - Request error with this channel UC_wfuKBoKvelxpV4PHa-H6w: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out.
+2026-10-20 04:26:43+0000 [WARNING] - Request error with this channel UCp6bpinXPzdx7d7-gekWzZQ: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out.
+2026-10-20 04:27:37+0000 [WARNING] - Request error with this channel UCWp8Rc0qh08RZKlWxNfQ6PQ: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
+2026-10-20 04:27:45+0000 [WARNING] - Request error with this channel UC1WKD9pJt5Sa4DCVaoJSAGw: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
+2026-10-20 04:27:50+0000 [WARNING] - Request error with this channel UCZyINKAa5O4FH15Zbw3L32w: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
+2026-10-20 04:27:59+0000 [WARNING] - Request error with this channel UCbr_gpafjcwT_MjV6K3Nh5g: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
+2026-10-20 04:28:10+0000 [WARNING] - Request error with this channel UC5nc_ZtjKW1htCVZVRxlQAQ: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
+2026-10-20 04:28:32+0000 [WARNING] - Request error with this channel UCc_bv_5nmxy2xnPNg9kP3Rg: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
+2026-10-20 04:28:39+0000 [WARNING] - Request error with this channel UCFUMI05jgO_O88Px8qfCQeQ: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
+2026-10-20 04:28:55+0000 [WARNING] - Request error with this channel UCZyL_PmshsD4VQtFvhtUSXA: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out.
+2026-10-20 04:29:00+0000 [WARNING] - Request error with this channel UCbDgBFAketcO26wz-pR6OKA: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
+2026-10-20 04:29:10+0000 [WARNING] - Request error with this channel UCtZZIenge-VfCE1eAXgLd4g: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
+2026-10-20 04:29:19+0000 [WARNING] - Request error with this channel UCMcWPM9eOz9Dsn7YwAlpOoQ: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
+2026-10-20 04:29:28+0000 [WARNING] - Request error with this channel UCFMjkrMT7Gvg84v0av-DIwA: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
+2026-10-20 04:29:37+0000 [WARNING] - Request error with this channel UCsN8M73DMWa8SPp5o_0IAQQ: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
+2026-10-20 04:29:44+0000 [WARNING] - Request error with this channel UCmKm7HJdOfkWLyml-fzKlVg: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
+2026-10-20 04:29:53+0000 [WARNING] - Request error with this channel UCKpOFjnfAxjwdt9B7F71GqA: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
+2026-10-20 04:30:00+0000 [WARNING] - Request error with this channel UCSw6mt6ounKWBFoHby719sw: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
+2026-10-20 04:30:01+0000 [INFO] - No livestream added or removed.
+2026-10-20 04:30:12+0000 [INFO] - Livestreams playlist sorted.
+2026-10-20 04:31:11+0000 [INFO] - 1 video(s) removed.
+2026-10-20 04:31:13+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-10-20 04:31:13+0000 [INFO] - Process ended.
