@@ -1,11 +1,13 @@
-2026-11-06 04:53:55+0000 [INFO] - Process started.
-2026-11-06 04:53:55+0000 [INFO] - API credentials refreshed.
-2026-11-06 04:53:55+0000 [INFO] - YouTube service created successfully.
-2026-11-06 04:54:29+0000 [WARNING] - Unparseable page data for channel UC029oCuh2jKkEEZcWdGG5xA: Expecting ',' delimiter: line 1 column 251594 (char 251593)
-2026-11-06 04:54:30+0000 [WARNING] - Unparseable page data for channel UC_3LN2xxmK9CMYFh3WrxRVQ: Expecting ',' delimiter: line 1 column 251531 (char 251530)
-2026-11-06 04:54:36+0000 [WARNING] - Unparseable page data for channel UCbHxmQ-3YgSud1b9bToU7qw: Expecting ',' delimiter: line 1 column 897315 (char 897314)
-2026-11-06 04:55:34+0000 [INFO] - No livestream added or removed.
-2026-11-06 04:55:45+0000 [INFO] - Livestreams playlist sorted.
-2026-11-06 04:56:44+0000 [INFO] - 1 new video(s) added.
-2026-11-06 04:56:46+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
-2026-11-06 04:56:46+0000 [INFO] - Process ended.
+2026-11-06 18:49:17+0000 [INFO] - Process started.
+2026-11-06 18:49:17+0000 [INFO] - API credentials refreshed.
+2026-11-06 18:49:17+0000 [INFO] - YouTube service created successfully.
+2026-11-06 18:49:32+0000 [WARNING] - Unparseable page data for channel UCMaoxh46hAsqlaVk2HcZkcg: Expecting ',' delimiter: line 1 column 1599238 (char 1599237)
+2026-11-06 18:50:22+0000 [WARNING] - Unparseable page data for channel UCd61k-5ykv_4RIbQg-Mpvrg: Expecting ',' delimiter: line 1 column 1551957 (char 1551956)
+2026-11-06 18:50:50+0000 [INFO] - 3 livestream(s) removed.
+2026-11-06 18:51:01+0000 [WARNING] - (zF5NRw7t8QM) - [{'message': 'Invalid specified snippet.', 'domain': 'youtube.playlistItem', 'reason': 'invalidSnippet'}]
+2026-11-06 18:51:01+0000 [WARNING] - (IvuwTft-0cM) - [{'message': 'Invalid playlist item position.', 'domain': 'youtube.playlistItem', 'reason': 'invalidPlaylistItemPosition'}]
+2026-11-06 18:51:01+0000 [INFO] - Livestreams playlist sorted.
+2026-11-06 18:52:10+0000 [INFO] - 4 new video(s) added.
+2026-11-06 18:52:12+0000 [INFO] - 8 video(s) removed.
+2026-11-06 18:52:14+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-11-06 18:52:14+0000 [INFO] - Process ended.
