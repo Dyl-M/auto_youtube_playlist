@@ -29564,3 +29564,15 @@
 2026-11-17 06:56:06+0000 [INFO] - No video added or removed.
 2026-11-17 06:56:07+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
 2026-11-17 06:56:07+0000 [INFO] - Process ended.
+2026-11-17 20:32:39+0000 [INFO] - Process started.
+2026-11-17 20:32:39+0000 [INFO] - API credentials refreshed.
+2026-11-17 20:32:39+0000 [INFO] - YouTube service created successfully.
+2026-11-17 20:32:45+0000 [WARNING] - Unparseable page data for channel UCv0C_ZXlu6Wv950vyiG5UOw: Expecting ',' delimiter: line 1 column 1201428 (char 1201427)
+2026-11-17 20:34:24+0000 [INFO] - 2 livestream(s) removed.
+2026-11-17 20:34:35+0000 [WARNING] - (T7SyIfRgYdQ) - [{'message': 'Invalid specified snippet.', 'domain': 'youtube.playlistItem', 'reason': 'invalidSnippet'}]
+2026-11-17 20:34:35+0000 [WARNING] - (IvuwTft-0cM) - [{'message': 'Invalid playlist item position.', 'domain': 'youtube.playlistItem', 'reason': 'invalidPlaylistItemPosition'}]
+2026-11-17 20:34:35+0000 [INFO] - Livestreams playlist sorted.
+2026-11-17 20:35:31+0000 [INFO] - 4 new video(s) added.
+2026-11-17 20:35:32+0000 [INFO] - 3 video(s) removed.
+2026-11-17 20:35:34+0000 [INFO] - Repository Secret 'CREDS_B64' updated successfully.
+2026-11-17 20:35:34+0000 [INFO] - Process ended.
